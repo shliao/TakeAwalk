@@ -13,5 +13,15 @@ namespace TakeAwalk.SystemAdmin
         {
 
         }
+
+        protected void btnCancle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

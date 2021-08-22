@@ -4,19 +4,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="display: inline; font-size:40px">購票首頁</div>
+    <div style="display: inline; font-size: 40px">火車訂票系統</div>
     <div style="display: inline;">
         <span style="margin-left: 30px">
-            <asp:Button ID="Lgnbtn" runat="server" Text="會員登入" />
-            <asp:Button ID="Rgrbtn" runat="server" Text="註冊會員" />
+            <a href="Login.aspx">會員登入</a>
+            <a href="Register.aspx">註冊會員</a>
         </span>
     </div>
     <br />
     <br />
     <table>
         <tr>
-            <td>熱門優惠票
-                <asp:GridView ID="GvTicket" runat="server"></asp:GridView>
+            <td>
+                熱門優惠票
+                <asp:GridView ID="gdvTicket" runat="server"></asp:GridView>
             </td>
         </tr>
     </table>

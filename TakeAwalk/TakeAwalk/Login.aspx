@@ -4,25 +4,28 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="font-size: 40px">會員登入頁</div>
+    <div style="font-size: 40px">會員登入</div>
     <br />
     <table>
         <tr>
-            <td>帳號:
-                <asp:TextBox ID="actbox" runat="server"></asp:TextBox>
+            <td>
+                帳號:
+                <asp:TextBox ID="txbAccount" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td>密碼:
-                <asp:TextBox ID="pwdbox" runat="server"></asp:TextBox><br />
-                <div style="margin-left: 150px"> <a href="/SystemAdmin/ForgotPassword.aspx">忘記密碼?</a></div>
-               
+            <td>
+                密碼:
+                <asp:TextBox ID="txbPassword" runat="server"></asp:TextBox><br />
+                <div style="margin-left: 150px">
+                    <a href="ForgotPassword.aspx">忘記密碼?</a>
+                </div>
             </td>
         </tr>
     </table>
     <div>
         <span>
-            <asp:Button ID="Savebtn" runat="server" Text="送出" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Againbtn" runat="server" Text="重新輸入" />
+            <asp:Button ID="btnSave" runat="server" Text="送出" OnClick="btnSave_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancle" runat="server" Text="取消" OnClick="btnCancle_Click" />
         </span>
     </div>
 

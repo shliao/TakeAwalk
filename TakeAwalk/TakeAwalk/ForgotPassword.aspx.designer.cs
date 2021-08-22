@@ -15,39 +15,39 @@ namespace TakeAwalk
     {
 
         /// <summary>
-        /// actbox 控制項。
+        /// txbAccount 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox actbox;
+        protected global::System.Web.UI.WebControls.TextBox txbAccount;
 
         /// <summary>
-        /// emlbox 控制項。
+        /// txbEmail 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emlbox;
+        protected global::System.Web.UI.WebControls.TextBox txbEmail;
 
         /// <summary>
-        /// Savebtn 控制項。
+        /// btnSave 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Savebtn;
+        protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
-        /// Againbtn 控制項。
+        /// btnCancle 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Againbtn;
+        protected global::System.Web.UI.WebControls.Button btnCancle;
     }
 }

@@ -6,25 +6,28 @@
     <br />
     <table>
         <tr>
-            <td>帳號:
-               <asp:Literal ID="ltlAct" runat="server"></asp:Literal>
+            <td>
+                帳號:
+                <asp:Literal ID="ltlAccount" runat="server"></asp:Literal>
             </td>
         </tr>
         <tr>
-            <td>新密碼:
-                <asp:TextBox ID="pwdbox" runat="server"></asp:TextBox>
+            <td>
+                新密碼:
+                <asp:TextBox ID="txbNewPassword" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td>確認新密碼:
-                <asp:TextBox ID="npwdbox" runat="server"></asp:TextBox>
+            <td>
+                確認新密碼:
+                <asp:TextBox ID="txbNewPasswordCmf" runat="server"></asp:TextBox>
             </td>
         </tr>
     </table>
     <br />
     <div>
         <span>
-            <asp:Button ID="Savebtn" runat="server" Text="確定變更" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Againbtn" runat="server" Text="取消變更" />
+            <asp:Button ID="btnSave" runat="server" Text="確定變更" OnClick="btnSave_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancle" runat="server" Text="取消" OnClick="btnCancle_Click" />
         </span>
     </div>
 </asp:Content>

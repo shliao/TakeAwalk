@@ -15,75 +15,75 @@ namespace TakeAwalk
     {
 
         /// <summary>
-        /// actbox 控制項。
+        /// txbAccount 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox actbox;
+        protected global::System.Web.UI.WebControls.TextBox txbAccount;
 
         /// <summary>
-        /// pwdbox 控制項。
+        /// txbPassword 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pwdbox;
+        protected global::System.Web.UI.WebControls.TextBox txbPassword;
 
         /// <summary>
-        /// nmebox 控制項。
+        /// txbName 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nmebox;
+        protected global::System.Web.UI.WebControls.TextBox txbName;
 
         /// <summary>
-        /// emlbox 控制項。
+        /// txbId 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emlbox;
+        protected global::System.Web.UI.WebControls.TextBox txbId;
 
         /// <summary>
-        /// telbox 控制項。
+        /// txbMobilePhone 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox telbox;
+        protected global::System.Web.UI.WebControls.TextBox txbMobilePhone;
 
         /// <summary>
-        /// idbox 控制項。
+        /// txbEmail 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idbox;
+        protected global::System.Web.UI.WebControls.TextBox txbEmail;
 
         /// <summary>
-        /// Savebtn 控制項。
+        /// btnSave 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Savebtn;
+        protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
-        /// Againbtn 控制項。
+        /// btnCancle 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Againbtn;
+        protected global::System.Web.UI.WebControls.Button btnCancle;
     }
 }

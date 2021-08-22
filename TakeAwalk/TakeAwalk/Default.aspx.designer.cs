@@ -15,30 +15,12 @@ namespace TakeAwalk
     {
 
         /// <summary>
-        /// Lgnbtn 控制項。
+        /// gdvTicket 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Lgnbtn;
-
-        /// <summary>
-        /// Rgrbtn 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Rgrbtn;
-
-        /// <summary>
-        /// GvTicket 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GvTicket;
+        protected global::System.Web.UI.WebControls.GridView gdvTicket;
     }
 }

@@ -15,48 +15,48 @@ namespace TakeAwalk.SystemAdmin
     {
 
         /// <summary>
-        /// ltlAct 控制項。
+        /// ltlAccount 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlAct;
+        protected global::System.Web.UI.WebControls.Literal ltlAccount;
 
         /// <summary>
-        /// pwdbox 控制項。
+        /// txbNewPassword 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pwdbox;
+        protected global::System.Web.UI.WebControls.TextBox txbNewPassword;
 
         /// <summary>
-        /// npwdbox 控制項。
+        /// txbNewPasswordCmf 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox npwdbox;
+        protected global::System.Web.UI.WebControls.TextBox txbNewPasswordCmf;
 
         /// <summary>
-        /// Savebtn 控制項。
+        /// btnSave 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Savebtn;
+        protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
-        /// Againbtn 控制項。
+        /// btnCancle 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Againbtn;
+        protected global::System.Web.UI.WebControls.Button btnCancle;
     }
 }
