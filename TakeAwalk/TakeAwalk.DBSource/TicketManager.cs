@@ -9,7 +9,7 @@ namespace TakeAwalk.DBSource
 {
     public class TicketManager
     {
-        public static List<TrainTicket> GetTrainTicketsList_Default()
+        public static List<TrainTicket> GetTrainTicketsList()
         {
             using (ContextModel context = new ContextModel())
             {
