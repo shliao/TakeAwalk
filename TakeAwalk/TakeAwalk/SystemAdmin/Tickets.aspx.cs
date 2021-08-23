@@ -17,13 +17,15 @@ namespace TakeAwalk.SystemAdmin
             {
                 this.gv_ticket.DataSource = TicketManager.GetTrainTicketsList();
                 this.gv_ticket.DataBind();
+                this.gv_selected.Visible = false;
+                this.ltlMsg.Visible = false;
             }
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[4] { new DataColumn("票券名稱"), new DataColumn("主辦單位"), new DataColumn("票價"), new DataColumn("數量") });
+            dt.Columns.AddRange(new DataColumn[4] { new DataColumn("TicketContent_Confirm"), new DataColumn("TrainCompany_Confirm"), new DataColumn("TicketPrice_Confirm"), new DataColumn("Quantity_Confirm") });
             foreach (GridViewRow row in gv_ticket.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
@@ -39,6 +41,18 @@ namespace TakeAwalk.SystemAdmin
 
                         dt.Rows.Add(ticketcontent, traincompany, ticketprice, quantity);
                     }
+                    else
+                    {
+                        this.ltlMsg.Visible = true;
+                        this.btnBuy.Visible = false;
+                        this.ltlMsg.Text = "未勾選任何優惠票及數量";
+                    }
+                }
+                else
+                {
+                    this.ltlMsg.Visible = true;
+                    this.btnBuy.Visible = false;
+                    this.ltlMsg.Text = "未勾選任何優惠票及數量";
                 }
             }
             this.gv_ticket.Visible = false;
@@ -55,8 +69,11 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            this.btnConfirm.Visible = true;
+            this.btnBuy.Visible = false;
             this.gv_ticket.Visible = true;
             this.gv_selected.Visible = false;
+            this.ltlMsg.Visible = false;
             this.gv_ticket.DataSource = TicketManager.GetTrainTicketsList();
             this.gv_ticket.DataBind();
         }
