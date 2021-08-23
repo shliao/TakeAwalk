@@ -4,13 +4,22 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+            <ul>
+                <li><a href="Tickets.aspx">優惠票購買</a></li>
+                <li><a href="OrderList.aspx">購票紀錄</a></li>
+                <li><a href="Customer.aspx">會員中心</a></li>
+                <li><a href="CustomerList.aspx" style="color: red">客戶資料</a></li>
+                <li><a href="OrderDetail.aspx" style="color: red">管理客戶訂單</a></li>
+            </ul>
+        </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

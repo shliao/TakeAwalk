@@ -8,14 +8,12 @@
     <br />
     <table>
         <tr>
-            <td>
-                帳號:
+            <td>帳號:
                 <asp:TextBox ID="txbAccount" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td>
-                密碼:
+            <td>密碼:
                 <asp:TextBox ID="txbPassword" runat="server"></asp:TextBox><br />
                 <div style="margin-left: 150px">
                     <a href="ForgotPassword.aspx">忘記密碼?</a>
@@ -23,9 +21,12 @@
             </td>
         </tr>
     </table>
+    <br />
+    <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
+    <br />
     <div>
         <span>
-            <asp:Button ID="btnSave" runat="server" Text="送出" OnClick="btnSave_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancle" runat="server" Text="取消" OnClick="btnCancle_Click" />
+            <asp:Button ID="btnLogin" runat="server" Text="登入" OnClick="btnLogin_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancle" runat="server" Text="取消" OnClick="btnCancle_Click" />
         </span>
     </div>
 

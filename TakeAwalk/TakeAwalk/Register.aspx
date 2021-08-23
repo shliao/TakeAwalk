@@ -47,7 +47,7 @@
     <br />
     <div>
         <span>
-            <asp:Button ID="btnSave" runat="server" Text="送出" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancle" runat="server" Text="取消" />
+            <asp:Button ID="btnRegister" runat="server" Text="註冊" OnClick="btnRegister_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancle" runat="server" Text="取消" OnClick="btnCancle_Click" />
         </span>
     </div>
 </asp:Content>

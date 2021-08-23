@@ -13,5 +13,15 @@ namespace TakeAwalk
         {
 
         }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCancle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
