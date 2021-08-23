@@ -13,7 +13,7 @@ namespace TakeAwalk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.gdvTicket.DataSource = TicketManager.GetTrainTicketsList_Default();
+            this.gdvTicket.DataSource = TicketManager.GetTrainTicketsList();
             this.gdvTicket.DataBind();
         }
     }
