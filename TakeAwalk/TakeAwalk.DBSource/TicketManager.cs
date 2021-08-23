@@ -18,7 +18,8 @@ namespace TakeAwalk.DBSource
                     var query = (from item in context.TrainTickets
                                  select item);
 
-                    return query.ToList();
+                    var list = query.ToList();
+                    return list;
                 }
                 catch (Exception ex)
                 {

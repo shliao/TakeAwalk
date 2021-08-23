@@ -17,7 +17,13 @@
         <tr>
             <td>
                 熱門優惠票
-                <asp:GridView ID="gdvTicket" runat="server"></asp:GridView>
+                <asp:GridView ID="gdvTicket" runat="server" AutoGenerateColumns="False" Height="78px" Width="233px">
+                    <Columns>
+                        <asp:BoundField HeaderText="票券名稱" DataField="TicketContent" />
+                        <asp:BoundField HeaderText="主辦單位" DataField="TrainCompany" />
+                        <asp:BoundField HeaderText="票價" DataField="TicketPrice" />
+                    </Columns>
+                </asp:GridView>
             </td>
         </tr>
     </table>
