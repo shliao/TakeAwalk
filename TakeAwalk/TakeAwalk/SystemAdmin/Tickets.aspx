@@ -25,5 +25,5 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-    <asp:Button ID="btnConfirm" runat="server" Text="確認購買" /><asp:Button ID="btnCancel" runat="server" Text="取消返回" />
+    <asp:Button ID="btnConfirm" runat="server" Text="確認選項" /><asp:Button ID="btnCancel" runat="server" Text="取消" />
 </asp:Content>
