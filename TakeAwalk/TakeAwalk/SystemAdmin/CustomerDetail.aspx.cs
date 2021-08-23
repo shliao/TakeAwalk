@@ -22,5 +22,15 @@ namespace TakeAwalk.SystemAdmin
 
 
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/SystemAdmin/Customer.aspx");
+        }
+
+        protected void btnPwd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/SystemAdmin/CustomerPasswordChange.aspx");
+        }
     }
 }

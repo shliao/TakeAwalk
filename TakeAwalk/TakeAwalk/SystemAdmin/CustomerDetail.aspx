@@ -30,6 +30,6 @@
                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
         </tr>
     </table>
-    <asp:Button ID="btnEdit" runat="server" Text="確定修改" /><asp:Button ID="btnLogout" runat="server" Text="返回" /></br>
-    <asp:Button ID="btnPwd" runat="server" Text="變更密碼" />
+    <asp:Button ID="btnEdit" runat="server" Text="確定修改" /><asp:Button ID="btnLogout" runat="server" Text="返回" OnClick="btnLogout_Click" /></br>
+    <asp:Button ID="btnPwd" runat="server" Text="變更密碼" OnClick="btnPwd_Click" />
 </asp:Content>
