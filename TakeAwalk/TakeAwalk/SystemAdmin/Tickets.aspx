@@ -33,7 +33,7 @@
             <asp:BoundField DataField="Quantity_Confirm" HeaderText="數量" />
         </Columns>
     </asp:GridView><br/>
-    <asp:Literal ID="ltlMsg" runat="server" Text="未勾選任何優惠票"></asp:Literal><br/>
+    <asp:Literal ID="ltlMsg" runat="server" Text="未勾選任何優惠票" Visible="False"></asp:Literal><br/>
     <asp:Button ID="btnConfirm" runat="server" Text="確認選項" OnClick="btnConfirm_Click" />
     <asp:Button ID="btnBuy" runat="server" Text="確定訂購" OnClick="btnConfirm_Click" Visible="False" />
     <asp:Button ID="btnCancel" runat="server" Text="取消" OnClick="btnCancel_Click" />

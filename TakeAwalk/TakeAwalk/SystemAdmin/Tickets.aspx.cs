@@ -56,6 +56,7 @@ namespace TakeAwalk.SystemAdmin
                 this.gv_selected.DataBind();
                 this.btnConfirm.Visible = false;
                 this.btnBuy.Visible = true;
+                this.btnBuy.Enabled = true;
             }
         }
         protected void btnCancel_Click(object sender, EventArgs e)
