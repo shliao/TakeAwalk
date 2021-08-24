@@ -43,7 +43,7 @@ namespace TakeAwalk.SystemAdmin
             }
             if (dt.Rows.Count == 0)
             {
-                this.ltlMsg.Visible = true;
+                this.lbError.Visible = true;
                 this.btnConfirm.Visible = false;
                 this.btnBuy.Visible = true;
                 this.btnBuy.Enabled = false;
@@ -57,6 +57,19 @@ namespace TakeAwalk.SystemAdmin
                 this.btnConfirm.Visible = false;
                 this.btnBuy.Visible = true;
                 this.btnBuy.Enabled = true;
+
+                int dr_cnt = dt.Rows.Count;
+                decimal total = 0;
+                int ticket_cnt = 0;
+                for (int i = 0; i < dr_cnt; i++)
+                {
+                    decimal amount = decimal.Parse(dt.Rows[i]["TicketPrice_Confirm"].ToString()) * decimal.Parse(dt.Rows[i]["Quantity_Confirm"].ToString());
+                    total += amount;
+                    int ticket = int.Parse(dt.Rows[i]["Quantity_Confirm"].ToString());
+                    ticket_cnt += ticket;
+                }
+                this.lbAmount.Visible = true;
+                this.lbAmount.Text = $"小計: {total} 元 \t\t {ticket_cnt} 張";
             }
         }
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -65,9 +78,15 @@ namespace TakeAwalk.SystemAdmin
             this.btnBuy.Visible = false;
             this.gv_ticket.Visible = true;
             this.gv_selected.Visible = false;
-            this.ltlMsg.Visible = false;
+            this.lbError.Visible = false;
+            this.lbAmount.Visible = false;
             this.gv_ticket.DataSource = TicketManager.GetTrainTicketsList();
             this.gv_ticket.DataBind();
+        }
+
+        protected void btnBuy_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

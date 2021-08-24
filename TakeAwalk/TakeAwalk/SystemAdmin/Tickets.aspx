@@ -30,11 +30,14 @@
             <asp:BoundField DataField="TicketContent_Confirm" HeaderText="票券名稱" />
             <asp:BoundField DataField="TrainCompany_Confirm" HeaderText="主辦單位" />
             <asp:BoundField DataField="TicketPrice_Confirm" HeaderText="票價" />
+            <asp:TemplateField><ItemTemplate><label>元</label></ItemTemplate></asp:TemplateField>
             <asp:BoundField DataField="Quantity_Confirm" HeaderText="數量" />
+            <asp:TemplateField><ItemTemplate><label>張</label></ItemTemplate></asp:TemplateField>
         </Columns>
-    </asp:GridView><br/>
-    <asp:Literal ID="ltlMsg" runat="server" Text="未勾選任何優惠票" Visible="False"></asp:Literal><br/>
+    </asp:GridView>
+    <asp:Label ID="lbError" runat="server" Text="未勾選任何優惠票" Visible="False"></asp:Label>
+    <asp:Label ID="lbAmount" runat="server" Visible="False"></asp:Label><br/>
     <asp:Button ID="btnConfirm" runat="server" Text="確認選項" OnClick="btnConfirm_Click" />
-    <asp:Button ID="btnBuy" runat="server" Text="確定訂購" OnClick="btnConfirm_Click" Visible="False" />
+    <asp:Button ID="btnBuy" runat="server" Text="確定訂購" OnClick="btnBuy_Click" Visible="False" />
     <asp:Button ID="btnCancel" runat="server" Text="取消" OnClick="btnCancel_Click" />
 </asp:Content>
