@@ -33,13 +33,13 @@
         <tr>
             <td>
                 電話:
-                <asp:TextBox ID="txbMobilePhone" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txbMobilePhone" runat="server" TextMode="Phone"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td>
                 信箱:
-                <asp:TextBox ID="txbEmail" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txbEmail" runat="server" TextMode="Email"></asp:TextBox>
             </td>
         </tr>
 

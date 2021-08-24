@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using TakeAwalk.DBSource;
@@ -19,8 +20,6 @@ namespace TakeAwalk.Support
             string val = ConfigurationManager.ConnectionStrings["DefauitConnectionString"].ConnectionString;
             return val;
         }
-
-
 
         public static DataRow ReadDataRow(string connectionstring, string dbCommandstring, List<SqlParameter> list)
         {
@@ -45,8 +44,6 @@ namespace TakeAwalk.Support
             }
         }
 
-
-
         public class Logger
         {
             public static void Writelog(Exception ex)
@@ -54,8 +51,6 @@ namespace TakeAwalk.Support
                 throw ex;
             }
         }
-
-
 
         public static bool trySearch(string account, string email, out string errorMsg)
         {
@@ -87,8 +82,6 @@ namespace TakeAwalk.Support
 
         }
 
-
-
         public static void CreateCustomer(UserInfo userInfo)
         {
 
@@ -107,8 +100,6 @@ namespace TakeAwalk.Support
 
             }
         }
-
-
 
         public static bool UpdatePWD(Guid CustomerID, string PWD)
         {

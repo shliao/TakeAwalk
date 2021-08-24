@@ -27,6 +27,9 @@ namespace TakeAwalk
 
             Guid Cid = Guid.NewGuid();
 
+
+
+
             UserInfo userInfo = new UserInfo()
             {
 
@@ -36,7 +39,7 @@ namespace TakeAwalk
                 Account = txbAccount.Text,
                 Password = txbPassword.Text,
                 ID = txbId.Text,
-                CustomerID= Cid
+                CustomerID = Cid
             };
 
             dbSupport.CreateCustomer(userInfo);
@@ -53,20 +56,26 @@ namespace TakeAwalk
             else if (this.txbAccount.Text.Length < 3)
                 msglist.Add("<span style='color:red'>帳號長度應為三到十八碼.</span>");
 
-            else if (string.IsNullOrWhiteSpace(this.txbPassword.Text) ||string.IsNullOrEmpty(this.txbPassword.Text))
+            else if (string.IsNullOrWhiteSpace(this.txbPassword.Text) || string.IsNullOrEmpty(this.txbPassword.Text))
                 msglist.Add("<span style='color:red'>密碼為必填(英數字元)</span>");
             else if (this.txbPassword.Text.Length < 8)
                 msglist.Add("<span style='color:red'>密碼長度應為八到十八碼.</span>");
 
             else if (string.IsNullOrWhiteSpace(this.txbName.Text) || string.IsNullOrEmpty(this.txbName.Text))
                 msglist.Add("<span style='color:red'>姓名為必填</span>");
-            else if (string.IsNullOrWhiteSpace(this.txbEmail.Text) ||string.IsNullOrEmpty(this.txbEmail.Text))
-                msglist.Add("<span style='color:red'>信箱為必填</span>");
-            else if (string.IsNullOrWhiteSpace(this.txbMobilePhone.Text) ||string.IsNullOrEmpty(this.txbMobilePhone.Text))
-                msglist.Add("<span style='color:red'>電話為必填</span>");
-            else if (string.IsNullOrWhiteSpace(this.txbId.Text) ||string.IsNullOrEmpty(this.txbId.Text))
-                msglist.Add("<span style='color:red'>身分字號為必填</span>");
 
+            else if (string.IsNullOrWhiteSpace(this.txbEmail.Text) || string.IsNullOrEmpty(this.txbEmail.Text))
+                msglist.Add("<span style='color:red'>信箱為必填</span>");
+
+            else if (string.IsNullOrWhiteSpace(this.txbMobilePhone.Text) || string.IsNullOrEmpty(this.txbMobilePhone.Text))
+                msglist.Add("<span style='color:red'>電話為必填</span>");
+            else if (this.txbMobilePhone.Text.Length != 10)
+                msglist.Add("<span style='color:red'>電話長度應為十碼.</span>");
+
+            else if (string.IsNullOrWhiteSpace(this.txbId.Text) || string.IsNullOrEmpty(this.txbId.Text))
+                msglist.Add("<span style='color:red'>身分字號為必填</span>");
+            else if (this.txbId.Text.Length != 10)
+                msglist.Add("<span style='color:red'>身分證長度應為十碼.</span>");
 
             errorMsgList = msglist;
 
