@@ -12,7 +12,7 @@
             <asp:BoundField HeaderText="總張數" />
             <asp:TemplateField><ItemTemplate><label>張</label></ItemTemplate></asp:TemplateField>
             <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" />
-            <asp:BoundField HeaderText="取消訂單日期" />
+            <asp:BoundField HeaderText="取消訂單日期" DataField="CancellationDate" />
             <asp:ImageField>
             </asp:ImageField>
         </Columns>

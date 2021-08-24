@@ -23,5 +23,6 @@ namespace TakeAwalk.ORM.DBModels
         public DateTime OrderDate { get; set; }
 
         public DateTime? CancellationDate { get; set; }
+
     }
 }

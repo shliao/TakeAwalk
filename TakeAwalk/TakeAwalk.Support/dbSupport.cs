@@ -15,40 +15,6 @@ namespace TakeAwalk.Support
 {
     public class dbSupport
     {
-        public static string Getconnectionstring()
-        {
-            string val = ConfigurationManager.ConnectionStrings["DefauitConnectionString"].ConnectionString;
-            return val;
-        }
-        public static DataRow ReadDataRow(string connectionstring, string dbCommandstring, List<SqlParameter> list)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionstring))
-            {
-                using (SqlCommand command = new SqlCommand(dbCommandstring, connection))
-                {
-                    command.Parameters.AddRange(list.ToArray());
-
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    DataTable dt = new DataTable();
-                    dt.Load(reader);
-                    reader.Close();
-
-                    if (dt.Rows.Count == 0)
-                        return null;
-                    DataRow dr = dt.Rows[0];
-                    return dr;
-                }
-            }
-        }
-        public class Logger
-        {
-            public static void Writelog(Exception ex)
-            {
-                throw ex;
-            }
-        }
         public static bool trySearch(string account, string email, out string errorMsg)
         {
             if (string.IsNullOrWhiteSpace(account) || string.IsNullOrWhiteSpace(email))
@@ -92,7 +58,7 @@ namespace TakeAwalk.Support
             }
             catch (Exception ex)
             {
-                Logger.Writelog(ex);
+                Logger.WriteLog(ex);
 
             }
         }
@@ -113,7 +79,7 @@ namespace TakeAwalk.Support
             }
             catch (Exception ex)
             {
-                Logger.Writelog(ex);
+                Logger.WriteLog(ex);
                 return false;
             }
         }

@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:GridView ID="gv_orderlist" runat="server" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField />
             <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
             <asp:BoundField DataField="OrderDate" HeaderText="購買日期" />
             <asp:BoundField DataField="Amount" HeaderText="總金額" />

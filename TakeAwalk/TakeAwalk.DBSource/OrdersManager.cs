@@ -36,7 +36,6 @@ namespace TakeAwalk.DBSource
                 try
                 {
                     var query = (from item in context.OrderRecords
-                                 join j in context.UserInfoes on item.CustomerID equals j.CustomerID
                                  select item);
 
                     var list = query.ToList();
