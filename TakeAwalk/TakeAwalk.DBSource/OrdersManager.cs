@@ -29,5 +29,25 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
+        public static List<OrderRecord> GetOrdersList_AdminOnly()
+        {
+            using (ContextModel context = new ContextModel())
+            {
+                try
+                {
+                    var query = (from item in context.OrderRecords
+                                 select item);
+
+                    var list = query.ToList();
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    Logger.WriteLog(ex);
+                    return null;
+                }
+            }
+        }
+
     }
 }
