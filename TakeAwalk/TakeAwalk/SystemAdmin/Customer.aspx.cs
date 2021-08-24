@@ -20,20 +20,20 @@ namespace TakeAwalk.SystemAdmin
             //        return;
             //    }
 
-                var currentUser = AuthManager.GetCurrentUser();
+            var currentUser = AuthManager.GetCurrentUser();
 
-                //if (currentUser == null)                             // 如果帳號不存在，導至登入頁
-                //{
-                //    Response.Redirect("/Login.aspx");
-                //    return;
-                //}
+            //if (currentUser == null)                             // 如果帳號不存在，導至登入頁
+            //{
+            //    Response.Redirect("/Login.aspx");
+            //    return;
+            //}
 
-                this.ltAccount.Text = currentUser.Account;
-                this.ltName.Text = currentUser.Name;
-                this.ltID.Text = currentUser.ID;
-                this.ltMobilePhone.Text = currentUser.MobilePhone;
-                this.ltEmail.Text = currentUser.Email;
-            }
+            this.ltAccount.Text = currentUser.Account;
+            this.ltName.Text = currentUser.Name;
+            this.ltID.Text = currentUser.ID;
+            this.ltMobilePhone.Text = currentUser.MobilePhone;
+            this.ltEmail.Text = currentUser.Email;
+        }
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
@@ -41,5 +41,11 @@ namespace TakeAwalk.SystemAdmin
 
             Response.Redirect("/SystemAdmin/CustomerDetail.aspx?CustomerID=" + currentUser.CustomerID);
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Session["UserLoginInfo"] = null;
+            Response.Redirect("/Login.aspx");
+        }
     }
-    }
+}
