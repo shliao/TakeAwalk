@@ -9,13 +9,13 @@
         <tr>
             <td>
                 帳號:
-                <asp:TextBox ID="txbAccount" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txbAccount" runat="server" ></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td>
                 密碼:
-                <asp:TextBox ID="txbPassword" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txbPassword" runat="server" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -44,6 +44,7 @@
         </tr>
 
     </table>
+     <asp:Literal ID="ltMsg" runat="server"></asp:Literal><br />
     <br />
     <div>
         <span>

@@ -27,7 +27,6 @@ namespace TakeAwalk
                 return;
             }
 
-
             Response.Redirect("/SystemAdmin/Customer.aspx");
         }
 

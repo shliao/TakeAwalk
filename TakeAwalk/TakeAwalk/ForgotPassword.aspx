@@ -19,6 +19,7 @@
             </td>
         </tr>
     </table>
+    <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
     <br />
     <div>
         <span>

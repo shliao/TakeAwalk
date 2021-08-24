@@ -14,16 +14,18 @@
         <tr>
             <td>
                 新密碼:
-                <asp:TextBox ID="txbNewPassword" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txbNewPassword" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
             </td>
         </tr>
         <tr>
             <td>
                 確認新密碼:
-                <asp:TextBox ID="txbNewPasswordCmf" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txbNewPasswordCmf" runat="server" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
     </table>
+      <asp:Literal ID="ltlCheckInput" runat="server"></asp:Literal>
     <br />
     <div>
         <span>
