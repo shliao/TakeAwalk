@@ -89,7 +89,6 @@
     <Content Include="SystemAdmin\OrderCancle.aspx" />
     <Content Include="SystemAdmin\OrderDetail.aspx" />
     <Content Include="SystemAdmin\OrderList.aspx" />
-    <Content Include="SystemAdmin\TicketComfirm.aspx" />
     <Content Include="SystemAdmin\Tickets.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -195,13 +194,6 @@
     </Compile>
     <Compile Include="SystemAdmin\OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SystemAdmin\TicketComfirm.aspx.cs">
-      <DependentUpon>TicketComfirm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SystemAdmin\TicketComfirm.aspx.designer.cs">
-      <DependentUpon>TicketComfirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="SystemAdmin\Tickets.aspx.cs">
       <DependentUpon>Tickets.aspx</DependentUpon>

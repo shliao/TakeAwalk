@@ -16,6 +16,8 @@ namespace TakeAwalk.ORM.DBModels
 
         public Guid TrainTicketID { get; set; }
 
+        public int Amount { get; set; }
+
         public int OrderStatus { get; set; }
 
         public DateTime OrderDate { get; set; }

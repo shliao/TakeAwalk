@@ -7,15 +7,16 @@ using TakeAwalk.ORM.DBModels;
 
 namespace TakeAwalk.DBSource
 {
-    public class TicketManager
+    class OrdersManager
     {
-        public static List<TrainTicket> GetTrainTicketsList()
+        public static List<OrderRecord> GetOrdersListbyCustomerID(Guid customerid)
         {
             using (ContextModel context = new ContextModel())
             {
                 try
                 {
-                    var query = (from item in context.TrainTickets
+                    var query = (from item in context.OrderRecords
+                                 where item.CustomerID == customerid
                                  select item);
 
                     var list = query.ToList();

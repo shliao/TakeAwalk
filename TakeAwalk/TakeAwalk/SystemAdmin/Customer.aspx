@@ -31,4 +31,5 @@
                 <asp:Literal ID="ltEmail" runat="server"></asp:Literal></td>
         </tr>
     </table>
+    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" /><asp:Button ID="btnLogout" runat="server" Text="Logout" />
 </asp:Content>

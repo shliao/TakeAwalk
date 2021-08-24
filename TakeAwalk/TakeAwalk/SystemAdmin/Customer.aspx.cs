@@ -34,5 +34,12 @@ namespace TakeAwalk.SystemAdmin
                 this.ltMobilePhone.Text = currentUser.MobilePhone;
                 this.ltEmail.Text = currentUser.Email;
             }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            var currentUser = AuthManager.GetCurrentUser();
+
+            Response.Redirect("/SystemAdmin/CustomerDetail.aspx?CustomerID=" + currentUser.CustomerID);
         }
+    }
     }

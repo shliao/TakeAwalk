@@ -30,5 +30,25 @@ namespace TakeAwalk.DBSource
                 return null;
             }
         }
+        public static List<UserInfo> GetUserInfoList_AdminOnly()
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var query =
+                        (from item in context.UserInfoes
+                         select item);
+
+                    var list = query.ToList();
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return null;
+            }
+        }
     }
 }
