@@ -27,7 +27,7 @@ namespace TakeAwalk
                 return;
             }
 
-            Response.Redirect("/SystemAdmin/Customer.aspx");
+            Response.Redirect("/SystemAdmin/CustomerInfo.aspx");
         }
 
         protected void btnCancle_Click(object sender, EventArgs e)

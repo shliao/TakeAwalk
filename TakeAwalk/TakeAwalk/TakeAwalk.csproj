@@ -81,12 +81,12 @@
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="SystemAdmin\Customer.aspx" />
+    <Content Include="SystemAdmin\CustomerInfo.aspx" />
     <Content Include="SystemAdmin\CustomerDetail.aspx" />
     <Content Include="SystemAdmin\CustomerList.aspx" />
     <Content Include="SystemAdmin\CustomerPasswordChange.aspx" />
     <Content Include="SystemAdmin\ForgotPasswordChange.aspx" />
-    <Content Include="SystemAdmin\OrderCancle.aspx" />
+    <Content Include="SystemAdmin\Manager_OrderList.aspx" />
     <Content Include="SystemAdmin\OrderDetail.aspx" />
     <Content Include="SystemAdmin\OrderList.aspx" />
     <Content Include="SystemAdmin\Tickets.aspx" />
@@ -139,12 +139,12 @@
     <Compile Include="SystemAdmin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="SystemAdmin\Customer.aspx.cs">
-      <DependentUpon>Customer.aspx</DependentUpon>
+    <Compile Include="SystemAdmin\CustomerInfo.aspx.cs">
+      <DependentUpon>CustomerInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SystemAdmin\Customer.aspx.designer.cs">
-      <DependentUpon>Customer.aspx</DependentUpon>
+    <Compile Include="SystemAdmin\CustomerInfo.aspx.designer.cs">
+      <DependentUpon>CustomerInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="SystemAdmin\CustomerDetail.aspx.cs">
       <DependentUpon>CustomerDetail.aspx</DependentUpon>
@@ -174,12 +174,12 @@
     <Compile Include="SystemAdmin\ForgotPasswordChange.aspx.designer.cs">
       <DependentUpon>ForgotPasswordChange.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SystemAdmin\OrderCancle.aspx.cs">
-      <DependentUpon>OrderCancle.aspx</DependentUpon>
+    <Compile Include="SystemAdmin\Manager_OrderList.aspx.cs">
+      <DependentUpon>Manager_OrderList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SystemAdmin\OrderCancle.aspx.designer.cs">
-      <DependentUpon>OrderCancle.aspx</DependentUpon>
+    <Compile Include="SystemAdmin\Manager_OrderList.aspx.designer.cs">
+      <DependentUpon>Manager_OrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="SystemAdmin\OrderDetail.aspx.cs">
       <DependentUpon>OrderDetail.aspx</DependentUpon>

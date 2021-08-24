@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TakeAwalk.Auth;
+using TakeAwalk.DBSource;
 
 namespace TakeAwalk.SystemAdmin
 {
@@ -11,7 +13,10 @@ namespace TakeAwalk.SystemAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var currentUser = AuthManager.GetCurrentUser();
 
+            this.gv_orderlist.DataSource = OrdersManager.GetOrdersListbyCustomerID(currentUser.CustomerID);
+            this.gv_orderlist.DataBind();
         }
     }
 }

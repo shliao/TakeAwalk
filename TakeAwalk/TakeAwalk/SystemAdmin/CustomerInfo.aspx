@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SystemAdmin/Admin.Master" AutoEventWireup="true" CodeBehind="Customer.aspx.cs" Inherits="TakeAwalk.SystemAdmin.Customer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SystemAdmin/Admin.Master" AutoEventWireup="true" CodeBehind="CustomerInfo.aspx.cs" Inherits="TakeAwalk.SystemAdmin.Customer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -31,5 +31,5 @@
                 <asp:Literal ID="ltEmail" runat="server"></asp:Literal></td>
         </tr>
     </table>
-    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" /><asp:Button ID="btnLogout" runat="server" Text="Logout" />
+    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" /><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
 </asp:Content>

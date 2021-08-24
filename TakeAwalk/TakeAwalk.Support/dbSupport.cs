@@ -20,7 +20,6 @@ namespace TakeAwalk.Support
             string val = ConfigurationManager.ConnectionStrings["DefauitConnectionString"].ConnectionString;
             return val;
         }
-
         public static DataRow ReadDataRow(string connectionstring, string dbCommandstring, List<SqlParameter> list)
         {
             using (SqlConnection connection = new SqlConnection(connectionstring))
@@ -43,7 +42,6 @@ namespace TakeAwalk.Support
                 }
             }
         }
-
         public class Logger
         {
             public static void Writelog(Exception ex)
@@ -51,7 +49,6 @@ namespace TakeAwalk.Support
                 throw ex;
             }
         }
-
         public static bool trySearch(string account, string email, out string errorMsg)
         {
             if (string.IsNullOrWhiteSpace(account) || string.IsNullOrWhiteSpace(email))
@@ -81,7 +78,6 @@ namespace TakeAwalk.Support
             }
 
         }
-
         public static void CreateCustomer(UserInfo userInfo)
         {
 
@@ -100,7 +96,6 @@ namespace TakeAwalk.Support
 
             }
         }
-
         public static bool UpdatePWD(Guid CustomerID, string PWD)
         {
             try
@@ -123,6 +118,5 @@ namespace TakeAwalk.Support
             }
         }
     }
-
-    }
+}
 

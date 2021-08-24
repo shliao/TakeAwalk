@@ -7,7 +7,7 @@ using TakeAwalk.ORM.DBModels;
 
 namespace TakeAwalk.DBSource
 {
-    class OrdersManager
+    public class OrdersManager
     {
         public static List<OrderRecord> GetOrdersListbyCustomerID(Guid customerid)
         {
@@ -29,5 +29,26 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
+        public static List<OrderRecord> GetOrdersList_AdminOnly()
+        {
+            using (ContextModel context = new ContextModel())
+            {
+                try
+                {
+                    var query = (from item in context.OrderRecords
+                                 join j in context.UserInfoes on item.CustomerID equals j.CustomerID
+                                 select item);
+
+                    var list = query.ToList();
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    Logger.WriteLog(ex);
+                    return null;
+                }
+            }
+        }
+
     }
 }
