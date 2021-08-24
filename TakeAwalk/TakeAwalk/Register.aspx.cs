@@ -25,19 +25,23 @@ namespace TakeAwalk
                 return;
             }
 
+            Guid Cid = Guid.NewGuid();
+
             UserInfo userInfo = new UserInfo()
             {
+
                 Name = txbName.Text,
                 MobilePhone = txbMobilePhone.Text,
                 Email = txbEmail.Text,
                 Account = txbAccount.Text,
                 Password = txbPassword.Text,
-                ID = txbId.Text
+                ID = txbId.Text,
+                CustomerID= Cid
             };
 
             dbSupport.CreateCustomer(userInfo);
 
-            Response.Redirect("/SystemAdmin/Customer.aspx");
+            Response.Redirect("/Login.aspx");
         }
 
         private bool CheckInput(out List<string> errorMsgList)
