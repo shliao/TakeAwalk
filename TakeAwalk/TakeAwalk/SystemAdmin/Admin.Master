@@ -15,9 +15,9 @@
             <ul>
                 <li><a href="Tickets.aspx">優惠票購買</a></li>
                 <li><a href="OrderList.aspx">購票紀錄</a></li>
-                <li><a href="Customer.aspx">會員中心</a></li>
+                <li><a href="CustomerInfo.aspx">會員中心</a></li>
                 <li><a href="CustomerList.aspx" style="color: red">客戶資料</a></li>
-                <li><a href="OrderDetail.aspx" style="color: red">管理客戶訂單</a></li>
+                <li><a href="Manager_OrderList.aspx" style="color: red">管理客戶訂單</a></li>
             </ul>
         </div>
         <div>
