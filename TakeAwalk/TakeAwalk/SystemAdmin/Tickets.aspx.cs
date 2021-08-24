@@ -17,15 +17,13 @@ namespace TakeAwalk.SystemAdmin
             {
                 this.gv_ticket.DataSource = TicketManager.GetTrainTicketsList();
                 this.gv_ticket.DataBind();
-                this.gv_selected.Visible = false;
-                this.ltlMsg.Visible = false;
             }
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[4] { new DataColumn("TicketContent_Confirm"), new DataColumn("TrainCompany_Confirm"), new DataColumn("TicketPrice_Confirm"), new DataColumn("Quantity_Confirm") });
+                DataTable dt = new DataTable();
+                dt.Columns.AddRange(new DataColumn[4] { new DataColumn("TicketContent_Confirm"), new DataColumn("TrainCompany_Confirm"), new DataColumn("TicketPrice_Confirm"), new DataColumn("Quantity_Confirm") });
             foreach (GridViewRow row in gv_ticket.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
@@ -41,32 +39,25 @@ namespace TakeAwalk.SystemAdmin
 
                         dt.Rows.Add(ticketcontent, traincompany, ticketprice, quantity);
                     }
-                    else
-                    {
-                        this.ltlMsg.Visible = true;
-                        this.btnBuy.Visible = false;
-                        this.ltlMsg.Text = "未勾選任何優惠票及數量";
-                    }
-                }
-                else
-                {
-                    this.ltlMsg.Visible = true;
-                    this.btnBuy.Visible = false;
-                    this.ltlMsg.Text = "未勾選任何優惠票及數量";
                 }
             }
-            this.gv_ticket.Visible = false;
-            this.gv_selected.DataSource = dt;
-            this.gv_selected.DataBind();
-            this.btnConfirm.Visible = false;
-            this.btnBuy.Visible = true;
+            if (dt.Rows.Count == 0)
+            {
+                this.ltlMsg.Visible = true;
+                this.btnConfirm.Visible = false;
+                this.btnBuy.Visible = true;
+                this.btnBuy.Enabled = false;
+            }
+            else
+            {
+                this.gv_ticket.Visible = false;
+                this.gv_selected.Visible = true;
+                this.gv_selected.DataSource = dt;
+                this.gv_selected.DataBind();
+                this.btnConfirm.Visible = false;
+                this.btnBuy.Visible = true;
+            }
         }
-
-        protected void gv_selected_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             this.btnConfirm.Visible = true;

@@ -25,7 +25,7 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-    <asp:GridView ID="gv_selected" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gv_selected_SelectedIndexChanged">
+    <asp:GridView ID="gv_selected" runat="server" AutoGenerateColumns="False" Visible="False">
         <Columns>
             <asp:BoundField DataField="TicketContent_Confirm" HeaderText="票券名稱" />
             <asp:BoundField DataField="TrainCompany_Confirm" HeaderText="主辦單位" />
@@ -33,7 +33,7 @@
             <asp:BoundField DataField="Quantity_Confirm" HeaderText="數量" />
         </Columns>
     </asp:GridView><br/>
-    <asp:Literal ID="ltlMsg" runat="server"></asp:Literal><br/>
+    <asp:Literal ID="ltlMsg" runat="server" Text="未勾選任何優惠票"></asp:Literal><br/>
     <asp:Button ID="btnConfirm" runat="server" Text="確認選項" OnClick="btnConfirm_Click" />
     <asp:Button ID="btnBuy" runat="server" Text="確定訂購" OnClick="btnConfirm_Click" Visible="False" />
     <asp:Button ID="btnCancel" runat="server" Text="取消" OnClick="btnCancel_Click" />
