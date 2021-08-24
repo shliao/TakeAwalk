@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -27,12 +28,35 @@ namespace TakeAwalk
 
             Guid Cid = Guid.NewGuid();
 
-
-
+            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");
+            if (!rx.IsMatch(txbName.Text))
+            {
+                this.ltMsg.Text = "<span style='color:red'>姓名不能為特殊字元,請重新輸入</span>";
+                return;
+            }
+            if (!rx.IsMatch(txbMobilePhone.Text))
+            {
+                this.ltMsg.Text = "<span style='color:red'>電話不能為特殊字元,請重新輸入</span>";
+                return;
+            }
+            if (!rx.IsMatch(txbAccount.Text))
+            {
+                this.ltMsg.Text = "<span style='color:red'>帳號不能為特殊字元,請重新輸入</span>";
+                return;
+            }
+            if (!rx.IsMatch(txbPassword.Text))
+            {
+                this.ltMsg.Text = "<span style='color:red'>密碼不能為特殊字元,請重新輸入</span>";
+                return;
+            }
+            if (!rx.IsMatch(txbId.Text))
+            {
+                this.ltMsg.Text = "<span style='color:red'>身分證不能為特殊字元,請重新輸入</span>";
+                return;
+            }
 
             UserInfo userInfo = new UserInfo()
             {
-
                 Name = txbName.Text,
                 MobilePhone = txbMobilePhone.Text,
                 Email = txbEmail.Text,
