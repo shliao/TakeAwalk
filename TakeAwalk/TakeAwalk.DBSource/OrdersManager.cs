@@ -7,7 +7,7 @@ using TakeAwalk.ORM.DBModels;
 
 namespace TakeAwalk.DBSource
 {
-    class OrdersManager
+    public class OrdersManager
     {
         public static List<OrderRecord> GetOrdersListbyCustomerID(Guid customerid)
         {
