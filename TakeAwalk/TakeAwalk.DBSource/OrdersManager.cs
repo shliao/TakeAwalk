@@ -9,13 +9,13 @@ namespace TakeAwalk.DBSource
 {
     public class OrdersManager
     {
-        public static List<OrderRecord> GetOrdersListbyCustomerID(Guid customerid)
+        public static List<Order> GetOrdersListbyCustomerID(Guid customerid)
         {
             using (ContextModel context = new ContextModel())
             {
                 try
                 {
-                    var query = (from item in context.OrderRecords
+                    var query = (from item in context.Orders
                                  where item.CustomerID == customerid
                                  select item);
 
@@ -29,13 +29,13 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-        public static List<OrderRecord> GetOrdersList_AdminOnly()
+        public static List<Order> GetOrdersList_AdminOnly()
         {
             using (ContextModel context = new ContextModel())
             {
                 try
                 {
-                    var query = (from item in context.OrderRecords
+                    var query = (from item in context.Orders
                                  select item);
 
                     var list = query.ToList();
