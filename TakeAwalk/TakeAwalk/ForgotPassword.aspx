@@ -15,7 +15,7 @@
         <tr>
             <td>
                 信箱:
-                <asp:TextBox ID="txbEmail" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txbEmail" runat="server" TextMode="Email"></asp:TextBox>
             </td>
         </tr>
     </table>
