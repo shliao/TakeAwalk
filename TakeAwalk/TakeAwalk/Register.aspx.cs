@@ -17,6 +17,7 @@ namespace TakeAwalk
 
         }
 
+        [Obsolete]
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             List<string> msgList = new List<string>();
@@ -28,7 +29,7 @@ namespace TakeAwalk
 
             Guid Cid = Guid.NewGuid();
 
-            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");
+            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");           //正則表達式排除特殊字元
             if (!rx.IsMatch(txbName.Text))
             {
                 this.ltMsg.Text = "<span style='color:red'>姓名不能為特殊字元,請重新輸入</span>";
