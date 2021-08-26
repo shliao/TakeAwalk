@@ -15,6 +15,19 @@ namespace TakeAwalk.SystemAdmin
         {
             var currentUser = AuthManager.GetCurrentUser();
 
+            if (currentUser.UserLevel == 0)
+            {
+                string guidtxt = this.Request.QueryString["CustomerID"];
+
+                if (guidtxt == string.Empty)
+                {
+                    Guid customerid = Guid.Parse(guidtxt);
+                    this.gv_orderlist.DataSource = OrdersManager.GetOrdersListbyCustomerID(customerid);
+                    this.gv_orderlist.DataBind();
+                }
+
+                this.gv_orderlist.DataSource = OrdersManager.GetOrdersListbyCustomerID(currentUser.CustomerID);
+            }
             this.gv_orderlist.DataSource = OrdersManager.GetOrdersListbyCustomerID(currentUser.CustomerID);
             this.gv_orderlist.DataBind();
         }
