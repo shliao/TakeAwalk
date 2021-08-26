@@ -15,9 +15,10 @@ namespace TakeAwalk.DBSource
             {
                 try
                 {
-                    var query = (from item in context.Orders
-                                 where item.CustomerID == customerid
-                                 select item);
+                    var query = (from o in context.Orders
+                                 join od in context.OrderDetails on o.OrderID equals od.OrderID
+                                 where o.CustomerID == customerid
+                                 select o);
 
                     var list = query.ToList();
                     return list;
