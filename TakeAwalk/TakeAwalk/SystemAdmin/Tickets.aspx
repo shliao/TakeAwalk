@@ -4,11 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:GridView ID="gv_ticket" runat="server" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField DataField="TicketContent" HeaderText="票券名稱" />
+            <asp:BoundField DataField="TicketName" HeaderText="票券名稱" />
             <asp:BoundField DataField="TrainCompany" HeaderText="主辦單位"/>
             <asp:BoundField DataField="ActivityStartDate" HeaderText="開始日期" DataFormatString="{0:d}"/>
             <asp:BoundField DataField="ActivityEndDate" HeaderText="結束日期" DataFormatString="{0:d}"/>
-            <asp:BoundField DataField="TicketPrice" HeaderText="票價"/>
+            <asp:BoundField DataField="Price" HeaderText="票價"/>
             <asp:TemplateField HeaderText="數量 (上限3張)">
                 <ItemTemplate>
                     <asp:DropDownList ID="ddl_quantity" runat="server">

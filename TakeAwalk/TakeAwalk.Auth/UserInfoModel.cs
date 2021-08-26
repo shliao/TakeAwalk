@@ -10,7 +10,7 @@ namespace TakeAwalk.Auth
     {
         public Guid CustomerID { get; set; }
         public string Name { get; set; }
-        public string ID { get; set; }
+        public string IdNumber { get; set; }
         public string MobilePhone { get; set; }
         public string Email { get; set; }
         public string Account { get; set; }

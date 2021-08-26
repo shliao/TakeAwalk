@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,6 +17,7 @@ namespace TakeAwalk.SystemAdmin
         {
             this.ltlCheckInput.Text = string.Empty;
             this.ltlMsg.Text = string.Empty;
+            this.ltlMsg2.Text = string.Empty;
             ltlAccount.Text = this.Session["UserLoginInfo"] as string;
         }
 
@@ -26,6 +28,18 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");
+            if (!rx.IsMatch(txbNewPassword.Text))
+            {
+                this.ltlMsg.Text = "<span style='color:red'>新密碼不能為特殊字元,請重新輸入</span>";
+                return;
+            }
+            if (!rx.IsMatch(txbNewPasswordCmf.Text))
+            {
+                this.ltlMsg2.Text = "<span style='color:red'>確認密碼不能為特殊字元,請重新輸入</span>";
+                return;
+            }
+
             string iptNewPWD = txbNewPassword.Text;
             string iptNewPWD_Check = txbNewPasswordCmf.Text;
             string account = this.Session["UserLoginInfo"] as string;

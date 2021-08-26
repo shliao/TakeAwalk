@@ -22,6 +22,7 @@
             <td>
                 確認新密碼:
                 <asp:TextBox ID="txbNewPasswordCmf" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:Literal ID="ltlMsg2" runat="server"></asp:Literal>
             </td>
         </tr>
     </table>

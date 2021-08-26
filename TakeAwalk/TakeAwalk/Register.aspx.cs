@@ -62,7 +62,7 @@ namespace TakeAwalk
                 Email = txbEmail.Text,
                 Account = txbAccount.Text,
                 Password = txbPassword.Text,
-                ID = txbId.Text,
+                IdNumber = txbId.Text,
                 CustomerID = Cid
             };
 

@@ -6,35 +6,19 @@ namespace TakeAwalk.ORM.DBModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("TrainTicket")]
-    public partial class TrainTicket
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TrainTicket()
+        public Order()
         {
             OrderDetails = new HashSet<OrderDetail>();
         }
 
-        [Key]
-        public int TicketID { get; set; }
+        public int OrderID { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string TicketName { get; set; }
+        public Guid CustomerID { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string TrainCompany { get; set; }
-
-        public DateTime ActivityStartDate { get; set; }
-
-        public DateTime ActivityEndDate { get; set; }
-
-        public decimal Price { get; set; }
-
-        public int Stocks { get; set; }
-
-        public bool IsEnabled { get; set; }
+        public int OrderStatus { get; set; }
 
         public DateTime CreateDate { get; set; }
 
@@ -46,5 +30,7 @@ namespace TakeAwalk.ORM.DBModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
+        public virtual UserInfo UserInfo { get; set; }
     }
 }

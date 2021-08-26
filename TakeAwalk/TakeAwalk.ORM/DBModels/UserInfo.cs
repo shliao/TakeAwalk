@@ -9,6 +9,12 @@ namespace TakeAwalk.ORM.DBModels
     [Table("UserInfo")]
     public partial class UserInfo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UserInfo()
+        {
+            Orders = new HashSet<Order>();
+        }
+
         [Key]
         public Guid CustomerID { get; set; }
 
@@ -18,7 +24,7 @@ namespace TakeAwalk.ORM.DBModels
 
         [Required]
         [StringLength(10)]
-        public string ID { get; set; }
+        public string IdNumber { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -37,5 +43,8 @@ namespace TakeAwalk.ORM.DBModels
         public string Password { get; set; }
 
         public int UserLevel { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

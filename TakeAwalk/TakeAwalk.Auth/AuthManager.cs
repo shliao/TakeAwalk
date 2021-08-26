@@ -42,7 +42,7 @@ namespace TakeAwalk.Auth
             UserInfoModel model = new UserInfoModel();
             model.CustomerID = userInfo.CustomerID;
             model.Name = userInfo.Name;
-            model.ID = userInfo.ID;
+            model.IdNumber = userInfo.IdNumber;
             model.MobilePhone = userInfo.MobilePhone;
             model.Email = userInfo.Email;
             model.Account = userInfo.Account;

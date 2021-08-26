@@ -35,7 +35,7 @@ namespace TakeAwalk.DBSource
                 try
                 {
                     var query = (from item in context.TrainTickets
-                                 orderby item.Inventory descending
+                                 orderby item.Stocks descending
                                  select item);
 
                     var list = query.ToList();
