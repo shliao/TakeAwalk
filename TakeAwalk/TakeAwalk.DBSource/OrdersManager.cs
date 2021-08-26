@@ -9,14 +9,34 @@ namespace TakeAwalk.DBSource
 {
     public class OrdersManager
     {
-        public static List<OrderRecord> GetOrdersListbyCustomerID(Guid customerid)
+        public static List<Order> GetOrdersListbyCustomerID(Guid customerid)
         {
             using (ContextModel context = new ContextModel())
             {
                 try
                 {
-                    var query = (from item in context.OrderRecords
-                                 where item.CustomerID == customerid
+                    var query = (from o in context.Orders
+                                 join od in context.OrderDetails on o.OrderID equals od.OrderID
+                                 where o.CustomerID == customerid
+                                 select o);
+
+                    var list = query.ToList();
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    Logger.WriteLog(ex);
+                    return null;
+                }
+            }
+        }
+        public static List<Order> GetOrdersList_AdminOnly()
+        {
+            using (ContextModel context = new ContextModel())
+            {
+                try
+                {
+                    var query = (from item in context.Orders
                                  select item);
 
                     var list = query.ToList();
@@ -29,25 +49,5 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-        public static List<OrderRecord> GetOrdersList_AdminOnly()
-        {
-            using (ContextModel context = new ContextModel())
-            {
-                try
-                {
-                    var query = (from item in context.OrderRecords
-                                 select item);
-
-                    var list = query.ToList();
-                    return list;
-                }
-                catch (Exception ex)
-                {
-                    Logger.WriteLog(ex);
-                    return null;
-                }
-            }
-        }
-
     }
 }

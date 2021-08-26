@@ -79,6 +79,7 @@
     <Content Include="Default.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\icons-search.png" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="SystemAdmin\CustomerInfo.aspx" />

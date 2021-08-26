@@ -16,7 +16,7 @@ namespace TakeAwalk.SystemAdmin
 
             this.ltAccount.Text = currentUser.Account;
             this.txtName.Text = currentUser.Name;
-            this.txtID.Text = currentUser.ID;
+            this.txtID.Text = currentUser.IdNumber;
             this.txtMobilePhone.Text = currentUser.MobilePhone;
             this.txtEmail.Text = currentUser.Email;
 

@@ -6,7 +6,7 @@
         <Columns>
             <asp:BoundField DataField="CustomerID" HeaderText="客戶編號" />
             <asp:BoundField DataField="Name" HeaderText="姓名" />
-            <asp:BoundField DataField="ID" HeaderText="身分證字號" />
+            <asp:BoundField DataField="IdNumber" HeaderText="身分證字號" />
             <asp:BoundField DataField="MobilePhone" HeaderText="手機號碼" />
             <asp:BoundField DataField="Email" HeaderText="Email" />
             <asp:BoundField DataField="Account" HeaderText="帳號" />
