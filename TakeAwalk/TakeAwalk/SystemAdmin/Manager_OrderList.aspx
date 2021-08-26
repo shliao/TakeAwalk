@@ -6,7 +6,7 @@
         <Columns>
             <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
             <asp:BoundField DataField="OrderDate" HeaderText="購買日期" />
-            <asp:BoundField DataField="Name" HeaderText="姓名" />
+            <asp:BoundField HeaderText="姓名" DataField="Name" />
             <asp:BoundField DataField="Amount" HeaderText="總金額" />
             <asp:TemplateField><ItemTemplate><label>元</label></ItemTemplate></asp:TemplateField>
             <asp:BoundField HeaderText="總張數" />

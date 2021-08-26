@@ -29,7 +29,7 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-        public static List<OrderRecord> GetOrdersList_AdminOnly()
+        public static List<OrderRecord> GetOrdersRecord_AdminOnly()
         {
             using (ContextModel context = new ContextModel())
             {
@@ -48,6 +48,5 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-
     }
 }

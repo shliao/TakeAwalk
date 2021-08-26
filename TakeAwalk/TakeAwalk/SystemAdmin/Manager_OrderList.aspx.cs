@@ -31,7 +31,8 @@ namespace TakeAwalk.SystemAdmin
 
             if (currentUser.UserLevel == 0)
             {
-                this.gv_orderlist.DataSource = OrdersManager.GetOrdersList_AdminOnly();
+                this.gv_orderlist.DataSource = OrdersManager.GetOrdersRecord_AdminOnly();
+                UserInfoManager.GetUserInfoList_AdminOnly();
                 this.gv_orderlist.DataBind();
 
             }
