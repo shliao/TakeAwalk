@@ -7,12 +7,12 @@
         <Columns>
             <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
             <asp:BoundField DataField="CreateDate" HeaderText="購買日期" />
-            <asp:BoundField HeaderText="總金額" />
+            <asp:BoundField HeaderText="總金額" DataField="Total" />
             <asp:TemplateField>
                 <ItemTemplate>
                     <label>元</label></ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField HeaderText="總張數" />
+            <asp:BoundField HeaderText="總張數" DataField="TotalQuantity" />
             <asp:TemplateField>
                 <ItemTemplate>
                     <label>張</label></ItemTemplate>
