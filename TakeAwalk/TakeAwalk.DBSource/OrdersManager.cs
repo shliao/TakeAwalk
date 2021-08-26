@@ -35,23 +35,20 @@ namespace TakeAwalk.DBSource
             {
                 try
                 {
-                    //TrainTicket t = new TrainTicket();
-                    //OrderDetail od = new OrderDetail();
-
-                    var query = (from od in context.OrderDetails
-                                 join t in context.TrainTickets
-                                 on od.TicketID equals t.TicketID
-                                 join o in context.Orders
-                                 on od.OrderID equals o.OrderID
-                                 where o.CustomerID == customerid
-                                 select new JoinOrdersTable
-                                 {
-                                     OrderID = o.OrderID,
-                                     CreateDate = o.CreateDate,
-                                     Total = od.Quantity * t.Price,
-                                     TotalQuantity = (od.Quantity),
-                                     OrderStatus = o.OrderStatus
-                                 });
+                    var query =(from od in context.OrderDetails
+                                              join o in context.Orders
+                                              on od.OrderID equals o.OrderID
+                                              join t in context.TrainTickets
+                                              on od.TicketID equals t.TicketID
+                                              where (o.CustomerID == customerid)
+                                              select new JoinOrdersTable
+                                              {
+                                                  OrderID = o.OrderID,
+                                                  CreateDate = o.CreateDate,
+                                                  Total = od.Quantity * t.Price,
+                                                  TotalQuantity = (od.Quantity),
+                                                  OrderStatus = o.OrderStatus
+                                              });
 
                     var list = query.ToList();
                     return list;
