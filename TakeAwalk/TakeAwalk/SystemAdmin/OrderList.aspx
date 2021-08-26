@@ -18,8 +18,13 @@
                     <label>張</label></ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" />
-            <asp:ImageField>
-            </asp:ImageField>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:HyperLink ID="hyperlink_orderdetails" runat="server" href="OrderDetail.aspx">
+                        <img src="/Images/icons-search.png" />
+                    </asp:HyperLink>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
 </asp:Content>
