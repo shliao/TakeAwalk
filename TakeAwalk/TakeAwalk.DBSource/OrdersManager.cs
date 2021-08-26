@@ -29,26 +29,14 @@ namespace TakeAwalk.DBSource
         //        }
         //    }
         //}
-        public static List<JoinOrdersTable> GetOrdersListbyCustomerID(Guid customerid)
+        public static List<OrderList_View> GetOrdersListbyCustomerID(Guid customerid)
         {
             using (ContextModel context = new ContextModel())
             {
                 try
                 {
-                    var query =(from od in context.OrderDetails
-                                              join o in context.Orders
-                                              on od.OrderID equals o.OrderID
-                                              join t in context.TrainTickets
-                                              on od.TicketID equals t.TicketID
-                                              where (o.CustomerID == customerid)
-                                              select new JoinOrdersTable
-                                              {
-                                                  OrderID = o.OrderID,
-                                                  CreateDate = o.CreateDate,
-                                                  Total = od.Quantity * t.Price,
-                                                  TotalQuantity = (od.Quantity),
-                                                  OrderStatus = o.OrderStatus
-                                              });
+                    var query =(from item in context.OrderList_View
+                                select item);
 
                     var list = query.ToList();
                     return list;
@@ -60,16 +48,5 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-    }
-
-    public class JoinOrdersTable
-    {
-        internal object ordergroups;
-
-        public int OrderID { get; set; }
-        public DateTime CreateDate { get; set; }
-        public decimal Total { get; set; }
-        public int TotalQuantity { get; set; }
-        public int OrderStatus { get; set; }
     }
 }
