@@ -16,6 +16,9 @@ namespace TakeAwalk.ORM.DBModels
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<TrainTicket> TrainTickets { get; set; }
         public virtual DbSet<UserInfo> UserInfoes { get; set; }
+        public virtual DbSet<Manager_OrderList_View> Manager_OrderList_View { get; set; }
+        public virtual DbSet<OrderList_View> OrderList_View { get; set; }
+        public virtual DbSet<TicketComfirm_View> TicketComfirm_View { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -49,6 +52,18 @@ namespace TakeAwalk.ORM.DBModels
                 .HasMany(e => e.Orders)
                 .WithRequired(e => e.UserInfo)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Manager_OrderList_View>()
+                .Property(e => e.Total)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<OrderList_View>()
+                .Property(e => e.Total)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<TicketComfirm_View>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TakeAwalk.DBSource;
 using TakeAwalk.ORM.DBModels;
 using TakeAwalk.Support;
 
@@ -66,7 +67,7 @@ namespace TakeAwalk
                 CustomerID = Cid
             };
 
-            dbSupport.CreateCustomer(userInfo);
+            UserInfoManager.CreateCustomer(userInfo);
 
             Response.Redirect("/Login.aspx");
         }

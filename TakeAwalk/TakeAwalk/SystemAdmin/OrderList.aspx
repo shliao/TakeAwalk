@@ -7,12 +7,12 @@
         <Columns>
             <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
             <asp:BoundField DataField="CreateDate" HeaderText="購買日期" />
-            <asp:BoundField HeaderText="總金額" />
+            <asp:BoundField HeaderText="總金額" DataField="Total" />
             <asp:TemplateField>
                 <ItemTemplate>
                     <label>元</label></ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField HeaderText="總張數" />
+            <asp:BoundField HeaderText="總張數" DataField="Quantity" />
             <asp:TemplateField>
                 <ItemTemplate>
                     <label>張</label></ItemTemplate>
@@ -20,11 +20,12 @@
             <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" />
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:HyperLink ID="hyperlink_orderdetails" runat="server" href="OrderDetail.aspx">
+                    <a href="OrderDetail.aspx?ID=<%# Eval("OrderID")%>">
                         <img src="/Images/icons-search.png" />
-                    </asp:HyperLink>
+                    </a>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+    <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
 </asp:Content>

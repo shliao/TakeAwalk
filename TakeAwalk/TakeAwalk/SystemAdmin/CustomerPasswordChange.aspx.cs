@@ -83,7 +83,7 @@ namespace TakeAwalk.SystemAdmin
 
                 if (iptNewPWD == iptNewPWD_Check)
                 {
-                    dbSupport.UpdatePWD(userInfo.CustomerID, iptNewPWD_Check);
+                    UserInfoManager.UpdatePWD(userInfo.CustomerID, iptNewPWD_Check);
                     //this.Session["UserLoginInfo"] = null;
                     Response.Redirect("/SystemAdmin/CustomerDetail.aspx");
                     return;
