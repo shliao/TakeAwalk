@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TakeAwalk.DBSource;
 using TakeAwalk.Support;
 
 namespace TakeAwalk
@@ -30,7 +31,7 @@ namespace TakeAwalk
             string elb = txbEmail.Text;
 
             string errormsg;
-            if (!dbSupport.trySearch(atb, elb, out errormsg))
+            if (!UserInfoManager.trySearch(atb, elb, out errormsg))
             {
                 this.ltlMsg.Text = $"<span style='color:red'>{errormsg}</span>";
                 return;

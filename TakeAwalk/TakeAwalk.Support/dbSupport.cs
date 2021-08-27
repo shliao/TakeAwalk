@@ -44,45 +44,6 @@ namespace TakeAwalk.Support
             }
 
         }
-        public static void CreateCustomer(UserInfo userInfo)
-        {
-
-            try
-            {
-                using (ContextModel context = new ContextModel())
-                {
-
-                    context.UserInfoes.Add(userInfo);
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.WriteLog(ex);
-
-            }
-        }
-        public static bool UpdatePWD(Guid CustomerID, string PWD)
-        {
-            try
-            {
-                using (ContextModel context = new ContextModel())
-                {
-                    var query = (from item in context.UserInfoes
-                                 where item.CustomerID == CustomerID
-                                 select item).FirstOrDefault();
-                    query.Password = PWD;
-                    context.SaveChanges();
-                    return true;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Logger.WriteLog(ex);
-                return false;
-            }
-        }
     }
 }
 
