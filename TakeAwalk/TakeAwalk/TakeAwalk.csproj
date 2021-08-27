@@ -232,10 +232,6 @@
       <Project>{8b03c329-aa69-4e9b-8f68-797f0478882e}</Project>
       <Name>TakeAwalk.ORM</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TakeAwalk.Support\TakeAwalk.Support.csproj">
-      <Project>{9E9F4495-4918-4580-AD76-324034D42D13}</Project>
-      <Name>TakeAwalk.Support</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
