@@ -7,7 +7,7 @@
         <tr>
             <th>帳號:</th>
             <td>
-                <asp:Literal ID="ltAccount" runat="server"></asp:Literal></td>
+                <asp:Literal ID="ltlAccount" runat="server"></asp:Literal></td>
         </tr>
         <tr>
             <th>姓名:</th>
@@ -22,14 +22,15 @@
          <tr>
             <th>電話:</th>
             <td>
-                <asp:TextBox ID="txtMobilePhone" runat="server"></asp:TextBox></td>
+                <asp:TextBox ID="txtMobilePhone" runat="server" TextMode="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></asp:TextBox></td>
         </tr>
         <tr>
             <th>Email:</th>
             <td>
-                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
+                <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox></td>
         </tr>
     </table>
-    <asp:Button ID="btnEdit" runat="server" Text="確定修改" /><asp:Button ID="btnLogout" runat="server" Text="返回" OnClick="btnLogout_Click" /></br>
+    <asp:Literal ID="ltlMsg" runat="server"></asp:Literal><br />
+    <asp:Button ID="btnEdit" runat="server" Text="確定修改" OnClick="btnEdit_Click" /><asp:Button ID="btnLogout" runat="server" Text="返回" OnClick="btnLogout_Click" /></br>
     <asp:Button ID="btnPwd" runat="server" Text="變更密碼" OnClick="btnPwd_Click" />
 </asp:Content>

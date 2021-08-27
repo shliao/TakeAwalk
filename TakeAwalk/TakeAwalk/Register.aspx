@@ -15,7 +15,7 @@
         <tr>
             <td>
                 密碼:
-                <asp:TextBox ID="txbPassword" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="txbPassword" runat="server" TextMode="Password" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></asp:TextBox>
             </td>
         </tr>
         <tr>

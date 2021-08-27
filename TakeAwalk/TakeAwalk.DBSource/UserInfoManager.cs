@@ -120,5 +120,36 @@ namespace TakeAwalk.DBSource
                 return false;
             }
         }
+        public static bool UpdateCustomer(Guid CustomerID, UserInfo userInfo)
+        {
+
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var obj = (from item in context.UserInfoes
+                               where item.CustomerID == CustomerID
+                               select item).FirstOrDefault();
+
+                    if (obj != null)
+                    {
+                        obj.Name = userInfo.Name;
+                        obj.IdNumber = userInfo.IdNumber;
+                        obj.MobilePhone = userInfo.MobilePhone;
+                        obj.Email = userInfo.Email;
+
+                        context.SaveChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return false;
+            }
+        }
+
     }
 }
