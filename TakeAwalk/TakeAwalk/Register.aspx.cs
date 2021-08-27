@@ -17,7 +17,6 @@ namespace TakeAwalk
 
         }
 
-        [Obsolete]
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             List<string> msgList = new List<string>();
