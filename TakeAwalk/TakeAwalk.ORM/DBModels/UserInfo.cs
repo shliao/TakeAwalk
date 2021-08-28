@@ -26,9 +26,7 @@ namespace TakeAwalk.ORM.DBModels
         [StringLength(10)]
         public string IdNumber { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string MobilePhone { get; set; }
+        public long MobilePhone { get; set; }
 
         [Required]
         [StringLength(100)]

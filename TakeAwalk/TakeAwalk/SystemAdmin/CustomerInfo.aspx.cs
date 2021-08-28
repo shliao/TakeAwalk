@@ -31,7 +31,7 @@ namespace TakeAwalk.SystemAdmin
             this.ltAccount.Text = currentUser.Account;
             this.ltName.Text = currentUser.Name;
             this.ltID.Text = currentUser.IdNumber;
-            this.ltMobilePhone.Text = currentUser.MobilePhone;
+            this.ltMobilePhone.Text = currentUser.MobilePhone.ToString();
             this.ltEmail.Text = currentUser.Email;
             Session["Email"] = ltEmail.Text;
         }
