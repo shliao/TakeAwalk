@@ -86,7 +86,12 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnBuy_Click(object sender, EventArgs e)
         {
-
+            
+            string subject = "TakeAwalk火車訂票系統-訂票完成通知信";
+            string body = $"感謝您的支持,祝您旅途平安";
+            string elb = Session["Email"] as string;
+            UserInfoManager.SendAutomatedEmail(elb, body, subject);
+            Response.Redirect("/SystemAdmin/OrderList.aspx");
         }
     }
 }

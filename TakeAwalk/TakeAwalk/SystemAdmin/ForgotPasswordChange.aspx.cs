@@ -28,6 +28,12 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            if (txbAttest.Text != "9267434351")
+            {
+                ltlMsg1.Text = "認證碼錯誤,請重新輸入.";
+                return;
+            }
+
             Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");             //正則表達式排除特殊字元
             if (!rx.IsMatch(txbNewPassword.Text))
             {

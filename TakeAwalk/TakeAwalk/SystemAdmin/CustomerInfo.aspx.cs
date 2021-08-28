@@ -33,6 +33,7 @@ namespace TakeAwalk.SystemAdmin
             this.ltID.Text = currentUser.IdNumber;
             this.ltMobilePhone.Text = currentUser.MobilePhone;
             this.ltEmail.Text = currentUser.Email;
+            Session["Email"] = ltEmail.Text;
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)

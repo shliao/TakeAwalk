@@ -5,12 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using TakeAwalk.ORM.DBModels;
 using System.Web;
-
+using System.Net.Mail;
 
 namespace TakeAwalk.DBSource
 {
     public class UserInfoManager
     {
+        public static void SendAutomatedEmail(string elb , string body, string subject)
+        {
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("thousandsones@gmail.com", "TakeAwalk");   //信箱帳號 ,寄信人名稱
+            mail.To.Add(elb);
+            mail.Priority = MailPriority.Normal;
+            mail.Subject = subject ;
+            mail.Body = body;
+            SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
+            MySmtp.Credentials = new System.Net.NetworkCredential("thousandsones@gmail.com", "h0916916145");  //信箱帳號 ,信箱密碼
+            MySmtp.EnableSsl = true;
+            MySmtp.Send(mail);
+            MySmtp = null;
+            mail.Dispose();
+        }
+
         public static bool trySearch(string account, string email, out string errorMsg)
         {
             if (string.IsNullOrWhiteSpace(account) || string.IsNullOrWhiteSpace(email))
