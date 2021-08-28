@@ -26,7 +26,7 @@
     <br />
     <div>
         <span>
-            <asp:Button ID="btnLogin" runat="server" Text="登入" OnClick="btnLogin_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancle" runat="server" Text="取消" OnClick="btnCancle_Click" />
+            <asp:Button ID="btnLogin" runat="server" Text="登入" OnClick="btnLogin_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancle" runat="server" Text="取消" OnClick="btnCancel_Click" />
         </span>
     </div>
 

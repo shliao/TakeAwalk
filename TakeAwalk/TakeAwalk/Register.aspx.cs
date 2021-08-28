@@ -7,7 +7,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TakeAwalk.DBSource;
 using TakeAwalk.ORM.DBModels;
-using TakeAwalk.Support;
 
 namespace TakeAwalk
 {
@@ -109,7 +108,6 @@ namespace TakeAwalk
             else
                 return false;
         }
-
         protected void btnCancle_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Default.aspx");

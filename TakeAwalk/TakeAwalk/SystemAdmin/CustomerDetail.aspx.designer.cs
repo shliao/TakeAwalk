@@ -15,13 +15,13 @@ namespace TakeAwalk.SystemAdmin
     {
 
         /// <summary>
-        /// ltAccount 控制項。
+        /// ltlAccount 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltAccount;
+        protected global::System.Web.UI.WebControls.Literal ltlAccount;
 
         /// <summary>
         /// txtName 控制項。
@@ -58,6 +58,15 @@ namespace TakeAwalk.SystemAdmin
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// ltlMsg 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlMsg;
 
         /// <summary>
         /// btnEdit 控制項。
