@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row gx-5 align-items-center justify-content-center" style="background-color: lightgray">
+    <div class="row gx-5 align-items-center justify-content-center" style="background-color: lightgray; font-family: 'Microsoft JhengHei'">
         <div class="col-lg-8 col-xl-7 col-xxl-6">
             <div class="my-5 text-center text-xl-start">
                 <span>會員登入</span>
