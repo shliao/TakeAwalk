@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TakeAwalk.DBSource;
+using TakeAwalk.ORM.DBModels;
 
 namespace TakeAwalk.SystemAdmin
 {
@@ -72,6 +73,7 @@ namespace TakeAwalk.SystemAdmin
                 }
                 this.lbAmount.Visible = true;
                 this.lbAmount.Text = $"小計: {total} 元 \t\t {ticket_cnt} 張";
+
             }
         }
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -88,6 +90,17 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnBuy_Click(object sender, EventArgs e)
         {
+            //this.gv_selected.Visible = true;
+            //string ticketName = "";
+            //for (int i = 0; i < gv_selected.Rows.Count; i++)
+            //{
+            //    ticketName += this.gv_selected.Rows[i].Cells[0].Text.Trim() + this.gv_selected.Rows[i].Cells[4].Text.Trim() + "張,";
+            //};
+            //string subject = "TakeAwalk火車訂票系統-訂票完成通知信";
+            //string body = $"感謝您訂購本公司的{ticketName}祝您旅途平安.";
+            //string elb = Session["Email"] as string;
+            //UserInfoManager.SendAutomatedEmail(elb, body, subject);
+            //Response.Redirect("/SystemAdmin/OrderList.aspx");
             System.Threading.Thread.Sleep(1000);
 
         }

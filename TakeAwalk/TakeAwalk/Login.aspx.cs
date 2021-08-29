@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TakeAwalk.Auth;
+using TakeAwalk.ORM.DBModels;
 
 namespace TakeAwalk
 {
@@ -17,8 +20,9 @@ namespace TakeAwalk
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+          
             string inp_Account = this.txbAccount.Text;
-            string inp_PWD = this.txbPassword.Text;
+            string inp_PWD = txbPassword.Text;
 
             string msg;
             if (!AuthManager.TryLogin(inp_Account, inp_PWD, out msg))
@@ -28,6 +32,7 @@ namespace TakeAwalk
             }
 
             Response.Redirect("/SystemAdmin/CustomerInfo.aspx");
+           
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

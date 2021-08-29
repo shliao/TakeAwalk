@@ -90,22 +90,5 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-        public static void CreateTicketOrders(TicketComfirm_View ticketorder)
-        {
-
-            try
-            {
-                using (ContextModel context = new ContextModel())
-                {
-                    context.TicketComfirm_View.Add(ticketorder);
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.WriteLog(ex);
-
-            }
-        }
     }
 }

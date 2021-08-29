@@ -19,7 +19,7 @@ namespace TakeAwalk
         protected void btnSave_Click(object sender, EventArgs e)
         {
 
-            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");
+            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");           //正則表達式排除特殊字元
             if (!rx.IsMatch(txbAccount.Text))
             {
                 this.ltlMsg.Text = "<span style='color:red'>帳號不能為特殊字元,請重新輸入</span>";
@@ -35,6 +35,10 @@ namespace TakeAwalk
                 this.ltlMsg.Text = $"<span style='color:red'>{errormsg}</span>";
                 return;
             }
+
+            //string body = "驗證碼 : 9267434351 ,請回到火車訂票系統完成驗證.";
+            //string subject = "TakeAwalk火車訂票系統-忘記密碼確認信";
+            //UserInfoManager.SendAutomatedEmail(elb, body, subject);
 
             Session["UserLoginInfo"] = txbAccount.Text;
             Response.Redirect("/SystemAdmin/ForgotPasswordChange.aspx");

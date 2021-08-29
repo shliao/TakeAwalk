@@ -17,6 +17,7 @@ namespace TakeAwalk.SystemAdmin
             this.ltlCheckInput.Text = string.Empty;
             this.ltlMsg.Text = string.Empty;
             this.ltlMsg2.Text = string.Empty;
+            this.ltlMsg1.Text= "<span style='color:red'>請於信箱收取驗證碼.</span>";
             ltlAccount.Text = this.Session["UserLoginInfo"] as string;
         }
 
@@ -27,7 +28,13 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");
+            if (txbAttest.Text != "9267434351")
+            {
+                ltlMsg1.Text = "驗證碼錯誤,請重新輸入.";
+                return;
+            }
+
+            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");             //正則表達式排除特殊字元
             if (!rx.IsMatch(txbNewPassword.Text))
             {
                 this.ltlMsg.Text = "<span style='color:red'>新密碼不能為特殊字元,請重新輸入</span>";

@@ -22,7 +22,7 @@ namespace TakeAwalk.SystemAdmin
                 this.ltlAccount.Text = currentUser.Account;
                 this.txtName.Text = currentUser.Name;
                 this.txtID.Text = currentUser.IdNumber;
-                this.txtMobilePhone.Text = currentUser.MobilePhone;
+                this.txtMobilePhone.Text = currentUser.MobilePhone.ToString();
                 this.txtEmail.Text = currentUser.Email;
             }
 
@@ -70,7 +70,7 @@ namespace TakeAwalk.SystemAdmin
             UserInfo userInfo = new UserInfo()
             {
                 Name = txtName.Text,
-                MobilePhone = txtMobilePhone.Text,
+                MobilePhone = Convert.ToInt64(txtMobilePhone.Text),
                 Email = txtEmail.Text,
                 IdNumber = txtID.Text,
                 //CustomerID = customerid

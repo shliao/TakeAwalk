@@ -45,7 +45,7 @@ namespace TakeAwalk.SystemAdmin
             string account = this.Session["UserLoginInfo"] as string;
             var userInfo = UserInfoManager.GetUserInfoByAccount(account);
 
-            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");
+            Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");              //正則表達式排除特殊字元
             if (!rx.IsMatch(txbPassword.Text))
             {
                 this.ltlMsg.Text = "<span style='color:red'>原密碼不能為特殊字元,請重新輸入</span>";

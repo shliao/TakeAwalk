@@ -37,10 +37,6 @@ namespace TakeAwalk.ORM.DBModels
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<UserInfo>()
-                .Property(e => e.MobilePhone)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<UserInfo>()
                 .Property(e => e.Account)
                 .IsUnicode(false);
 
