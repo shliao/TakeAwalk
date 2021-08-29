@@ -33,5 +33,37 @@ namespace TakeAwalk.ORM.DBModels
         public DateTime? ModifyDate { get; set; }
 
         public Guid? Modifier { get; set; }
+
+        [Key]
+        [Column(Order = 4)]
+        public Guid CustomerID { get; set; }
+
+        [Key]
+        [Column(Order = 5)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int TicketID { get; set; }
+
+        [Key]
+        [Column(Order = 6)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Expr1 { get; set; }
+
+        [Key]
+        [Column(Order = 7)]
+        public DateTime Expr2 { get; set; }
+
+        [Key]
+        [Column(Order = 8)]
+        public Guid Expr3 { get; set; }
+
+        [Key]
+        [Column(Order = 9)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Expr4 { get; set; }
+
+        [Key]
+        [Column(Order = 10)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Stocks { get; set; }
     }
 }
