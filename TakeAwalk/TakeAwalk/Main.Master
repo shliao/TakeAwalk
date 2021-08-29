@@ -46,6 +46,28 @@
                 </div>
             </header>
         </main>
+        <!-- Testimonial section-->
+        <div class="py-5 bg-light">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-10 col-xl-7">
+                        <div class="text-center">
+                            <div class="fs-4 mb-4 fst-italic">"歡迎來到最優質的火車優惠訂票系統，天天開心!"</div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img class="rounded-circle me-3" src="Images/smile_baby.jpg" alt="..." />
+                                <div class="fw-bold">
+                                    TakeAwalk
+                                       
+                                    <span class="fw-bold text-primary mx-1">/</span>
+                                    出去走走工作室
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
