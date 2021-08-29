@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:GridView ID="gv_ticket" runat="server" AutoGenerateColumns="False">
         <Columns>
+            <asp:BoundField DataField="TicketID" HeaderText="票券編號"/>
             <asp:BoundField DataField="TicketName" HeaderText="票券名稱" />
             <asp:BoundField DataField="TrainCompany" HeaderText="主辦單位"/>
             <asp:BoundField DataField="ActivityStartDate" HeaderText="開始日期" DataFormatString="{0:d}"/>
@@ -27,6 +28,7 @@
     </asp:GridView>
     <asp:GridView ID="gv_selected" runat="server" AutoGenerateColumns="False" Visible="False">
         <Columns>
+            <asp:BoundField DataField="TicketID" HeaderText="票券編號" />
             <asp:BoundField DataField="TicketContent_Confirm" HeaderText="票券名稱" />
             <asp:BoundField DataField="TrainCompany_Confirm" HeaderText="主辦單位" />
             <asp:BoundField DataField="TicketPrice_Confirm" HeaderText="票價" />

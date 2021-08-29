@@ -23,21 +23,23 @@ namespace TakeAwalk.SystemAdmin
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
                 DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[4] { new DataColumn("TicketContent_Confirm"), new DataColumn("TrainCompany_Confirm"), new DataColumn("TicketPrice_Confirm"), new DataColumn("Quantity_Confirm") });
+                dt.Columns.AddRange(new DataColumn[5] 
+                { new DataColumn("TicketID"), new DataColumn("TicketContent_Confirm"), new DataColumn("TrainCompany_Confirm"), new DataColumn("TicketPrice_Confirm"), new DataColumn("Quantity_Confirm") });
             foreach (GridViewRow row in gv_ticket.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
                 {
-                    CheckBox cbox = (row.Cells[6].FindControl("cbox") as CheckBox);
+                    CheckBox cbox = (row.Cells[7].FindControl("cbox") as CheckBox);
                     if (cbox.Checked)
                     {
-                        string ticketcontent = row.Cells[0].Text;
-                        string traincompany = row.Cells[1].Text;
-                        string ticketprice = row.Cells[4].Text;
-                        DropDownList q = row.Cells[5].FindControl("ddl_quantity") as DropDownList;
+                        string ticketid = row.Cells[0].Text;
+                        string ticketcontent = row.Cells[1].Text;
+                        string traincompany = row.Cells[2].Text;
+                        string ticketprice = row.Cells[5].Text;
+                        DropDownList q = row.Cells[6].FindControl("ddl_quantity") as DropDownList;
                         string quantity = q.SelectedValue;
 
-                        dt.Rows.Add(ticketcontent, traincompany, ticketprice, quantity);
+                        dt.Rows.Add(ticketid, ticketcontent, traincompany, ticketprice, quantity);
                     }
                 }
             }
@@ -86,6 +88,7 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnBuy_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(1000);
 
         }
     }
