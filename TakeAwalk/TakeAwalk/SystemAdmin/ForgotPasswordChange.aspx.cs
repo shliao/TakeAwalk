@@ -17,6 +17,7 @@ namespace TakeAwalk.SystemAdmin
             this.ltlCheckInput.Text = string.Empty;
             this.ltlMsg.Text = string.Empty;
             this.ltlMsg2.Text = string.Empty;
+            this.ltlMsg1.Text= "<span style='color:red'>請於信箱收取驗證碼.</span>";
             ltlAccount.Text = this.Session["UserLoginInfo"] as string;
         }
 
@@ -29,7 +30,7 @@ namespace TakeAwalk.SystemAdmin
         {
             if (txbAttest.Text != "9267434351")
             {
-                ltlMsg1.Text = "認證碼錯誤,請重新輸入.";
+                ltlMsg1.Text = "驗證碼錯誤,請重新輸入.";
                 return;
             }
 

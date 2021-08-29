@@ -13,7 +13,7 @@
         </tr>
         <tr>
             <td>
-                認證碼:
+                驗證碼:
                 <asp:TextBox ID="txbAttest" runat="server"></asp:TextBox>
                 <asp:Literal ID="ltlMsg1" runat="server"></asp:Literal>
             </td>
