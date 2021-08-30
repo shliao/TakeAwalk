@@ -101,6 +101,7 @@
     <Content Include="Images\HornbyHarryPotter.jpg" />
     <Content Include="Images\icons-search.png" />
     <Content Include="Images\smile_baby.jpg" />
+    <Content Include="Images\trash_icon.png" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.esm.js" />

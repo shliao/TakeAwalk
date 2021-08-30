@@ -43,5 +43,10 @@ namespace TakeAwalk.SystemAdmin
                 this.gv_orderdetails.DataBind();
             }
         }
+
+        protected void Imgbtn_delete_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
     }
 }

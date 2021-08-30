@@ -30,7 +30,6 @@
             <td>
                 <asp:Literal ID="ltEmail" runat="server"></asp:Literal></td>
         </tr>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </table>
     <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" /><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
 </asp:Content>

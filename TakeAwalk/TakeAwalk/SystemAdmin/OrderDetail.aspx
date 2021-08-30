@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SystemAdmin/Admin.Master" AutoEventWireup="true" CodeBehind="OrderDetail.aspx.cs" Inherits="TakeAwalk.SystemAdmin.OrderDetail" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,6 +11,11 @@
             <asp:BoundField DataField="ActivityEndDate" DataFormatString="{0:d}" HeaderText="活動結束日期" />
             <asp:BoundField DataField="Price" HeaderText="票價" />
             <asp:BoundField DataField="Quantity" HeaderText="數量" />
+            <asp:TemplateField>
+            <itemtemplate>
+                <button type="button"><img src="/Images/trash_icon.png" onclick="Imgbtn_delete_Click"></button>
+            </itemtemplate>
+            </asp:TemplateField>       
         </Columns>
     </asp:GridView>
 </asp:Content>

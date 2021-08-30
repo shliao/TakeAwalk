@@ -26,7 +26,6 @@ namespace TakeAwalk.DBSource
             MySmtp = null;
             mail.Dispose();
         }
-
         public static bool trySearch(string account, string email, out string errorMsg)
         {
             if (string.IsNullOrWhiteSpace(account) || string.IsNullOrWhiteSpace(email))

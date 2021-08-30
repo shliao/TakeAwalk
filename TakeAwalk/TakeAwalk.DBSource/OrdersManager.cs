@@ -16,8 +16,7 @@ namespace TakeAwalk.DBSource
                 try
                 {
                     var query = (from item in context.OrderList_View
-                                 join order in context.Orders on item.OrderID equals order.OrderID
-                                 where order.CustomerID == customerid
+                                 where item.CustomerID == customerid
                                  select item);
 
                     var list = query.ToList();

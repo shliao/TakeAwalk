@@ -27,8 +27,12 @@ namespace TakeAwalk.SystemAdmin
             }
         }
 
-        protected void btnLogout_Click(object sender, EventArgs e)
+        protected void btnReturn_Click(object sender, EventArgs e)
         {
+            this.txtMobilePhone.Text = string.Empty;
+            this.txtEmail.Text = string.Empty;
+            this.txtID.Text = string.Empty;
+            this.txtName.Text = string.Empty;
             Response.Redirect("/SystemAdmin/CustomerInfo.aspx");
         }
 
@@ -71,8 +75,6 @@ namespace TakeAwalk.SystemAdmin
                 MobilePhone = Convert.ToInt64(txtMobilePhone.Text),
                 Email = txtEmail.Text,
                 IdNumber = txtID.Text,
-                //CustomerID = customerid
-                //Account = ltlAccount.Text,
             };
 
             UserInfoManager.UpdateCustomer(customerid,userInfo);

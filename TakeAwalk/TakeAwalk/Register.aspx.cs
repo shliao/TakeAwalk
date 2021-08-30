@@ -110,6 +110,12 @@ namespace TakeAwalk
         }
         protected void btnCancle_Click(object sender, EventArgs e)
         {
+            this.txbAccount.Text = string.Empty;
+            this.txbPassword.Text = string.Empty;
+            this.txbName.Text = string.Empty;
+            this.txbId.Text = string.Empty;
+            this.txbMobilePhone.Text = string.Empty;
+            this.txbEmail.Text = string.Empty;
             Response.Redirect("/Default.aspx");
         }
     }
