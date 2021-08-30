@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TakeAwalk.Auth;
@@ -34,6 +35,7 @@ namespace TakeAwalk.SystemAdmin
             this.ltMobilePhone.Text = currentUser.MobilePhone.ToString();
             this.ltEmail.Text = currentUser.Email;
             Session["Email"] = ltEmail.Text;
+            Session["UserLoginInfo"] = currentUser.Account;
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)

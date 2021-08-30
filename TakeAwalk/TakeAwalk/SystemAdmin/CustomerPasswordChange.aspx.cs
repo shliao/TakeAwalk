@@ -18,6 +18,12 @@ namespace TakeAwalk.SystemAdmin
             this.ltlMsg.Text = string.Empty;
             this.ltlMsg2.Text = string.Empty;
 
+            HttpCookie cookie = Request.Cookies.Get(".ASPXAUTH");  //以Cookies驗證是否已登入
+            if (cookie == null)
+            {
+                Response.Redirect("/Login.aspx");
+            }
+
             if (!IsPostBack)
             {
                 if (this.Session["UserLoginInfo"] == null)

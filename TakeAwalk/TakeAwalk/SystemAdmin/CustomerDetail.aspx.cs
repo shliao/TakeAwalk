@@ -25,8 +25,6 @@ namespace TakeAwalk.SystemAdmin
                 this.txtMobilePhone.Text = currentUser.MobilePhone.ToString();
                 this.txtEmail.Text = currentUser.Email;
             }
-
-
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

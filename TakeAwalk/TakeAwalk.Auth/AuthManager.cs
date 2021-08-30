@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Security;
 using TakeAwalk.DBSource;
 
 namespace TakeAwalk.Auth
@@ -24,7 +25,27 @@ namespace TakeAwalk.Auth
         /// <returns></returns>
         public static UserInfoModel GetCurrentUser()
         {
-            string account = HttpContext.Current.Session["UserLoginInfo"] as string;
+            
+            bool isAuth = HttpContext.Current.Request.IsAuthenticated; //是否登入
+            var user = HttpContext.Current.User;                       //取得使用者
+
+            if (isAuth && user != null)
+            {
+                var identity = HttpContext.Current.User.Identity as FormsIdentity;  //驗證轉型
+
+                if (identity == null)
+                {
+                    HttpContext.Current.Response.Redirect("/Login.aspx");
+                    return null;
+                }
+            }
+            else
+            {
+                HttpContext.Current.Response.Redirect("/Login.aspx");
+                return null;
+            }
+            string account = user.Identity.Name;
+
 
             if (account == null)
                 return null;
@@ -34,7 +55,7 @@ namespace TakeAwalk.Auth
 
             if (userInfo == null)
             {
-                HttpContext.Current.Session["UserLoginInfo"] = null;
+                FormsAuthentication.SignOut();
                 return null;
             }
 
@@ -54,7 +75,7 @@ namespace TakeAwalk.Auth
         /// <summary> 登出 </summary>
         public static void Logout()
         {
-            HttpContext.Current.Session["UserLoginInfo"] = null;
+            FormsAuthentication.SignOut();
         }
 
         /// <summary> 嘗試登入 </summary>
@@ -88,8 +109,7 @@ namespace TakeAwalk.Auth
             if (string.Compare(userInfo.Account, account, true) == 0 &&
                 string.Compare(userInfo.Password, pwd, false) == 0)
             {
-                HttpContext.Current.Session["UserLoginInfo"] = userInfo.Account;
-
+                //HttpContext.Current.Session["UserLoginInfo"] = userInfo.Account;
                 errorMsg = string.Empty;
                 return true;
             }
