@@ -65,5 +65,10 @@ namespace TakeAwalk.ORM.DBModels
         [Column(Order = 10)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Stocks { get; set; }
+
+        [Key]
+        [Column(Order = 11)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Expr5 { get; set; }
     }
 }
