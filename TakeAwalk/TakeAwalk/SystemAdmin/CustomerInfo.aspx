@@ -3,33 +3,46 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>會員中心</h2>
-    <table>
-        <tr>
-            <th>帳號:</th>
-            <td>
-                <asp:Literal ID="ltAccount" runat="server"></asp:Literal></td>
-        </tr>
-        <tr>
-            <th>姓名:</th>
-            <td>
-                <asp:Literal ID="ltName" runat="server"></asp:Literal></td>
-        </tr>
-         <tr>
-            <th>身分證字號:</th>
-            <td>
-                <asp:Literal ID="ltID" runat="server"></asp:Literal></td>
-        </tr>
-         <tr>
-            <th>電話:</th>
-            <td>
-                <asp:Literal ID="ltMobilePhone" runat="server"></asp:Literal></td>
-        </tr>
-        <tr>
-            <th>Email:</th>
-            <td>
-                <asp:Literal ID="ltEmail" runat="server"></asp:Literal></td>
-        </tr>
-    </table>
-    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" /><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+    <div class="row gx-5 align-items-center justify-content-center" style="background-color: lightgray">
+        <div class="col-lg-8 col-xl-7 col-xxl-6">
+            <div class="my-5 text-center text-xl-start">
+                <h2>會員中心</h2>
+                <br />
+                <table>
+                    <tr>
+                        <th>帳號:</th>
+                        <td>
+                            <asp:Literal ID="ltAccount" runat="server"></asp:Literal>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>姓名:</th>
+                        <td>
+                            <asp:Literal ID="ltName" runat="server"></asp:Literal>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>身分證字號:</th>
+                        <td>
+                            <asp:Literal ID="ltID" runat="server"></asp:Literal>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>電話:</th>
+                        <td>
+                            <asp:Literal ID="ltMobilePhone" runat="server"></asp:Literal>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>
+                            <asp:Literal ID="ltEmail" runat="server"></asp:Literal>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <asp:Button ID="btnEdit" runat="server" Text="編輯" OnClick="btnEdit_Click" />
+            </div>
+        </div>
+    </div>
 </asp:Content>

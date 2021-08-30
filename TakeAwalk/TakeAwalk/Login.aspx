@@ -6,7 +6,8 @@
     <div class="row gx-5 align-items-center justify-content-center" style="background-color: lightgray">
         <div class="col-lg-8 col-xl-7 col-xxl-6">
             <div class="my-5 text-center text-xl-start">
-                <span>會員登入</span>
+                <h2>會員登入</h2>
+                <br />
                 <table>
                     <tr>
                         <td>帳號:

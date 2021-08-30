@@ -42,11 +42,5 @@ namespace TakeAwalk.SystemAdmin
 
             Response.Redirect("/SystemAdmin/CustomerDetail.aspx?CustomerID=" + currentUser.CustomerID);
         }
-
-        protected void btnLogout_Click(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-            Response.Redirect("/Login.aspx");
-        }
     }
 }

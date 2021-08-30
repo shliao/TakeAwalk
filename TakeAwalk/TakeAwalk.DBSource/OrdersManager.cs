@@ -9,14 +9,15 @@ namespace TakeAwalk.DBSource
 {
     public class OrdersManager
     {
-        public static List<OrderList_View> GetOrdersListbyCustomerID(Guid customerid)
+        public static List<Manager_OrderList_View> GetOrdersListbyCustomerID(Guid customerid)
         {
             using (ContextModel context = new ContextModel())
             {
                 try
                 {
-                    var query = (from item in context.OrderList_View
-                                 where item.CustomerID == customerid
+                    var query = (from item in context.Manager_OrderList_View
+                                 join order in context.Orders on item.OrderID equals order.OrderID
+                                 where order.CustomerID == customerid
                                  select item);
 
                     var list = query.ToList();
@@ -89,5 +90,13 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
+    }
+    public class newTicketComfirm_View
+    {
+        public decimal Total { get; set; }
+        public int TQuantity { get; set; }
+        public int OrderID { get; set; }
+        public DateTime CreateDate { get; set; }
+        public int OrderStatus { get; set; }
     }
 }
