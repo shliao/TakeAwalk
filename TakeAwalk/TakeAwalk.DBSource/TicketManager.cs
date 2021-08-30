@@ -48,5 +48,23 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
+        public static void CreateTicketOrders(OrderList_View orderlist)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+
+                    context.OrderList_View.Add(orderlist);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+
+            }
+
+        }
     }
 }
