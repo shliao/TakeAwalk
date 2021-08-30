@@ -31,6 +31,7 @@
         </tr>
     </table>
     <asp:Literal ID="ltlMsg" runat="server"></asp:Literal><br />
-    <asp:Button ID="btnEdit" runat="server" Text="確定修改" OnClick="btnEdit_Click" /><asp:Button ID="btnLogout" runat="server" Text="返回" OnClick="btnLogout_Click" /></br>
+    <asp:Button ID="btnEdit" runat="server" Text="確定修改" OnClick="btnEdit_Click" />
+    <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="btnReturn_Click" /></br>
     <asp:Button ID="btnPwd" runat="server" Text="變更密碼" OnClick="btnPwd_Click" />
 </asp:Content>
