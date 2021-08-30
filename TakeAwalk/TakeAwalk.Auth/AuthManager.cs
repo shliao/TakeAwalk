@@ -11,16 +11,7 @@ namespace TakeAwalk.Auth
 {
     public class AuthManager
     {
-        /// <summary> 檢查目前是否登入 </summary>
-        /// <returns></returns>
-        public static bool IsLogined()
-        {
-            if (HttpContext.Current.Session["UserLoginInfo"] == null)
-                return false;
-            else
-                return true;
-        }
-
+       
         /// <summary> 取得已登入的使用者資訊 (如果沒有登入就回傳 null) </summary>
         /// <returns></returns>
         public static UserInfoModel GetCurrentUser()
@@ -46,10 +37,8 @@ namespace TakeAwalk.Auth
             }
             string account = user.Identity.Name;
 
-
             if (account == null)
                 return null;
-
 
             var userInfo = UserInfoManager.GetUserInfoByAccount(account);
 
@@ -58,7 +47,6 @@ namespace TakeAwalk.Auth
                 FormsAuthentication.SignOut();
                 return null;
             }
-
 
             UserInfoModel model = new UserInfoModel();
             model.CustomerID = userInfo.CustomerID;

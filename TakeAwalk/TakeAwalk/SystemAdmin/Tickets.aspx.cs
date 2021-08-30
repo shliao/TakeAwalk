@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TakeAwalk.Auth;
 using TakeAwalk.DBSource;
 using TakeAwalk.ORM.DBModels;
 
@@ -104,7 +105,8 @@ namespace TakeAwalk.SystemAdmin
             //};
             //string subject = "TakeAwalk火車訂票系統-訂票完成通知信";
             //string body = $"感謝您訂購本公司的{ticketName}祝您旅途平安.";
-            //string elb = Session["Email"] as string;
+            //var currentUser = AuthManager.GetCurrentUser();
+            //var elb = currentUser.Email; 
             //UserInfoManager.SendAutomatedEmail(elb, body, subject);
             //Response.Redirect("/SystemAdmin/OrderList.aspx");
             System.Threading.Thread.Sleep(1000);

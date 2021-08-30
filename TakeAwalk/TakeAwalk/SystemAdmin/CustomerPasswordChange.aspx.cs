@@ -4,8 +4,10 @@ using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TakeAwalk.Auth;
 using TakeAwalk.DBSource;
 
 namespace TakeAwalk.SystemAdmin
@@ -18,26 +20,21 @@ namespace TakeAwalk.SystemAdmin
             this.ltlMsg.Text = string.Empty;
             this.ltlMsg2.Text = string.Empty;
 
-            HttpCookie cookie = Request.Cookies.Get(".ASPXAUTH");  //以Cookies驗證是否已登入
-            if (cookie == null)
-            {
-                Response.Redirect("/Login.aspx");
-            }
-
             if (!IsPostBack)
             {
-                if (this.Session["UserLoginInfo"] == null)
+                HttpCookie cookie = Request.Cookies.Get(".ASPXAUTH");  //以Cookies驗證是否已登入
+                if (cookie == null)
                 {
                     Response.Redirect("/Login.aspx");
-                    return;
                 }
 
-                string account = this.Session["UserLoginInfo"] as string;
+                var currentUser = AuthManager.GetCurrentUser();
+                var account = currentUser.Account;
                 var userInfo = UserInfoManager.GetUserInfoByAccount(account);
 
                 if (userInfo == null)
                 {
-                    this.Session["UserLoginInfo"] = null;
+                    FormsAuthentication.SignOut();
                     Response.Redirect("/Login.aspx");
                     return;
                 }
@@ -48,7 +45,8 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            string account = this.Session["UserLoginInfo"] as string;
+            var currentUser = AuthManager.GetCurrentUser();
+            var account = currentUser.Account;
             var userInfo = UserInfoManager.GetUserInfoByAccount(account);
 
             Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");              //正則表達式排除特殊字元
@@ -89,7 +87,6 @@ namespace TakeAwalk.SystemAdmin
                 if (iptNewPWD == iptNewPWD_Check)
                 {
                     UserInfoManager.UpdatePWD(userInfo.CustomerID, iptNewPWD_Check);
-                    //this.Session["UserLoginInfo"] = null;
                     Response.Redirect("/SystemAdmin/CustomerDetail.aspx");
                     return;
                 }

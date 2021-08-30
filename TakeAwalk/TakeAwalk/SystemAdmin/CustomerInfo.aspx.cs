@@ -34,8 +34,6 @@ namespace TakeAwalk.SystemAdmin
             this.ltID.Text = currentUser.IdNumber;
             this.ltMobilePhone.Text = currentUser.MobilePhone.ToString();
             this.ltEmail.Text = currentUser.Email;
-            Session["Email"] = ltEmail.Text;
-            Session["UserLoginInfo"] = currentUser.Account;
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
@@ -47,7 +45,7 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Session["UserLoginInfo"] = null;
+            FormsAuthentication.SignOut();
             Response.Redirect("/Login.aspx");
         }
     }
