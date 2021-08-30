@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row gx-5 align-items-center justify-content-center" style="background-color: lightgray; font-family: 'Microsoft JhengHei'">
+    <div class="row gx-5 align-items-center justify-content-center" style="background-color: lightgray">
         <div class="col-lg-8 col-xl-7 col-xxl-6">
             <div class="my-5 text-center text-xl-start">
                 <span>熱門優惠票</span>
@@ -12,6 +12,8 @@
                     <Columns>
                         <asp:BoundField HeaderText="票券名稱" DataField="TicketName" />
                         <asp:BoundField HeaderText="主辦單位" DataField="TrainCompany" />
+                        <asp:BoundField HeaderText="售票起始日" DataField="ActivityStartDate" DataFormatString="{0:d}" />
+                        <asp:BoundField HeaderText="售票截止日" DataField="ActivityEndDate" DataFormatString="{0:d}" />
                         <asp:BoundField HeaderText="票價" DataField="Price" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
@@ -26,7 +28,7 @@
             </div>
         </div>
         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-            <img class="img-fluid rounded-3 my-5" src="Images/HornbyHarryPotter.jpg" alt="..."/>
+            <img class="img-fluid rounded-3 my-5" src="Images/HornbyHarryPotter.jpg" alt="..." />
         </div>
     </div>
 </asp:Content>
