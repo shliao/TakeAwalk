@@ -22,7 +22,7 @@
          <tr>
             <th>電話:</th>
             <td>
-                <asp:TextBox ID="txtMobilePhone" runat="server" TextMode="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></asp:TextBox></td>
+                <asp:TextBox ID="txtMobilePhone" runat="server" TextMode="Phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"></asp:TextBox></td>
         </tr>
         <tr>
             <th>Email:</th>
