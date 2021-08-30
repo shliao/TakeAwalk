@@ -122,7 +122,7 @@ namespace TakeAwalk.SystemAdmin
 
             string subject = "TakeAwalk火車訂票系統-訂票完成通知信";
             string body = $"感謝您訂購本公司的{ticketName}祝您旅途平安.";
-            string elb = Session["Email"] as string;
+            string elb = currentUser.Email;
             UserInfoManager.SendAutomatedEmail(elb, body, subject);
             Response.Redirect("/SystemAdmin/OrderList.aspx");
         }
