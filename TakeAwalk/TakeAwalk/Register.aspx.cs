@@ -58,7 +58,7 @@ namespace TakeAwalk
             UserInfo userInfo = new UserInfo()
             {
                 Name = txbName.Text,
-                MobilePhone = Convert.ToInt64(txbMobilePhone.Text),
+                MobilePhone = txbMobilePhone.Text,
                 Email = txbEmail.Text,
                 Account = txbAccount.Text,
                 Password = txbPassword.Text,

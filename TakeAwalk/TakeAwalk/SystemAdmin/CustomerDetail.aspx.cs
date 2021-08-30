@@ -72,7 +72,7 @@ namespace TakeAwalk.SystemAdmin
             UserInfo userInfo = new UserInfo()
             {
                 Name = txtName.Text,
-                MobilePhone = Convert.ToInt64(txtMobilePhone.Text),
+                MobilePhone = txtMobilePhone.Text,
                 Email = txtEmail.Text,
                 IdNumber = txtID.Text,
             };
