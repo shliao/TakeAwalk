@@ -76,7 +76,7 @@ namespace TakeAwalk.DBSource
 
                     if (obj != null)
                     {
-                        obj.Stocks -= quantity;
+                        obj.Stocks += quantity;
 
                         context.SaveChanges();
                         return true;

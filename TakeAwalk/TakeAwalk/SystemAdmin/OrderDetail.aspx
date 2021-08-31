@@ -8,7 +8,7 @@
             <div class="my-5 text-center text-xl-start">
                 <h2>購票內容</h2>
                 <br />
-                <asp:GridView ID="gv_orderdetails" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="650px">
+                <asp:GridView ID="gv_orderdetails" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="650px" OnRowCommand="gv_orderdetails_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="TicketID" HeaderText="票券編號" />
                         <asp:BoundField DataField="TicketName" HeaderText="票券名稱" />
@@ -19,8 +19,9 @@
                         <asp:BoundField DataField="Quantity" HeaderText="數量" />
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <Button onclick="Imgbtn_delete_Click">
-                                    <img src="/Images/trash_icon.png" height="20" width="20"></Button>
+                                <asp:LinkButton ID="btn_delete" runat="server" CommandName="OrderDetails" CommandArgument='<%# Eval("TicketID")+","+Eval("Quantity") %>'>
+                                    <img src="../Images/trash_icon.png" height="24px" width="24px"/>
+                                </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -34,14 +35,16 @@
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </div>
+            <asp:Label ID="lb_test" runat="server" Text="Test:"></asp:Label>
         </div>
     </div>
-     <!--使用者登入時,隱藏管理者頁面-->
+    <!--使用者登入時,隱藏管理者頁面-->
     <script>
         var admin = document.getElementById('admin');
         var admin2 = document.getElementById('admin2');
         if (0 ==<%=currentUser.UserLevel%>) {
             admin.style.display = 'none';
-            admin2.style.display = 'none';}
+            admin2.style.display = 'none';
+        }
     </script>
 </asp:Content>

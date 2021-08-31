@@ -46,5 +46,20 @@ namespace TakeAwalk.SystemAdmin
                 this.gv_orderdetails.DataBind();
             }
         }
+
+        protected void gv_orderdetails_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "OrderDetails")
+            {
+                //this.lb_test.Text +=
+                string ticketidtxt = e.CommandArgument.ToString().Split(',')[0].Trim();
+                string quantitytxt = e.CommandArgument.ToString().Split(',')[1].Trim();
+
+                int ticket = int.Parse(ticketidtxt);
+                int quantity = int.Parse(quantitytxt);
+
+                TicketManager.UpdateStock(ticket, quantity);
+            }
+        }
     }
 }
