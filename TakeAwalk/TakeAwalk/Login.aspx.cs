@@ -14,16 +14,13 @@ namespace TakeAwalk
 {
     public partial class Login : System.Web.UI.Page
     {
-       
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-        }
 
+        }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-
             string inp_Account = this.txbAccount.Text;
             string inp_PWD = txbPassword.Text;
 
@@ -38,7 +35,6 @@ namespace TakeAwalk
 
             if (userInfo.Account == this.txbAccount.Text && userInfo.Password == this.txbPassword.Text)
             {
-
                 string account = userInfo.Account;       //帳號
                 string usreID = userInfo.IdNumber;    //id
                 string[] roles = { userInfo.Name };  //角色
