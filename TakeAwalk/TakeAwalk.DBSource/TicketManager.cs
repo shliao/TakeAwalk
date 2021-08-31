@@ -90,17 +90,23 @@ namespace TakeAwalk.DBSource
                 return false;
             }
         }
-        public static void DeleteTicketOrdersByOrderID_TicketID(int id, int ticketid)
+        public static void DeleteTicketOrders(int orderid)
         {
             try
             {
                 using (ContextModel context = new ContextModel())
                 {
-                    var obj = context.OrderDetails.Where(o => o.OrderID == id && o.TicketID == ticketid).FirstOrDefault();
+                    var obj = context.Orders.Where(o => o.OrderID == orderid).FirstOrDefault();
+                    var obj2 = context.OrderDetails.Where(o => o.OrderID == orderid);
+
+                    foreach (var item in obj2)
+                    {
+                        context.OrderDetails.Remove(item);
+                    }
 
                     if (obj != null)
                     {
-                        context.OrderDetails.Remove(obj);
+                        context.Orders.Remove(obj);
                         context.SaveChanges();
                     }
                 }

@@ -8,7 +8,7 @@
             <div class="my-5 text-center text-xl-start">
                 <h2>購票內容</h2>
                 <br />
-                <asp:GridView ID="gv_orderdetails" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="650px" OnRowCommand="gv_orderdetails_RowCommand">
+                <asp:GridView ID="gv_orderdetails" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="650px">
                     <Columns>
                         <asp:BoundField DataField="TicketID" HeaderText="票券編號" />
                         <asp:BoundField DataField="TicketName" HeaderText="票券名稱" />
@@ -17,13 +17,6 @@
                         <asp:BoundField DataField="ActivityEndDate" DataFormatString="{0:d}" HeaderText="活動結束日期" />
                         <asp:BoundField DataField="Price" HeaderText="票價" />
                         <asp:BoundField DataField="Quantity" HeaderText="數量" />
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:LinkButton ID="btn_delete" runat="server" CommandName="OrderDetails" CommandArgument='<%# Eval("TicketID")+","+Eval("Quantity") %>'>
-                                    <img src="../Images/trash_icon.png" height="24px" width="24px"/>
-                                </asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -35,7 +28,7 @@
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </div>
-            <asp:Label ID="lb_test" runat="server" Text="Test:"></asp:Label>
+            <asp:Button ID="btn_delete" runat="server" OnClick="btn_delete_Click" Text="刪除訂單" />
         </div>
     </div>
     <!--使用者登入時,隱藏管理者頁面-->

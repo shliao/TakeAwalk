@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Activities.Statements;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -47,19 +48,25 @@ namespace TakeAwalk.SystemAdmin
             }
         }
 
-        protected void gv_orderdetails_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void btn_delete_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "OrderDetails")
+            string orderidtxt = this.Request.QueryString["ID"].ToString();
+            int orderid = int.Parse(orderidtxt);
+
+            foreach (GridViewRow row in gv_orderdetails.Rows)
             {
-                //this.lb_test.Text +=
-                string ticketidtxt = e.CommandArgument.ToString().Split(',')[0].Trim();
-                string quantitytxt = e.CommandArgument.ToString().Split(',')[1].Trim();
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    string ticketidtxt = row.Cells[0].Text;
+                    int ticket = int.Parse(ticketidtxt);
+                    string quantitytxt = row.Cells[6].Text;
+                    int quantity = int.Parse(quantitytxt);
 
-                int ticket = int.Parse(ticketidtxt);
-                int quantity = int.Parse(quantitytxt);
-
-                TicketManager.UpdateStock(ticket, quantity);
+                    TicketManager.UpdateStock(ticket, quantity);
+                }
             }
+            TicketManager.DeleteTicketOrders(orderid);
+            Response.Redirect(this.Request.RawUrl);
         }
     }
 }
