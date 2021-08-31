@@ -29,10 +29,6 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnReturn_Click(object sender, EventArgs e)
         {
-            this.txtMobilePhone.Text = string.Empty;
-            this.txtEmail.Text = string.Empty;
-            this.txtID.Text = string.Empty;
-            this.txtName.Text = string.Empty;
             Response.Redirect("/SystemAdmin/CustomerInfo.aspx");
         }
 

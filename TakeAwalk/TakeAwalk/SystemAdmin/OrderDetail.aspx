@@ -10,6 +10,7 @@
                 <br />
                 <asp:GridView ID="gv_orderdetails" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="650px">
                     <Columns>
+                        <asp:BoundField DataField="TicketID" HeaderText="票券編號" />
                         <asp:BoundField DataField="TicketName" HeaderText="票券名稱" />
                         <asp:BoundField DataField="TrainCompany" HeaderText="主辦單位" />
                         <asp:BoundField DataField="ActivityStartDate" DataFormatString="{0:d}" HeaderText="活動開始日期" />
@@ -18,8 +19,8 @@
                         <asp:BoundField DataField="Quantity" HeaderText="數量" />
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <button type="button">
-                                    <img src="/Images/trash_icon.png" onclick="Imgbtn_delete_Click" height="20" width="20"></button>
+                                <LinkButton onclick="Imgbtn_delete_Click" runat="server">
+                                    <img src="/Images/trash_icon.png" height="20" width="20"></LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

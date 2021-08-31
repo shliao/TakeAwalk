@@ -91,12 +91,4 @@ namespace TakeAwalk.DBSource
             }
         }
     }
-    public class newTicketComfirm_View
-    {
-        public decimal Total { get; set; }
-        public int TQuantity { get; set; }
-        public int OrderID { get; set; }
-        public DateTime CreateDate { get; set; }
-        public int OrderStatus { get; set; }
-    }
 }

@@ -48,14 +48,14 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-        public static void CreateTicketOrders(OrderList_View orderlist)
+        public static void CreateTicketOrders(OrderDetail order)
         {
             try
             {
                 using (ContextModel context = new ContextModel())
                 {
 
-                    context.OrderList_View.Add(orderlist);
+                    context.OrderDetails.Add(order);
                     context.SaveChanges();
                 }
             }
@@ -65,6 +65,51 @@ namespace TakeAwalk.DBSource
 
             }
 
+        }
+        public static bool UpdateStock(int ticketid, int quantity)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var obj = context.TrainTickets.Where(o => o.TicketID == ticketid).FirstOrDefault();
+
+                    if (obj != null)
+                    {
+                        obj.Stocks -= quantity;
+
+                        context.SaveChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return false;
+            }
+        }
+
+        public static void DeleteTicketOrdersByOrderID_TicketID(int id, int ticketid)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var obj = context.OrderDetails.Where(o => o.OrderID == id && o.TicketID == ticketid).FirstOrDefault();
+
+                    if (obj != null)
+                    {
+                        context.OrderDetails.Remove(obj);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+            }
         }
     }
 }

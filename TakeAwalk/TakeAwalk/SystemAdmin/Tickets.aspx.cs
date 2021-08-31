@@ -107,17 +107,17 @@ namespace TakeAwalk.SystemAdmin
             {
                 ticketName += this.gv_selected.Rows[i].Cells[0].Text.Trim() + this.gv_selected.Rows[i].Cells[4].Text.Trim() + "張,";
 
-                OrderList_View orderList = new OrderList_View()
+                using (OrderDetail order_detail = new OrderDetail())
                 {
-                    Quantity = Convert.ToInt32(gv_selected.Rows[i].Cells[5].Text),
-                    CreateDate = DateTime.Now,
-                    OrderStatus = 0,
-                    Creator = currentUser.CustomerID,
-                    CustomerID = currentUser.CustomerID,
-                    TicketID = Convert.ToInt32(gv_selected.Rows[i].Cells[0].Text),
-                    Stocks = -Convert.ToInt32(gv_selected.Rows[i].Cells[5].Text)
+                    //Quantity = Convert.ToInt32(gv_selected.Rows[i].Cells[5].Text),
+                    //CreateDate = DateTime.Now,
+                    //OrderStatus = 0,
+                    //Creator = currentUser.CustomerID,
+                    //CustomerID = currentUser.CustomerID,
+                    //TicketID = Convert.ToInt32(gv_selected.Rows[i].Cells[0].Text),
+                    //Stocks = -Convert.ToInt32(gv_selected.Rows[i].Cells[5].Text)
                 };
-                TicketManager.CreateTicketOrders(orderList);
+                //TicketManager.CreateTicketOrders(order);
             };
 
             string subject = "TakeAwalk火車訂票系統-訂票完成通知信";
