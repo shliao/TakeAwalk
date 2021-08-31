@@ -13,8 +13,11 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class Tickets : System.Web.UI.Page
     {
+        public UserInfoModel currentUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            currentUser = AuthManager.GetCurrentUser();
             HttpCookie cookie = Request.Cookies.Get(".ASPXAUTH");  //以Cookies驗證是否已登入
             if (cookie == null)
             {

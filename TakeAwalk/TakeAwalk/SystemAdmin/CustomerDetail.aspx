@@ -34,4 +34,12 @@
     <asp:Button ID="btnEdit" runat="server" Text="確定修改" OnClick="btnEdit_Click" />
     <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="btnReturn_Click" /></br>
     <asp:Button ID="btnPwd" runat="server" Text="變更密碼" OnClick="btnPwd_Click" />
+     <!--使用者登入時,隱藏管理者頁面-->
+    <script>
+        var admin = document.getElementById('admin');
+        var admin2 = document.getElementById('admin2');
+        if (0 ==<%=currentUser.UserLevel%>) {
+            admin.style.display = 'none';
+            admin2.style.display = 'none';}
+    </script>
 </asp:Content>

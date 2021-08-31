@@ -14,10 +14,12 @@ namespace TakeAwalk
 {
     public partial class Login : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
+
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -64,7 +66,6 @@ namespace TakeAwalk
                 GenericPrincipal gp = new GenericPrincipal(identity, roles);   //放入驗證&角色
                 HttpContext.Current.User = gp;
                 HttpContext.Current.Response.Cookies.Add(cookie);
-
 
                 Response.Redirect("/SystemAdmin/CustomerInfo.aspx");
             }

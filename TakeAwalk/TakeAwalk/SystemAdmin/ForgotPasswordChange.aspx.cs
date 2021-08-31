@@ -6,14 +6,18 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TakeAwalk.Auth;
 using TakeAwalk.DBSource;
 
 namespace TakeAwalk.SystemAdmin
 {
     public partial class ForgotPasswordChange : System.Web.UI.Page
     {
+        public UserInfoModel currentUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            currentUser = AuthManager.GetCurrentUser();
             this.ltlCheckInput.Text = string.Empty;
             this.ltlMsg.Text = string.Empty;
             this.ltlMsg2.Text = string.Empty;
