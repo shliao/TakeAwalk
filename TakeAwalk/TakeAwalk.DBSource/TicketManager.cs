@@ -90,7 +90,6 @@ namespace TakeAwalk.DBSource
                 return false;
             }
         }
-
         public static void DeleteTicketOrdersByOrderID_TicketID(int id, int ticketid)
         {
             try

@@ -46,32 +46,5 @@ namespace TakeAwalk.SystemAdmin
                 this.gv_orderdetails.DataBind();
             }
         }
-
-        protected void Imgbtn_delete_Click(object sender, ImageClickEventArgs e)
-        {
-            LinkButton linkbtn = sender as LinkButton;
-            GridViewRow gvRow = linkbtn.NamingContainer as GridViewRow;
-            int ticketid = int.Parse(gv_orderdetails.DataKeys[gvRow.RowIndex].Value.ToString());
-
-            string idtxt = this.Request.QueryString["ID"].ToString();
-            if (string.IsNullOrWhiteSpace(idtxt))
-                return;
-            int orderid = int.Parse(idtxt);
-
-            //string ticketidtxt = this.gv_orderdetails.SelectedRow.Cells[0].Text;
-            //if (string.IsNullOrWhiteSpace(ticketidtxt))
-            //    return;
-            //int ticketid = int.Parse(ticketidtxt);
-
-            string quantitytxt = this.gv_orderdetails.SelectedRow.Cells[6].Text;
-            if (string.IsNullOrWhiteSpace(quantitytxt))
-                return;
-            int quantity = int.Parse(quantitytxt);
-
-            TicketManager.UpdateStock(ticketid, quantity);
-            TicketManager.DeleteTicketOrdersByOrderID_TicketID(orderid, ticketid);
-
-            Response.Redirect("OrderList.aspx");
-        }
     }
 }

@@ -19,8 +19,8 @@
                         <asp:BoundField DataField="Quantity" HeaderText="數量" />
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <LinkButton onclick="Imgbtn_delete_Click" runat="server">
-                                    <img src="/Images/trash_icon.png" height="20" width="20"></LinkButton>
+                                <Button onclick="Imgbtn_delete_Click">
+                                    <img src="/Images/trash_icon.png" height="20" width="20"></Button>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
