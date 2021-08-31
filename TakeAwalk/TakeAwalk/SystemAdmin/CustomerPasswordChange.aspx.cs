@@ -14,6 +14,8 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class CustomerPasswordChange : System.Web.UI.Page
     {
+        public UserInfoModel currentUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.ltlCheckInput.Text = string.Empty;
@@ -28,7 +30,7 @@ namespace TakeAwalk.SystemAdmin
                     Response.Redirect("/Login.aspx");
                 }
 
-                var currentUser = AuthManager.GetCurrentUser();
+                currentUser = AuthManager.GetCurrentUser();
                 var account = currentUser.Account;
                 var userInfo = UserInfoManager.GetUserInfoByAccount(account);
 

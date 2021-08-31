@@ -13,12 +13,14 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class CustomerDetail : System.Web.UI.Page
     {
+        public UserInfoModel currentUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            currentUser = AuthManager.GetCurrentUser();
+
             if (!IsPostBack)
             {
-                var currentUser = AuthManager.GetCurrentUser();
-
                 this.ltlAccount.Text = currentUser.Account;
                 this.txtName.Text = currentUser.Name;
                 this.txtID.Text = currentUser.IdNumber;
@@ -73,7 +75,7 @@ namespace TakeAwalk.SystemAdmin
                 IdNumber = txtID.Text,
             };
 
-            UserInfoManager.UpdateCustomer(customerid,userInfo);
+            UserInfoManager.UpdateCustomer(customerid, userInfo);
 
             Response.Redirect("CustomerInfo.aspx");
 

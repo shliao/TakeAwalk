@@ -14,13 +14,13 @@ namespace TakeAwalk.DBSource
         public static void SendAutomatedEmail(string elb , string body, string subject)
         {
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("", "TakeAwalk");   //信箱帳號 ,寄信人名稱
+            mail.From = new MailAddress("takeawalk837@gmail.com", "TakeAwalk");   //信箱帳號 ,寄信人名稱
             mail.To.Add(elb);
             mail.Priority = MailPriority.Normal;
             mail.Subject = subject ;
             mail.Body = body;
             SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
-            MySmtp.Credentials = new System.Net.NetworkCredential("", "");  //信箱帳號 ,信箱密碼
+            MySmtp.Credentials = new System.Net.NetworkCredential("takeawalk837@gmail.com", "take7308");  //信箱帳號 ,信箱密碼
             MySmtp.EnableSsl = true;
             MySmtp.Send(mail);
             MySmtp = null;

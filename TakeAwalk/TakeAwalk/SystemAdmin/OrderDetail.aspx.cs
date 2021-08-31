@@ -11,6 +11,8 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class OrderDetail : System.Web.UI.Page
     {
+        public UserInfoModel currentUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //    if (!AuthManager.IsLogined())                // 如果尚未登入，導至登入頁
@@ -19,7 +21,7 @@ namespace TakeAwalk.SystemAdmin
             //        return;
             //    }
 
-            var currentUser = AuthManager.GetCurrentUser();
+            currentUser = AuthManager.GetCurrentUser();
 
             //if (currentUser == null)                             // 如果帳號不存在，導至登入頁
             //{

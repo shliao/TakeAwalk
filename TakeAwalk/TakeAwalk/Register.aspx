@@ -26,7 +26,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>電話:<asp:TextBox ID="txbMobilePhone" runat="server" TextMode="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></asp:TextBox>
+                        <td>電話:<asp:TextBox ID="txbMobilePhone" runat="server" TextMode="Phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>

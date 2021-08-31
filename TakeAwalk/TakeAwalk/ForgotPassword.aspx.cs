@@ -36,9 +36,9 @@ namespace TakeAwalk
                 return;
             }
 
-            //string body = "驗證碼 : 9267434351 ,請回到火車訂票系統完成驗證.";
-            //string subject = "TakeAwalk火車訂票系統-忘記密碼確認信";
-            //UserInfoManager.SendAutomatedEmail(elb, body, subject);
+            string body = "驗證碼 : 9267434351 ,請回到火車訂票系統完成驗證.";
+            string subject = "TakeAwalk火車訂票系統-忘記密碼確認信";
+            UserInfoManager.SendAutomatedEmail(elb, body, subject);
 
             Session["UserLoginInfo"] = txbAccount.Text;
             Response.Redirect("/SystemAdmin/ForgotPasswordChange.aspx");

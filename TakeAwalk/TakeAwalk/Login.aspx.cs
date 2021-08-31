@@ -21,7 +21,6 @@ namespace TakeAwalk
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-
             string inp_Account = this.txbAccount.Text;
             string inp_PWD = txbPassword.Text;
 
@@ -36,7 +35,6 @@ namespace TakeAwalk
 
             if (userInfo.Account == this.txbAccount.Text && userInfo.Password == this.txbPassword.Text)
             {
-
                 string account = userInfo.Account;       //帳號
                 string usreID = userInfo.IdNumber;    //id
                 string[] roles = { userInfo.Name };  //角色
@@ -64,7 +62,6 @@ namespace TakeAwalk
                 GenericPrincipal gp = new GenericPrincipal(identity, roles);   //放入驗證&角色
                 HttpContext.Current.User = gp;
                 HttpContext.Current.Response.Cookies.Add(cookie);
-
 
                 Response.Redirect("/SystemAdmin/CustomerInfo.aspx");
             }

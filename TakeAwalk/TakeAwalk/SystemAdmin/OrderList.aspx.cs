@@ -11,9 +11,11 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class OrderList : System.Web.UI.Page
     {
+        public UserInfoModel currentUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var currentUser = AuthManager.GetCurrentUser();
+            currentUser = AuthManager.GetCurrentUser();
 
             if (!IsPostBack)
             {

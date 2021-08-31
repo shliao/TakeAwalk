@@ -11,6 +11,8 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class Customer : System.Web.UI.Page
     {
+        public UserInfoModel currentUser;  
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //if (!this.IsPostBack)                           // 可能是按鈕跳回本頁，所以要判斷 postback
@@ -21,7 +23,7 @@ namespace TakeAwalk.SystemAdmin
             //        return;
             //    }
 
-            var currentUser = AuthManager.GetCurrentUser();
+             currentUser = AuthManager.GetCurrentUser();
 
             //if (currentUser == null)                             // 如果帳號不存在，導至登入頁
             //{
@@ -34,6 +36,7 @@ namespace TakeAwalk.SystemAdmin
             this.ltID.Text = currentUser.IdNumber;
             this.ltMobilePhone.Text = currentUser.MobilePhone.ToString();
             this.ltEmail.Text = currentUser.Email;
+
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)

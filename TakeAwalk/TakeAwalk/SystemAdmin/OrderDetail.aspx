@@ -36,4 +36,12 @@
             </div>
         </div>
     </div>
+     <!--使用者登入時,隱藏管理者頁面-->
+    <script>
+        var admin = document.getElementById('admin');
+        var admin2 = document.getElementById('admin2');
+        if (0 ==<%=currentUser.UserLevel%>) {
+            admin.style.display = 'none';
+            admin2.style.display = 'none';}
+    </script>
 </asp:Content>
