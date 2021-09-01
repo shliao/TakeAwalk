@@ -130,7 +130,7 @@ namespace TakeAwalk.SystemAdmin
                 if (TicketManager.UpdateStock(ticketid, quantity) == false)
                 {
                     this.ltlMsg.Visible = true;
-                    this.ltlMsg.Text += $"購票失敗，票券: {ticketnametxt} 存庫不足。請按取消後重新勾選或調整數量 \r\n";
+                    this.ltlMsg.Text = $"購票失敗，票券: {ticketnametxt} 存庫不足。請按取消後重新勾選或調整數量 \r\n";
                     return;
                 }
 
