@@ -35,7 +35,7 @@
     <script>
         var admin = document.getElementById('admin');
         var admin2 = document.getElementById('admin2');
-        if (0 ==<%=currentUser.UserLevel%>) {
+        if (1 ==<%=currentUser.UserLevel%>) {
             admin.style.display = 'none';
             admin2.style.display = 'none';
         }

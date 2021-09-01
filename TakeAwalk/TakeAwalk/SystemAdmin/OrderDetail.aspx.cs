@@ -66,7 +66,7 @@ namespace TakeAwalk.SystemAdmin
                 }
             }
             TicketManager.DeleteTicketOrders(orderid);
-            Response.Redirect(this.Request.RawUrl);
+            Response.Redirect("/SystemAdmin/OrderList.aspx");
         }
     }
 }
