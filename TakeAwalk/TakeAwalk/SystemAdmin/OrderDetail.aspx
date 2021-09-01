@@ -28,7 +28,7 @@
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </div>
-            <asp:Button ID="btn_delete" runat="server" OnClick="btn_delete_Click" Text="刪除訂單" />
+            <asp:Button ID="btn_delete" runat="server" OnClick="btn_delete_Click" Text="刪除訂單" OnClientClick="return confirm('確認要刪除這筆訂單嗎?');" />
         </div>
     </div>
     <!--使用者登入時,隱藏管理者頁面-->

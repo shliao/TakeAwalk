@@ -110,7 +110,7 @@ namespace TakeAwalk.DBSource
                 {
                     var obj = context.TrainTickets.Where(o => o.TicketID == ticketid).FirstOrDefault();
 
-                    if (obj != null && (obj.Stocks >= quantity))
+                    if (obj != null && (obj.Stocks >= 3))
                     {
                         obj.Stocks -= quantity;
 
