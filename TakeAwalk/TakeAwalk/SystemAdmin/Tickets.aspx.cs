@@ -119,21 +119,7 @@ namespace TakeAwalk.SystemAdmin
 
             for (int i = 0; i < gv_selected.Rows.Count; i++)
             {
-                TicketFullName += this.gv_selected.Rows[i].Cells[1].Text.Trim() + this.gv_selected.Rows[i].Cells[4].Text.Trim() + "張,";
-
-                string ticketnametxt = this.gv_selected.Rows[i].Cells[1].Text.Trim();
-                string ticketidtxt = this.gv_selected.Rows[i].Cells[0].Text;
-                int ticketid = int.Parse(ticketidtxt);
-                string quantitytxt = this.gv_selected.Rows[i].Cells[5].Text;
-                int quantity = int.Parse(quantitytxt);
-
-                if (TicketManager.UpdateStock(ticketid, quantity) == false)
-                {
-                    this.ltlMsg.Visible = true;
-                    this.ltlMsg.Text = $"購票失敗，票券: {ticketnametxt} 存庫不足。請按取消後重新操作";
-                    return;
-                }
-
+                ticketName += this.gv_selected.Rows[i].Cells[0].Text.Trim() + this.gv_selected.Rows[i].Cells[4].Text.Trim() + "張,";
 
                 TakeAwalk.ORM.DBModels.OrderDetail orderdetail = new TakeAwalk.ORM.DBModels.OrderDetail()
                 {
