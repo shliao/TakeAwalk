@@ -57,7 +57,7 @@
                             <ItemTemplate>
                                 <label>張</label></ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="Stocks_Confirm" Visvle="false"/>
+                        <asp:BoundField DataField="Stocks_Confirm" Visible="false"/>
                     </Columns>
                     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
