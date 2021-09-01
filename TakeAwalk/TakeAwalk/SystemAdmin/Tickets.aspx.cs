@@ -108,7 +108,7 @@ namespace TakeAwalk.SystemAdmin
 
             for (int i = 0; i < gv_selected.Rows.Count; i++)
             {
-                ticketName += this.gv_selected.Rows[i].Cells[0].Text.Trim() + this.gv_selected.Rows[i].Cells[4].Text.Trim() + "張,";
+                ticketName += this.gv_selected.Rows[i].Cells[1].Text.Trim() + this.gv_selected.Rows[i].Cells[5].Text.Trim() + "張,";
 
             };
 
