@@ -62,7 +62,7 @@ namespace TakeAwalk.SystemAdmin
                     string quantitytxt = row.Cells[6].Text;
                     int quantity = int.Parse(quantitytxt);
 
-                    TicketManager.UpdateStock(ticket, quantity);
+                    TicketManager.ReturnStock(ticket, quantity);
                 }
             }
             TicketManager.DeleteTicketOrders(orderid);

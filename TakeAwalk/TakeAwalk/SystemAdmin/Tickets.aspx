@@ -30,6 +30,7 @@
                                 <asp:CheckBox ID="cbox" runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:BoundField DataField="Stocks" Visible="true"/>
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -56,6 +57,7 @@
                             <ItemTemplate>
                                 <label>張</label></ItemTemplate>
                         </asp:TemplateField>
+                        <asp:BoundField DataField="Stocks_Confirm" />
                     </Columns>
                     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -68,7 +70,8 @@
                     <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
                 <asp:Label ID="lbError" runat="server" Text="未勾選任何優惠票，請按取消後重新操作" Visible="False"></asp:Label>
-                <asp:Label ID="lbAmount" runat="server" Visible="False"></asp:Label><br /><br />
+                <asp:Label ID="lbAmount" runat="server" Visible="False"></asp:Label><br />
+                <asp:Literal ID="ltlMsg" runat="server" Visible="False"></asp:Literal><br /><br />
                 <asp:Button ID="btnConfirm" runat="server" Text="確認選項" OnClick="btnConfirm_Click" />
                 <asp:Button ID="btnBuy" runat="server" Text="確定訂購" OnClick="btnBuy_Click" Visible="False" />
                 <asp:Button ID="btnCancel" runat="server" Text="取消" OnClick="btnCancel_Click" />

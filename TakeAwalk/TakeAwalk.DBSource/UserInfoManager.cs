@@ -98,12 +98,10 @@ namespace TakeAwalk.DBSource
         }
         public static void CreateCustomer(UserInfo userInfo)
         {
-
             try
             {
                 using (ContextModel context = new ContextModel())
                 {
-
                     context.UserInfoes.Add(userInfo);
                     context.SaveChanges();
                 }
@@ -111,7 +109,6 @@ namespace TakeAwalk.DBSource
             catch (Exception ex)
             {
                 Logger.WriteLog(ex);
-
             }
         }
         public static bool UpdatePWD(Guid CustomerID, string PWD)

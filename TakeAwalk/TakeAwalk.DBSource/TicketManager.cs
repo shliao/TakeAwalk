@@ -48,25 +48,37 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-        public static void CreateTicketOrders(OrderDetail order)
+        public static void CreateTicketOrders_OrdersTable(Order orders)
         {
             try
             {
                 using (ContextModel context = new ContextModel())
                 {
-
-                    context.OrderDetails.Add(order);
+                    context.Orders.Add(orders);
                     context.SaveChanges();
                 }
             }
             catch (Exception ex)
             {
                 Logger.WriteLog(ex);
-
             }
-
         }
-        public static bool UpdateStock(int ticketid, int quantity)
+        public static void CreateTicketOrders_OrderDetailsTable(Order orders)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    context.Orders.Add(orders);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+            }
+        }
+        public static bool ReturnStock(int ticketid, int quantity)
         {
             try
             {
@@ -77,6 +89,30 @@ namespace TakeAwalk.DBSource
                     if (obj != null)
                     {
                         obj.Stocks += quantity;
+
+                        context.SaveChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return false;
+            }
+        }
+        public static bool UpdateStock(int ticketid, int quantity)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var obj = context.TrainTickets.Where(o => o.TicketID == ticketid).FirstOrDefault();
+
+                    if (obj != null && (obj.Stocks >= quantity))
+                    {
+                        obj.Stocks -= quantity;
 
                         context.SaveChanges();
                         return true;
