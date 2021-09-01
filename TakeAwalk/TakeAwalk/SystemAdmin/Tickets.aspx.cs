@@ -143,7 +143,7 @@ namespace TakeAwalk.SystemAdmin
                     CreateDate = order.CreateDate,
                     Creator = order.Creator
                 };
-                TicketManager.CreateTicketOrders_OrdersTable(order);
+                TicketManager.CreateTicketOrders_OrderDetailsTable(orderdetail);
             };
 
             string subject = "TakeAwalk火車訂票系統-訂票完成通知信";

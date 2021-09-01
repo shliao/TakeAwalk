@@ -63,13 +63,13 @@ namespace TakeAwalk.DBSource
                 Logger.WriteLog(ex);
             }
         }
-        public static void CreateTicketOrders_OrderDetailsTable(Order orders)
+        public static void CreateTicketOrders_OrderDetailsTable(OrderDetail orderdetails)
         {
             try
             {
                 using (ContextModel context = new ContextModel())
                 {
-                    context.Orders.Add(orders);
+                    context.OrderDetails.Add(orderdetails);
                     context.SaveChanges();
                 }
             }

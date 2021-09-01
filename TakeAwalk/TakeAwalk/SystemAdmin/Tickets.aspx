@@ -30,7 +30,7 @@
                                 <asp:CheckBox ID="cbox" runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="Stocks" Visible="true"/>
+                        <asp:BoundField DataField="Stocks" Visible="false"/>
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -57,7 +57,7 @@
                             <ItemTemplate>
                                 <label>張</label></ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="Stocks_Confirm" />
+                        <asp:BoundField DataField="Stocks_Confirm" Visvle="false"/>
                     </Columns>
                     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
