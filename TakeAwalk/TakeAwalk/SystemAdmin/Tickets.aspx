@@ -69,7 +69,7 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
-                <asp:Label ID="lbError" runat="server" Text="未勾選任何優惠票，請按取消後重新操作" Visible="False"></asp:Label>
+                <asp:Label ID="lbError" runat="server" Visible="False"></asp:Label>
                 <asp:Label ID="lbAmount" runat="server" Visible="False"></asp:Label><br />
                 <asp:Literal ID="ltlMsg" runat="server" Visible="False"></asp:Literal><br /><br />
                 <asp:Button ID="btnConfirm" runat="server" Text="確認選項" OnClick="btnConfirm_Click" />

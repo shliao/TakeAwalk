@@ -102,6 +102,32 @@ namespace TakeAwalk.DBSource
                 return false;
             }
         }
+        public static bool CheckStock(int ticketid, int quantity)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    TrainTicket trainticket = new TrainTicket();
+                    trainticket.Stocks = context.TrainTickets.First(o => o.TicketID == ticketid).Stocks;
+
+                    int stocks = trainticket.Stocks;
+
+                    if (stocks < quantity)
+                    {
+                        return false;
+                    }
+                    else
+                        return true;
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return false;
+            }
+        }
         public static bool UpdateStock(int ticketid, int quantity)
         {
             try
@@ -110,7 +136,7 @@ namespace TakeAwalk.DBSource
                 {
                     var obj = context.TrainTickets.Where(o => o.TicketID == ticketid).FirstOrDefault();
 
-                    if (obj != null && (obj.Stocks >= 3))
+                    if (obj != null)
                     {
                         obj.Stocks -= quantity;
 

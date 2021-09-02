@@ -27,9 +27,10 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-                DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[6] 
-                { new DataColumn("TicketID"), new DataColumn("TicketContent_Confirm"), new DataColumn("TrainCompany_Confirm"), new DataColumn("TicketPrice_Confirm"), new DataColumn("Quantity_Confirm"), new DataColumn("Stocks_Confirm") });
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[6]
+            { new DataColumn("TicketID"), new DataColumn("TicketContent_Confirm"), new DataColumn("TrainCompany_Confirm"), new DataColumn("TicketPrice_Confirm"), new DataColumn("Quantity_Confirm"), new DataColumn("Stocks_Confirm") });
+
             foreach (GridViewRow row in gv_ticket.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
@@ -37,21 +38,32 @@ namespace TakeAwalk.SystemAdmin
                     CheckBox cbox = (row.Cells[7].FindControl("cbox") as CheckBox);
                     if (cbox.Checked)
                     {
-                        string ticketid = row.Cells[0].Text;
+                        int ticketid = int.Parse(row.Cells[0].Text);
                         string ticketcontent = row.Cells[1].Text;
                         string traincompany = row.Cells[2].Text;
                         string ticketprice = row.Cells[5].Text;
                         DropDownList q = row.Cells[6].FindControl("ddl_quantity") as DropDownList;
-                        string quantity = q.SelectedValue;
-                        string stocks = row.Cells[8].Text;
+                        int quantity = int.Parse(q.SelectedValue);
 
-                        dt.Rows.Add(ticketid, ticketcontent, traincompany, ticketprice, quantity, stocks);
+                        if (TicketManager.CheckStock(ticketid, quantity) == false)
+                        {
+                            this.ltlMsg.Visible = true;
+                            this.ltlMsg.Text += $"勾選失敗。票券: {ticketcontent}庫存不足，請按取消後重勾選或調整數量 \r\n";
+                            this.btnConfirm.Enabled = false;
+                            return;
+                        }
+                        else
+                        {
+                            this.btnConfirm.Enabled = true;
+                            dt.Rows.Add(ticketid, ticketcontent, traincompany, ticketprice, quantity);
+                        }
                     }
                 }
             }
             if (dt.Rows.Count == 0)
             {
                 this.lbError.Visible = true;
+                this.lbError.Text = "未勾選任何優惠票，請按取消後重新操作";
                 this.btnConfirm.Visible = false;
                 this.btnBuy.Visible = true;
                 this.btnBuy.Enabled = false;
@@ -78,11 +90,11 @@ namespace TakeAwalk.SystemAdmin
                 }
                 this.lbAmount.Visible = true;
                 this.lbAmount.Text = $"小計: {total} 元 \t\t {ticket_cnt} 張";
-
             }
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            this.btnConfirm.Enabled = true;
             this.btnConfirm.Visible = true;
             this.btnBuy.Visible = false;
             this.gv_ticket.Visible = true;
@@ -90,6 +102,7 @@ namespace TakeAwalk.SystemAdmin
             this.lbError.Visible = false;
             this.lbAmount.Visible = false;
             this.ltlMsg.Visible = false;
+            this.ltlMsg.Text = string.Empty;
             this.gv_ticket.DataSource = TicketManager.GetTrainTicketsList();
             this.gv_ticket.DataBind();
         }
@@ -121,13 +134,7 @@ namespace TakeAwalk.SystemAdmin
                 string quantitytxt = this.gv_selected.Rows[i].Cells[5].Text;
                 int quantity = int.Parse(quantitytxt);
 
-                if (TicketManager.UpdateStock(ticketid, quantity) == false)
-                {
-                    this.ltlMsg.Visible = true;
-                    this.ltlMsg.Text = $"購票失敗，票券: {ticketnametxt} 存庫不足。請按取消後重新勾選或調整數量 \r\n";
-                    return;
-                }
-
+                TicketManager.UpdateStock(ticketid, quantity);
 
                 TakeAwalk.ORM.DBModels.OrderDetail orderdetail = new TakeAwalk.ORM.DBModels.OrderDetail()
                 {
