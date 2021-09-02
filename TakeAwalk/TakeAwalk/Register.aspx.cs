@@ -63,7 +63,8 @@ namespace TakeAwalk
                 Account = txbAccount.Text,
                 Password = txbPassword.Text,
                 IdNumber = txbId.Text,
-                CustomerID = Cid
+                CustomerID = Cid,
+                UserLevel=1
             };
 
             UserInfoManager.CreateCustomer(userInfo);

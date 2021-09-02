@@ -119,7 +119,7 @@ namespace TakeAwalk.SystemAdmin
 
             for (int i = 0; i < gv_selected.Rows.Count; i++)
             {
-                TicketFullName += this.gv_selected.Rows[i].Cells[0].Text.Trim() + this.gv_selected.Rows[i].Cells[4].Text.Trim() + "張,";
+                TicketFullName += this.gv_selected.Rows[i].Cells[1].Text.Trim() + this.gv_selected.Rows[i].Cells[5].Text.Trim() + "張,";
 
                 string ticketnametxt = this.gv_selected.Rows[i].Cells[1].Text.Trim();
                 string ticketidtxt = this.gv_selected.Rows[i].Cells[0].Text;
@@ -147,7 +147,7 @@ namespace TakeAwalk.SystemAdmin
             };
 
             string subject = "TakeAwalk火車訂票系統-訂票完成通知信";
-            string body = $"感謝您訂購本公司的{TicketFullName}祝您旅途平安.";
+            string body = $"您好,您的訂票內容如下\r\n{TicketFullName}\r\n感謝您的支持,TakeAwalk祝您旅途平安.";
             string elb = currentUser.Email;
             UserInfoManager.SendAutomatedEmail(elb, body, subject);
             Response.Redirect("/SystemAdmin/OrderList.aspx");
