@@ -24,12 +24,6 @@ namespace TakeAwalk.SystemAdmin
 
             if (!IsPostBack)
             {
-                HttpCookie cookie = Request.Cookies.Get(".ASPXAUTH");  //以Cookies驗證是否已登入
-                if (cookie == null)
-                {
-                    Response.Redirect("/Login.aspx");
-                }
-
                 currentUser = AuthManager.GetCurrentUser();
                 var account = currentUser.Account;
                 var userInfo = UserInfoManager.GetUserInfoByAccount(account);

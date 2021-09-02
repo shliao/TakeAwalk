@@ -18,12 +18,6 @@ namespace TakeAwalk.SystemAdmin
         protected void Page_Load(object sender, EventArgs e)
         {
             currentUser = AuthManager.GetCurrentUser();
-            HttpCookie cookie = Request.Cookies.Get(".ASPXAUTH");  //以Cookies驗證是否已登入
-            if (cookie == null)
-            {
-                Response.Redirect("/Login.aspx");
-            }
-
             if (!this.IsPostBack)
             {
                 this.gv_ticket.DataSource = TicketManager.GetTrainTicketsList();
