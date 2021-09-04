@@ -11,7 +11,6 @@ namespace TakeAwalk.Auth
 {
     public class AuthManager
     {
-       
         /// <summary> 取得已登入的使用者資訊 (如果沒有登入就回傳 null) </summary>
         /// <returns></returns>
         public static UserInfoModel GetCurrentUser()

@@ -167,10 +167,11 @@ namespace TakeAwalk.SystemAdmin
                 TicketManager.CreateTicketOrders_OrderDetailsTable(orderdetail);
             };
 
+            var name = currentUser.Name;
             string subject = "TakeAwalk火車訂票系統-訂票完成通知信";
-            string body = $"您好,您的訂票內容如下\r\n{TicketFullName}\r\n感謝您的支持,TakeAwalk祝您旅途平安.";
-            string elb = currentUser.Email;
-            UserInfoManager.SendAutomatedEmail(elb, body, subject);
+            string body = $"親愛的{name}會員 您好\r\n您的訂票內容如下:\r\n{TicketFullName}\r\n感謝您的支持,TakeAwalk祝您旅途平安.";
+            string email = currentUser.Email;
+            UserInfoManager.SendAutomatedEmail(email, body, subject);
             Response.Redirect("/SystemAdmin/OrderList.aspx");
         }
     }

@@ -13,15 +13,17 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class ForgotPasswordChange : System.Web.UI.Page
     {
-        public UserInfoModel currentUser;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            currentUser = AuthManager.GetCurrentUser();
+            if (HttpContext.Current.Session["UserLoginInfo"] == null)
+            {
+                HttpContext.Current.Response.Redirect("/Login.aspx");
+            }
+
             this.ltlCheckInput.Text = string.Empty;
             this.ltlMsg.Text = string.Empty;
             this.ltlMsg2.Text = string.Empty;
-            this.ltlMsg1.Text= "<span style='color:red'>請於信箱收取驗證碼.</span>";
+            this.ltlMsg1.Text = "<span style='color:red'>請於信箱收取驗證碼.</span>";
             ltlAccount.Text = this.Session["UserLoginInfo"] as string;
         }
 
