@@ -65,7 +65,8 @@ namespace TakeAwalk.SystemAdmin
                 return;
             }
 
-            Guid customerid = new Guid(this.Request.QueryString["CustomerID"].ToString());
+            currentUser = AuthManager.GetCurrentUser();
+            var customerid = currentUser.CustomerID;
 
             UserInfo userInfo = new UserInfo()
             {

@@ -77,7 +77,7 @@ namespace TakeAwalk.Auth
             if (string.IsNullOrWhiteSpace(account) ||
                 string.IsNullOrWhiteSpace(pwd))
             {
-                errorMsg = "請輸入帳號/密碼";
+                errorMsg = "<span style='color:red'>請輸入帳號/密碼</span>";
                 return false;
             }
 
@@ -88,7 +88,7 @@ namespace TakeAwalk.Auth
             // 檢查 Null
             if (userInfo == null)
             {
-                errorMsg = $"帳號: {account} 輸入錯誤";
+                errorMsg = $"<span style='color:red'>帳號: {account} 輸入錯誤</span>";
                 return false;
             }
 
@@ -103,7 +103,7 @@ namespace TakeAwalk.Auth
             }
             else
             {
-                errorMsg = "登入失敗，請重新確認帳號/密碼";
+                errorMsg = "<span style='color:red'>登入失敗，請重新確認帳號/密碼</span>";
                 return false;
             }
         }

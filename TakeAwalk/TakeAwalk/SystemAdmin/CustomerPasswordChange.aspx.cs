@@ -41,7 +41,7 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            var currentUser = AuthManager.GetCurrentUser();
+            currentUser = AuthManager.GetCurrentUser();
             var account = currentUser.Account;
             var userInfo = UserInfoManager.GetUserInfoByAccount(account);
 
