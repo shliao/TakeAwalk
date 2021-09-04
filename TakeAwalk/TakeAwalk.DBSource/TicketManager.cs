@@ -119,7 +119,7 @@ namespace TakeAwalk.DBSource
                     }
                     else
                         return true;
-                   
+
                 }
             }
             catch (Exception ex)
@@ -127,6 +127,26 @@ namespace TakeAwalk.DBSource
                 Logger.WriteLog(ex);
                 return false;
             }
+        }
+        public static bool CheckStock_test(int ticketid, int quantity, string ticketname, out string StocksMsg)
+        {
+            using (ContextModel context = new ContextModel())
+            {
+                TrainTicket trainticket = new TrainTicket();
+                trainticket.Stocks = context.TrainTickets.First(o => o.TicketID == ticketid).Stocks;
+
+                int stocks = trainticket.Stocks;
+                string Msg = string.Empty;
+
+                if (stocks < quantity)
+                {
+                    Msg = $"勾選失敗。票券: {ticketname}庫存不足，請按取消後重勾選或調整數量";
+                }
+
+                StocksMsg = Msg;
+                return false;
+            }
+
         }
         public static bool UpdateStock(int ticketid, int quantity)
         {
