@@ -11,11 +11,11 @@ namespace TakeAwalk.DBSource
 {
     public class UserInfoManager
     {
-        public static void SendAutomatedEmail(string elb , string body, string subject)
+        public static void SendAutomatedEmail(string email, string body, string subject)
         {
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("takeawalk837@gmail.com", "TakeAwalk");   //信箱帳號 ,寄信人名稱
-            mail.To.Add(elb);
+            mail.To.Add(email);
             mail.Priority = MailPriority.Normal;
             mail.Subject = subject ;
             mail.Body = body;
