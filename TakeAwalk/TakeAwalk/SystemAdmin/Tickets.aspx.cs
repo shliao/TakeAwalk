@@ -48,26 +48,15 @@ namespace TakeAwalk.SystemAdmin
                         int quantity = int.Parse(q.SelectedValue);
                         string StocksMsg;
 
-                        TicketManager.CheckStock_test(ticketid, quantity, ticketcontent, out StocksMsg);
-                        MsgList.Add(StocksMsg);
+                        TicketManager.IsEnoughStocks(ticketid, quantity, ticketcontent, out StocksMsg);
+                        if (StocksMsg != null)
+                        {
+                            MsgList.Add(StocksMsg);
+                        }
 
                         dt.Rows.Add(ticketid, ticketcontent, traincompany, ticketprice, quantity);
                     }
-
-                    //if (TicketManager.CheckStock(ticketid, quantity) == false)
-                    //{
-                    //    this.ltlMsg.Visible = true;
-                    //    this.ltlMsg.Text += $"勾選失敗。票券: {ticketcontent}庫存不足，請按取消後重勾選或調整數量 \r\n";
-                    //    this.btnConfirm.Enabled = false;
-                    //    return;
-                    //}
-                    //else
-                    //{
-                    //    this.btnConfirm.Enabled = true;
-                    //    dt.Rows.Add(ticketid, ticketcontent, traincompany, ticketprice, quantity);
-                    //}
                 }
-
             }
             if (dt.Rows.Count == 0)
             {
@@ -78,11 +67,11 @@ namespace TakeAwalk.SystemAdmin
                 this.btnBuy.Enabled = false;
                 return;
             }
-            else if (MsgList.ToString() != "")
+            else if (MsgList.Count != 0)
             {
                 foreach (var Msg in MsgList)
                 {
-                    this.ltlMsg.Text = string.Join("<br/>", Msg);
+                    this.ltlMsg.Text += (Msg + "<br/>");
                 }
                 this.ltlMsg.Visible = true;
                 this.btnConfirm.Enabled = false;
