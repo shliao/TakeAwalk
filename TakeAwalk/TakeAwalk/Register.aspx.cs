@@ -83,7 +83,7 @@ namespace TakeAwalk
 
             else if (string.IsNullOrWhiteSpace(this.txbPassword.Text) || string.IsNullOrEmpty(this.txbPassword.Text))
                 msglist.Add("<span style='color:red'>密碼為必填(英數字元)</span>");
-            else if (this.txbPassword.Text.Length < 8 || this.txbPassword.Text.Length>18)
+            else if (this.txbPassword.Text.Length < 8 || this.txbPassword.Text.Length >18)
                 msglist.Add("<span style='color:red'>密碼長度應為八到十八碼.</span>");
 
             else if (string.IsNullOrWhiteSpace(this.txbName.Text) || string.IsNullOrEmpty(this.txbName.Text))
