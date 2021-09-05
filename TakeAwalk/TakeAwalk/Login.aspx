@@ -10,13 +10,11 @@
                 <br />
                 <table>
                     <tr>
-                        <td>帳號:
-                            <asp:TextBox ID="txbAccount" runat="server"></asp:TextBox>
+                        <td>帳號:<asp:TextBox ID="txbAccount" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td>密碼:
-                            <asp:TextBox ID="txbPassword" runat="server" TextMode="Password"></asp:TextBox><br />
+                        <td>密碼:<asp:TextBox ID="txbPassword" runat="server" TextMode="Password"></asp:TextBox><br />
                             <div style="margin-left: 150px">
                                 <a href="ForgotPassword.aspx">忘記密碼?</a>
                             </div>

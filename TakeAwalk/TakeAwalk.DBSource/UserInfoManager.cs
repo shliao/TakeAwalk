@@ -17,7 +17,7 @@ namespace TakeAwalk.DBSource
             mail.From = new MailAddress("takeawalk837@gmail.com", "TakeAwalk");   //信箱帳號 ,寄信人名稱
             mail.To.Add(email);
             mail.Priority = MailPriority.Normal;
-            mail.Subject = subject ;
+            mail.Subject = subject;
             mail.Body = body;
             SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
             MySmtp.Credentials = new System.Net.NetworkCredential("takeawalk837@gmail.com", "take7308");  //信箱帳號 ,信箱密碼

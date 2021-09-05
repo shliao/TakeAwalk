@@ -15,7 +15,7 @@ namespace TakeAwalk.Auth
         /// <returns></returns>
         public static UserInfoModel GetCurrentUser()
         {
-            
+
             bool isAuth = HttpContext.Current.Request.IsAuthenticated; //是否登入
             var user = HttpContext.Current.User;                       //取得使用者
 

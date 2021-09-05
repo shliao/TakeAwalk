@@ -24,8 +24,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            確認新密碼:<asp:TextBox ID="txbNewPasswordCmf" runat="server" TextMode="Password"></asp:TextBox>
+                        <td>確認新密碼:<asp:TextBox ID="txbNewPasswordCmf" runat="server" TextMode="Password"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -39,12 +38,13 @@
             </div>
         </div>
     </div>
-     <!--使用者登入時,隱藏管理者頁面-->
+    <!--使用者登入時,隱藏管理者頁面-->
     <script>
         var admin = document.getElementById('admin');
         var admin2 = document.getElementById('admin2');
         if (1 ==<%=currentUser.UserLevel%>) {
             admin.style.display = 'none';
-            admin2.style.display = 'none';}
+            admin2.style.display = 'none';
+        }
     </script>
 </asp:Content>
