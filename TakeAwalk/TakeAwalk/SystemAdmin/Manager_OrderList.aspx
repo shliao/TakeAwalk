@@ -11,20 +11,22 @@
                 <asp:GridView ID="gv_orderlist" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="700px">
                     <Columns>
                         <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
-                        <asp:BoundField DataField="CreateDate" HeaderText="購買日期" DataFormatString="{0:yyyy/MM/dd HH:mm}"/>
+                        <asp:BoundField DataField="CreateDate" HeaderText="購買日期" DataFormatString="{0:yyyy/MM/dd HH:mm}" />
                         <asp:BoundField DataField="Name" HeaderText="姓名" />
                         <asp:BoundField DataField="Total" HeaderText="總金額" />
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <label>元</label></ItemTemplate>
+                                <label>元</label>
+                            </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="Quantity" HeaderText="總張數" />
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <label>張</label></ItemTemplate>
+                                <label>張</label>
+                            </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" />
-                        <asp:BoundField HeaderText="修改訂單日期" DataField="ModifyDate" DataFormatString="{0:yyyy/MM/dd HH:mm}"/>
+                        <asp:BoundField HeaderText="修改訂單日期" DataField="ModifyDate" DataFormatString="{0:yyyy/MM/dd HH:mm}" />
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <a href="OrderDetail.aspx?ID=<%# Eval("OrderID")%>">

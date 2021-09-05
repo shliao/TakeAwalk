@@ -33,7 +33,8 @@
                             <li class="nav-item"><a class="nav-link" href="Tickets.aspx">優惠票購買</a></li>
                             <li class="nav-item"><a class="nav-link" href="OrderList.aspx">購票紀錄</a></li>
                             <li class="nav-item"><a class="nav-link" href="CustomerInfo.aspx">會員中心</a></li>
-                            <li><asp:Button ID="btnLogout" runat="server" Text="登出" OnClick="btnLogout_Click"/></li>
+                            <li>
+                                <asp:Button ID="btnLogout" runat="server" Text="登出" OnClick="btnLogout_Click" /></li>
                             <li class="nav-item"><a class="nav-link" id="admin" href="CustomerList.aspx" style="color: orange">客戶資料</a></li>
                             <li class="nav-item"><a class="nav-link" id="admin2" href="Manager_OrderList.aspx" style="color: orange">管理客戶訂單</a></li>
                         </ul>

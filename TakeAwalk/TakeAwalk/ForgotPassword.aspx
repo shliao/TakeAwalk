@@ -10,16 +10,15 @@
                 <br />
                 <table>
                     <tr>
-                        <td>
-                            帳號:<asp:TextBox ID="txbAccount" runat="server"></asp:TextBox>
+                        <td>帳號:<asp:TextBox ID="txbAccount" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            信箱:<asp:TextBox ID="txbEmail" runat="server" TextMode="Email"></asp:TextBox>
+                        <td>信箱:<asp:TextBox ID="txbEmail" runat="server" TextMode="Email"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
+                <br />
                 <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
                 <br />
                 <div>

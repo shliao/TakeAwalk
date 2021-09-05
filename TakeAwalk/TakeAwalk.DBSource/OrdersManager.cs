@@ -36,8 +36,8 @@ namespace TakeAwalk.DBSource
             {
                 try
                 {
-                    var query =(from item in context.Manager_OrderList_View
-                                select item);
+                    var query = (from item in context.Manager_OrderList_View
+                                 select item);
 
                     var list = query.ToList();
                     return list;
