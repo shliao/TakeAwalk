@@ -8,7 +8,7 @@
             <div class="my-5 text-center text-xl-start">
                 <h2>管理客戶訂單</h2>
                 <br />
-                <asp:GridView ID="gv_orderlist" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="700px">
+                <asp:GridView ID="gv_orderlist" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                         <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
                         <asp:BoundField DataField="CreateDate" HeaderText="購買日期" DataFormatString="{0:yyyy/MM/dd HH:mm}" />

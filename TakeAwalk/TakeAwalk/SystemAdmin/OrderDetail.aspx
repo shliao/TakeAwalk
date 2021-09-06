@@ -8,7 +8,7 @@
             <div class="my-5 text-center text-xl-start">
                 <h2>購票內容</h2>
                 <br />
-                <asp:GridView ID="gv_orderdetails" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="650px">
+                <asp:GridView ID="gv_orderdetails" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                         <asp:BoundField DataField="TicketID" HeaderText="票券編號" />
                         <asp:BoundField DataField="TicketName" HeaderText="票券名稱" />

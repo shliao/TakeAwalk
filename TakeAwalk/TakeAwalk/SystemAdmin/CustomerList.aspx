@@ -8,7 +8,7 @@
             <div class="my-5 text-center text-xl-start">
                 <h2>客戶資料</h2>
                 <br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="700px">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                         <%--        <asp:BoundField DataField="CustomerID" HeaderText="客戶編號" />--%>
                         <asp:BoundField DataField="Name" HeaderText="姓名" />
