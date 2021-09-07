@@ -71,7 +71,7 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
-                <asp:Label ID="lbError" runat="server" Visible="False"></asp:Label>
+                <asp:Label ID="lbError" runat="server" Visible="False" ForeColor="Red"></asp:Label>
                 <asp:Label ID="lbAmount" runat="server" Visible="False"></asp:Label><br />
                 <asp:Literal ID="ltlMsg" runat="server" Visible="False"></asp:Literal><br />
                 <br />

@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SystemAdmin/Admin.Master" AutoEventWireup="true" CodeBehind="OrderList.aspx.cs" Inherits="TakeAwalk.SystemAdmin.OrderList" %>
 
+<%@ Register Src="~/UserControls/ucPager.ascx" TagPrefix="uc1" TagName="ucPager" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -42,6 +45,14 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
+                <asp:Literal runat="server" ID="ltPager">
+                </asp:Literal>
+                <uc1:ucPager runat="server" ID="ucPager" PageSize="10" CurrentPage="1" TotalSize="10" Url="OrderList.aspx" />
+                <asp:PlaceHolder ID="plcNoData" runat="server" Visible="false">
+                    <p style="color: red; background-color: cornflowerblue">
+                        沒有購買紀錄...
+                    </p>
+                </asp:PlaceHolder>
                 <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
             </div>
         </div>

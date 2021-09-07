@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SystemAdmin/Admin.Master" AutoEventWireup="true" CodeBehind="CustomerList.aspx.cs" Inherits="TakeAwalk.SystemAdmin.CustomerList" %>
 
+<%@ Register Src="~/UserControls/ucPager.ascx" TagPrefix="uc1" TagName="ucPager" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -16,7 +19,7 @@
                         <asp:BoundField DataField="MobilePhone" HeaderText="手機號碼" />
                         <asp:BoundField DataField="Email" HeaderText="Email" />
                         <asp:BoundField DataField="Account" HeaderText="帳號" />
-                        <asp:BoundField DataField="Password" HeaderText="密碼" />
+                        <asp:BoundField DataField="Password" HeaderText="密碼" DataFormatString="********" />
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <a href="OrderList.aspx?CustomerID=<%# Eval("CustomerID") %>">
@@ -34,6 +37,14 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
+                <asp:Literal runat="server" ID="ltPager">
+                </asp:Literal>
+                <uc1:ucPager runat="server" ID="ucPager" PageSize="10" CurrentPage="1" TotalSize="10" Url="CustomerList.aspx" />
+                <asp:PlaceHolder ID="plcNoData" runat="server" Visible="false">
+                    <p style="color: red; background-color: cornflowerblue">
+                        沒有客戶資料...
+                    </p>
+                </asp:PlaceHolder>
             </div>
         </div>
     </div>

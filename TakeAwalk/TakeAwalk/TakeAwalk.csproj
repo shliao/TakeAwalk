@@ -121,6 +121,7 @@
     <Content Include="SystemAdmin\OrderDetail.aspx" />
     <Content Include="SystemAdmin\OrderList.aspx" />
     <Content Include="SystemAdmin\Tickets.aspx" />
+    <Content Include="UserControls\ucPager.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -232,6 +233,13 @@
     </Compile>
     <Compile Include="SystemAdmin\Tickets.aspx.designer.cs">
       <DependentUpon>Tickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucPager.ascx.cs">
+      <DependentUpon>ucPager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucPager.ascx.designer.cs">
+      <DependentUpon>ucPager.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
