@@ -20,42 +20,80 @@ namespace TakeAwalk.SystemAdmin
 
             if (!IsPostBack)
             {
-                this.gv_orderlist.DataSource = OrdersManager.GetOrdersListbyCustomerID(currentUser.CustomerID);
-                this.gv_orderlist.DataBind();
+                var init_list = OrdersManager.GetOrdersListbyCustomerID(currentUser.CustomerID);
+                this.gv_orderlist.DataSource = init_list;
+                //this.gv_orderlist.DataBind();
+
+                if (init_list.Count > 0)  // 檢查有無資料
+                {
+                    var pagedList = this.GetPagedDataTable(init_list);
+
+                    this.gv_orderlist.DataSource = pagedList;
+                    this.gv_orderlist.DataBind();
+
+                    this.ucPager.TotalSize = init_list.Count;
+                    this.ucPager.Bind();
+                }
+                else
+                {
+                    this.gv_orderlist.Visible = false;
+                    this.plcNoData.Visible = true;
+                }
             }
 
             if (currentUser.UserLevel == 0)
             {
                 string guidtxt = this.Request.QueryString["CustomerID"];
-                this.gv_orderlist.DataSource = OrdersManager.GetOrdersListbyCustomerID(currentUser.CustomerID);
-                this.gv_orderlist.DataBind();
+
+                var Manager_list = OrdersManager.GetOrdersListbyCustomerID(currentUser.CustomerID);
+                this.gv_orderlist.DataSource = Manager_list;
+                //this.gv_orderlist.DataBind();
+
+                if (Manager_list.Count > 0)  // 檢查有無資料
+                {
+                    var pagedList = this.GetPagedDataTable(Manager_list);
+
+                    this.gv_orderlist.DataSource = pagedList;
+                    this.gv_orderlist.DataBind();
+
+                    this.ucPager.TotalSize = Manager_list.Count;
+                    this.ucPager.Bind();
+                }
+                else
+                {
+                    this.gv_orderlist.Visible = false;
+                    this.plcNoData.Visible = true;
+                }
 
                 if (guidtxt != null)
                 {
                     Guid customerid = Guid.Parse(guidtxt);
-                    this.gv_orderlist.DataSource = OrdersManager.GetOrdersListbyCustomerID(customerid);
-                    this.gv_orderlist.DataBind();
+                    var Customer_list = OrdersManager.GetOrdersListbyCustomerID(customerid);
+                    this.gv_orderlist.DataSource = Customer_list;
+                    //this.gv_orderlist.DataBind();
+
+                    if (Customer_list.Count > 0)  // 檢查有無資料
+                    {
+                        var pagedList = this.GetPagedDataTable(Customer_list);
+
+                        this.gv_orderlist.DataSource = pagedList;
+                        this.gv_orderlist.DataBind();
+
+                        this.ucPager.TotalSize = Customer_list.Count;
+                        this.ucPager.Bind();
+                    }
+                    else
+                    {
+                        this.gv_orderlist.Visible = false;
+                        this.plcNoData.Visible = true;
+                    }
                 }
             }
+
 
             // 取得訂單資料
             var list = OrdersManager.GetOrdersListbyCustomerID(currentUser.CustomerID);
 
-            if (list.Count > 0)  // 檢查有無資料
-            {
-                var pagedList = this.GetPagedDataTable(list);
-
-                this.gv_orderlist.DataSource = pagedList;
-                this.gv_orderlist.DataBind();
-
-                this.ucPager.TotalSize = list.Count;
-                this.ucPager.Bind();
-            }
-            else
-            {
-                this.gv_orderlist.Visible = false;
-                this.plcNoData.Visible = true;
-            }
         }
 
         private int GetCurrentPage()
