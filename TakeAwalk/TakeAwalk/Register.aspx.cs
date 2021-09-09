@@ -55,6 +55,14 @@ namespace TakeAwalk
                 return;
             }
 
+            var account = txbAccount.Text;
+            var email = txbEmail.Text;
+            if ( UserInfoManager.GetUserByEmail(email) || UserInfoManager.GetUserByAccount(account))
+            {
+                this.ltMsg.Text = "<span style='color:red'>帳號或信箱已註冊會員,請重新輸入</span>";
+                return;
+            }
+           
             UserInfo userInfo = new UserInfo()
             {
                 Name = txbName.Text,

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TakeAwalk.ORM.DBModels;
 using System.Web;
 using System.Net.Mail;
+using System.IO;
 
 namespace TakeAwalk.DBSource
 {
@@ -13,19 +14,57 @@ namespace TakeAwalk.DBSource
     {
         public static void SendAutomatedEmail(string email, string body, string subject)
         {
-            MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("takeawalk837@gmail.com", "TakeAwalk");   //信箱帳號 ,寄信人名稱
-            mail.To.Add(email);
-            mail.Priority = MailPriority.Normal;
-            mail.Subject = subject;
-            mail.Body = body;
-            SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
-            MySmtp.Credentials = new System.Net.NetworkCredential("takeawalk837@gmail.com", "take7308");  //信箱帳號 ,信箱密碼
-            MySmtp.EnableSsl = true;
-            MySmtp.Send(mail);
-            MySmtp = null;
-            mail.Dispose();
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("takeawalk837@gmail.com", "TakeAwalk");   //信箱帳號 ,寄信人名稱
+                mail.To.Add(email);
+                mail.Priority = MailPriority.Normal;
+                mail.Subject = subject;
+                mail.Body = body;
+                SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
+                MySmtp.Credentials = new System.Net.NetworkCredential("takeawalk837@gmail.com", "take7308");  //信箱帳號 ,信箱密碼
+                MySmtp.EnableSsl = true;
+                MySmtp.Send(mail);
+                MySmtp = null;
+                mail.Dispose();
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    writelog(ex.Message);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                throw ex;
+            };
         }
+
+        #region write log 紀錄觸發
+        private static void writelog(string msg)
+        {
+            string logPath = @"C:\Log";
+
+            // check path exist
+            if (!Directory.Exists(logPath))
+            {
+                Directory.CreateDirectory(logPath);                                 //新增log資料夾
+            }
+
+            FileStream fs = new FileStream (@"C:\Log\error.log", FileMode.Append);  //新增錯誤log檔
+
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine(DateTime.Now.ToString() + "----" + msg);
+            sw.Close();
+            fs.Close();
+        }
+        #endregion
+
         public static bool trySearch(string account, string email, out string errorMsg)
         {
             if (string.IsNullOrWhiteSpace(account) || string.IsNullOrWhiteSpace(email))
@@ -76,6 +115,58 @@ namespace TakeAwalk.DBSource
                 return null;
             }
         }
+
+
+        public static bool GetUserByAccount(string account)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var query =
+                        (from item in context.UserInfoes
+                         where item.Account == account
+                         select item);
+
+                    var obj = query.FirstOrDefault();
+                    if (obj == null)
+                        return false;
+                    else
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return true;
+            }
+        }
+
+        public static bool GetUserByEmail(string email)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var query =
+                        (from item in context.UserInfoes
+                         where item.Email == email
+                         select item);
+
+                    var obj = query.FirstOrDefault();
+                    if (obj == null)
+                        return false;
+                    else
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return true;
+            }
+        }
+
         public static List<UserInfo> GetUserInfoList_AdminOnly()
         {
             try

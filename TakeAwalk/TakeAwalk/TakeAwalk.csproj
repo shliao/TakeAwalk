@@ -266,6 +266,7 @@
     <Content Include="js\bootstrap.esm.min.js.map" />
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
+    <Content Include="Log\error.log" />
     <None Include="packages.config" />
     <Content Include="SystemAdmin\Admin.Master" />
     <None Include="Web.Debug.config">

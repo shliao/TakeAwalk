@@ -160,7 +160,16 @@ namespace TakeAwalk.SystemAdmin
             string subject = "TakeAwalk火車訂票系統-訂票完成通知信";
             string body = $"親愛的{name}會員 您好\r\n您的訂票內容如下:\r\n{TicketFullName}\r\n感謝您的支持,TakeAwalk祝您旅途平安.";
             string email = currentUser.Email;
-            UserInfoManager.SendAutomatedEmail(email, body, subject);
+            try
+            {
+                UserInfoManager.SendAutomatedEmail(email, body, subject);
+            }
+            catch (Exception)
+            {
+                this.ltlMsg.Visible = true;
+                this.ltlMsg.Text = $"<span style='color:red'>訂單已成立,由於系統異常,通知信尚未寄發,稍後為您寄送.</span>";
+                return;
+            }
             Response.Redirect("/SystemAdmin/OrderList.aspx");
         }
     }
