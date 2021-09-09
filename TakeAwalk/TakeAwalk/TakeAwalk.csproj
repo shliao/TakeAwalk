@@ -117,7 +117,10 @@
     <Content Include="SystemAdmin\CustomerList.aspx" />
     <Content Include="SystemAdmin\CustomerPasswordChange.aspx" />
     <Content Include="SystemAdmin\ForgotPasswordChange.aspx" />
+    <Content Include="SystemAdmin\Manager_ChangeTicket.aspx" />
+    <Content Include="SystemAdmin\Manager_CreatTicket.aspx" />
     <Content Include="SystemAdmin\Manager_OrderList.aspx" />
+    <Content Include="SystemAdmin\Manager_TicketList.aspx" />
     <Content Include="SystemAdmin\OrderDetail.aspx" />
     <Content Include="SystemAdmin\OrderList.aspx" />
     <Content Include="SystemAdmin\Tickets.aspx" />
@@ -206,12 +209,33 @@
     <Compile Include="SystemAdmin\ForgotPasswordChange.aspx.designer.cs">
       <DependentUpon>ForgotPasswordChange.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SystemAdmin\Manager_ChangeTicket.aspx.cs">
+      <DependentUpon>Manager_ChangeTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\Manager_ChangeTicket.aspx.designer.cs">
+      <DependentUpon>Manager_ChangeTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\Manager_CreatTicket.aspx.cs">
+      <DependentUpon>Manager_CreatTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\Manager_CreatTicket.aspx.designer.cs">
+      <DependentUpon>Manager_CreatTicket.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SystemAdmin\Manager_OrderList.aspx.cs">
       <DependentUpon>Manager_OrderList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SystemAdmin\Manager_OrderList.aspx.designer.cs">
       <DependentUpon>Manager_OrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\Manager_TicketList.aspx.cs">
+      <DependentUpon>Manager_TicketList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\Manager_TicketList.aspx.designer.cs">
+      <DependentUpon>Manager_TicketList.aspx</DependentUpon>
     </Compile>
     <Compile Include="SystemAdmin\OrderDetail.aspx.cs">
       <DependentUpon>OrderDetail.aspx</DependentUpon>

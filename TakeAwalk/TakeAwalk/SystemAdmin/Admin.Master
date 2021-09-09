@@ -37,6 +37,7 @@
                                 <asp:Button ID="btnLogout" runat="server" Text="登出" OnClick="btnLogout_Click" /></li>
                             <li class="nav-item"><a class="nav-link" id="admin" href="CustomerList.aspx" style="color: orange">客戶資料</a></li>
                             <li class="nav-item"><a class="nav-link" id="admin2" href="Manager_OrderList.aspx" style="color: orange">管理客戶訂單</a></li>
+                            <li class="nav-item"><a class="nav-link" id="admin3" href="Manager_TicketList.aspx" style="color: orange">優惠票管理清單</a></li>
                         </ul>
                     </div>
                 </div>
