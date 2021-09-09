@@ -47,6 +47,26 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
+        public static TrainTicket GetTrainTicketsDetailbyID_AdminOnly(int ticketid)
+        {
+            using (ContextModel context = new ContextModel())
+            {
+                try
+                {
+                    var query = (from item in context.TrainTickets
+                                 where item.TicketID == ticketid
+                                 select item);
+
+                    var obj = query.FirstOrDefault();
+                    return obj;
+                }
+                catch (Exception ex)
+                {
+                    Logger.WriteLog(ex);
+                    return null;
+                }
+            }
+        }
         public static List<TrainTicket> GetTrainTicketsList_OrderByInventory()
         {
             using (ContextModel context = new ContextModel())

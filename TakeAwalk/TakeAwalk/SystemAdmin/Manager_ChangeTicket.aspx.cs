@@ -11,7 +11,8 @@ namespace TakeAwalk.SystemAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string ticketidtxt = this.Request.QueryString["ID"];
+            int ticketid = int.Parse(ticketidtxt);
         }
     }
 }
