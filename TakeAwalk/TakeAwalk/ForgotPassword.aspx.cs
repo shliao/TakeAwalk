@@ -49,6 +49,7 @@ namespace TakeAwalk
                 this.ltlMsg.Text = $"<span style='color:red'>系統異常,忘記密碼確認信尚未寄發,請您稍後再試一次</span>";
                 return;
             }
+
             Session["UserLoginInfo"] = txbAccount.Text;
             Response.Redirect("/SystemAdmin/ForgotPasswordChange.aspx");
         }

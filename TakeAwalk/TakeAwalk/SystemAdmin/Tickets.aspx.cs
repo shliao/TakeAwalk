@@ -170,6 +170,7 @@ namespace TakeAwalk.SystemAdmin
                 this.ltlMsg.Text = $"<span style='color:red'>訂單已成立,由於系統異常,通知信尚未寄發,稍後為您寄送.</span>";
                 return;
             }
+
             Response.Redirect("/SystemAdmin/OrderList.aspx");
         }
     }

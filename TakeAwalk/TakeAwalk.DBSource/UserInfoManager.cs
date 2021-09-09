@@ -40,7 +40,6 @@ namespace TakeAwalk.DBSource
 
                     throw;
                 }
-
                 throw ex;
             };
         }
