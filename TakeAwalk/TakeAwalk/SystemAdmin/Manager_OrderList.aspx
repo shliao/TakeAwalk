@@ -47,8 +47,6 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
-                <asp:Literal runat="server" ID="ltPager">
-                </asp:Literal>
                 <uc1:ucPager runat="server" ID="ucPager" PageSize="10" CurrentPage="1" TotalSize="10" Url="Manager_OrderList.aspx" />
                 <asp:PlaceHolder ID="plcNoData" runat="server" Visible="false">
                     <p style="color: red; background-color: cornflowerblue">
