@@ -28,7 +28,7 @@
                                 <label>張</label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" />
+                        <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" DataFormatString="{0:'已完成'}"/>
                         <asp:BoundField HeaderText="修改訂單日期" DataField="ModifyDate" DataFormatString="{0:yyyy/MM/dd HH:mm}" />
                         <asp:TemplateField>
                             <ItemTemplate>
