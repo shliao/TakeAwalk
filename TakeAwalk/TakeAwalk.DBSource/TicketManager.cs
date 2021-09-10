@@ -215,5 +215,41 @@ namespace TakeAwalk.DBSource
                 Logger.WriteLog(ex);
             }
         }
+        public static bool UpdateTickets(int ticketid, TrainTicket trainticket)
+        {
+
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var obj = (from item in context.TrainTickets
+                               where item.TicketID == ticketid
+                               select item).FirstOrDefault();
+
+                    if (obj != null)
+                    {
+                        obj.TicketName = trainticket.TicketName;
+                        obj.TrainCompany = trainticket.TrainCompany;
+                        obj.ActivityStartDate = trainticket.ActivityStartDate;
+                        obj.ActivityEndDate = trainticket.ActivityEndDate;
+                        obj.Price = trainticket.Price;
+                        obj.Stocks = trainticket.Stocks;
+                        obj.Modifier = trainticket.Modifier;
+                        obj.ModifyDate = trainticket.ModifyDate;
+                        obj.IsEnabled = trainticket.IsEnabled;
+
+                        context.SaveChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return false;
+            }
+        }
+
     }
 }

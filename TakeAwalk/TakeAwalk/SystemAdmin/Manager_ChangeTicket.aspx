@@ -23,7 +23,7 @@
                 最新異動者:<asp:Literal ID="Modifier_ltl" runat="server"></asp:Literal><br />
                 最新異動日期:<asp:Literal ID="ModifyDate_ltl" runat="server"></asp:Literal></asp:TextBox><br />
                 <asp:Literal ID="ltlMsg" runat="server"></asp:Literal><br />
-                <asp:Button ID="btnSave" runat="server" Text="儲存" />
+                <asp:Button ID="btnSave" runat="server" Text="儲存" OnClick="btnSave_Click" />
                 <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="btnReturn_Click" />
             </div>
         </div>
