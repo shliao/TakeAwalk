@@ -42,13 +42,13 @@ namespace TakeAwalk.SystemAdmin
         protected global::System.Web.UI.WebControls.TextBox Start_tbx;
 
         /// <summary>
-        /// TextBox4 控制項。
+        /// End_tbx 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox End_tbx;
 
         /// <summary>
         /// Price_tbx 控制項。
@@ -123,13 +123,13 @@ namespace TakeAwalk.SystemAdmin
         protected global::System.Web.UI.WebControls.Literal ltlMsg;
 
         /// <summary>
-        /// btnEdit 控制項。
+        /// btnSave 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
         /// btnReturn 控制項。
