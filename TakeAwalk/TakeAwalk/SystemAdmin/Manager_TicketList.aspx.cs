@@ -21,6 +21,10 @@ namespace TakeAwalk.SystemAdmin
                 this.gv_ticketslist.DataSource = TicketManager.GetTrainTicketsList_AdminOnly();
                 this.gv_ticketslist.DataBind();
             }
+            else
+            {
+                Response.Redirect("/Login.aspx");
+            }
 
             var list = TicketManager.GetTrainTicketsList_AdminOnly();
 

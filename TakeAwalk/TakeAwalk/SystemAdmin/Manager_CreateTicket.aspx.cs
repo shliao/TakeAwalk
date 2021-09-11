@@ -16,7 +16,11 @@ namespace TakeAwalk.SystemAdmin
         public UserInfoModel currentUser;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            currentUser= AuthManager.GetCurrentUser();
+            if (currentUser.UserLevel != 0)
+            {
+                Response.Redirect("/Login.aspx");
+            }
         }
 
         protected void Return_btn_Click(object sender, EventArgs e)

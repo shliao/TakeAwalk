@@ -15,9 +15,13 @@ namespace TakeAwalk.SystemAdmin
     {
         public TrainTicket trainTicket;
         public UserInfoModel currentUser;
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            currentUser = AuthManager.GetCurrentUser();
+            if (currentUser.UserLevel != 0)
+            {
+                Response.Redirect("/Login.aspx");
+            }
             string ticketidtxt = this.Request.QueryString["ID"];
             int ticketid = int.Parse(ticketidtxt);
 

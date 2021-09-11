@@ -21,6 +21,10 @@ namespace TakeAwalk.SystemAdmin
                 this.GridView1.DataSource = UserInfoManager.GetUserInfoList_AdminOnly();
                 this.GridView1.DataBind();
             }
+            else
+            {
+                Response.Redirect("/Login.aspx");
+            }
 
             // 取得訂單資料
             var list = UserInfoManager.GetUserInfoList_AdminOnly();

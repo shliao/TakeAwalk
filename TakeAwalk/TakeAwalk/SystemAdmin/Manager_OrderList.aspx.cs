@@ -21,6 +21,10 @@ namespace TakeAwalk.SystemAdmin
                 this.gv_orderlist.DataSource = OrdersManager.GetOrdersList_AdminOnly();
                 this.gv_orderlist.DataBind();
             }
+            else
+            {
+                Response.Redirect("/Login.aspx");
+            }
 
             // 取得訂單資料
             var list = OrdersManager.GetOrdersList_AdminOnly();
