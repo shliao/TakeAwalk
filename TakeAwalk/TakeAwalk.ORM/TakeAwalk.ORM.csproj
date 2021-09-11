@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DBModels\ContextModel.cs" />
     <Compile Include="DBModels\Manager_OrderList_View.cs" />
+    <Compile Include="DBModels\Manager_TicketList_View.cs" />
     <Compile Include="DBModels\Order.cs" />
     <Compile Include="DBModels\OrderDetail.cs" />
     <Compile Include="DBModels\OrderList_View.cs" />
