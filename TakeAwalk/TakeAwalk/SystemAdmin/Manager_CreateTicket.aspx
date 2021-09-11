@@ -10,8 +10,8 @@
                 <br />
                 票券名稱:<asp:TextBox ID="Name_tbx" runat="server"></asp:TextBox><br />
                 主辦單位:<asp:TextBox ID="Company_tbx" runat="server"></asp:TextBox><br />
-                活動開始日期:<asp:TextBox ID="Start_tbx" runat="server" TextMode="DateTime"></asp:TextBox><br />
-                活動結束日期:<asp:TextBox ID="End_tbx" runat="server" TextMode="DateTime"></asp:TextBox><br />
+                活動開始日期:<asp:TextBox ID="Start_tbx" runat="server" TextMode="Date"></asp:TextBox><br />
+                活動結束日期:<asp:TextBox ID="End_tbx" runat="server" TextMode="Date"></asp:TextBox><br />
                 定價:<asp:TextBox ID="Price_tbx" runat="server" TextMode="Number"></asp:TextBox><br />
                 庫存:<asp:TextBox ID="Stocks_tbx" runat="server" TextMode="Number"></asp:TextBox><br />
                 上架狀態:<asp:DropDownList ID="Enabled_ddl" runat="server">
