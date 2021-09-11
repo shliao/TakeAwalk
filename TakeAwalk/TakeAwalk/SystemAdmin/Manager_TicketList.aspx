@@ -21,7 +21,11 @@
                         <asp:BoundField DataField="ActivityEndDate" HeaderText="活動結束日期" DataFormatString="{0:d}" />
                         <asp:BoundField DataField="Price" HeaderText="定價" />
                         <asp:BoundField DataField="Stocks" HeaderText="庫存" />
-                        <asp:BoundField DataField="IsEnabled" HeaderText="上架狀態" />
+                        <asp:TemplateField HeaderText="上架狀態">
+                            <ItemTemplate>
+                                <%# Boolean.Parse(Eval("IsEnabled").ToString()) ? "上架中" : "已下架" %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <a href="Manager_ChangeTicket.aspx?ID=<%# Eval("TicketID")%>">
