@@ -59,5 +59,10 @@ namespace TakeAwalk.SystemAdmin
             int startIndex = (this.GetCurrentPage() - 1) * 10;
             return list.Skip(startIndex).Take(10).ToList();
         }
+
+        protected void NewTicket_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/SystemAdmin/Manager_CreateTicket.aspx");
+        }
     }
 }

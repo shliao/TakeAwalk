@@ -118,7 +118,7 @@
     <Content Include="SystemAdmin\CustomerPasswordChange.aspx" />
     <Content Include="SystemAdmin\ForgotPasswordChange.aspx" />
     <Content Include="SystemAdmin\Manager_ChangeTicket.aspx" />
-    <Content Include="SystemAdmin\Manager_CreatTicket.aspx" />
+    <Content Include="SystemAdmin\Manager_CreateTicket.aspx" />
     <Content Include="SystemAdmin\Manager_OrderList.aspx" />
     <Content Include="SystemAdmin\Manager_TicketList.aspx" />
     <Content Include="SystemAdmin\OrderDetail.aspx" />
@@ -216,12 +216,12 @@
     <Compile Include="SystemAdmin\Manager_ChangeTicket.aspx.designer.cs">
       <DependentUpon>Manager_ChangeTicket.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SystemAdmin\Manager_CreatTicket.aspx.cs">
-      <DependentUpon>Manager_CreatTicket.aspx</DependentUpon>
+    <Compile Include="SystemAdmin\Manager_CreateTicket.aspx.cs">
+      <DependentUpon>Manager_CreateTicket.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SystemAdmin\Manager_CreatTicket.aspx.designer.cs">
-      <DependentUpon>Manager_CreatTicket.aspx</DependentUpon>
+    <Compile Include="SystemAdmin\Manager_CreateTicket.aspx.designer.cs">
+      <DependentUpon>Manager_CreateTicket.aspx</DependentUpon>
     </Compile>
     <Compile Include="SystemAdmin\Manager_OrderList.aspx.cs">
       <DependentUpon>Manager_OrderList.aspx</DependentUpon>

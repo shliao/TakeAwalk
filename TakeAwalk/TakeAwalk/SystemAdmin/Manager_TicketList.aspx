@@ -11,6 +11,7 @@
             <div class="my-5 text-center text-xl-start">
                 <h2>優惠票管理清單</h2>
                 <br />
+                <asp:Button ID="NewTicket_btn" runat="server" Text="新增優惠票" align="right" OnClick="NewTicket_btn_Click" /><br />
                 <asp:GridView ID="gv_ticketslist" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                     <Columns>
                         <asp:BoundField DataField="TicketID" HeaderText="票券編號" />

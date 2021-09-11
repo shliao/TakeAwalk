@@ -55,9 +55,11 @@ namespace TakeAwalk.DBSource
                 {
                     var query = (from item in context.TrainTickets
                                  where item.TicketID == ticketid
-                                 select item);
+                                 select item).FirstOrDefault();
 
-                    var obj = query.FirstOrDefault();
+
+
+                    var obj = query;
                     return obj;
                 }
                 catch (Exception ex)
@@ -248,6 +250,22 @@ namespace TakeAwalk.DBSource
             {
                 Logger.WriteLog(ex);
                 return false;
+            }
+        }
+        public static void CreateTickets(TrainTicket trainticket)
+        {
+
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    context.TrainTickets.Add(trainticket);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
             }
         }
 
