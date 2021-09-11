@@ -59,12 +59,12 @@ namespace TakeAwalk.SystemAdmin
 
             if (price < 0)
             {
-                this.ltlMsg.Text = "<span style='color:red'>定價不能為0元,請重新輸入</span>";
+                this.ltlMsg.Text = "<span style='color:red'>定價不能為負或零元,請重新輸入</span>";
                 return;
             }
             if (stocks < 0)
             {
-                this.ltlMsg.Text = "<span style='color:red'>庫存不能為0,請重新輸入</span>";
+                this.ltlMsg.Text = "<span style='color:red'>庫存不能為負或零,請重新輸入</span>";
                 return;
             }
 
