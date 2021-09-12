@@ -57,6 +57,11 @@ namespace TakeAwalk.SystemAdmin
             int price = int.Parse(this.Price_tbx.Text);
             int stocks = int.Parse(this.Stocks_tbx.Text);
 
+            if (end_d < start_d)
+            {
+                this.ltlMsg.Text = "<span style='color:red'>活動日期輸入無效，結束日期必須大於開始日期。請重新輸入</span>";
+                return;
+            }
             if (price < 0)
             {
                 this.ltlMsg.Text = "<span style='color:red'>定價不能為負或零元,請重新輸入</span>";
