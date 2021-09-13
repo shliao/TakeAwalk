@@ -43,6 +43,8 @@ namespace TakeAwalk.SystemAdmin
             int level = int.Parse(leveltxt);
 
             UserInfoManager.UpdateUserLevel(customerid, level);
+
+            Response.Redirect("/SystemAdmin/CustomerList.aspx");
         }
     }
 }

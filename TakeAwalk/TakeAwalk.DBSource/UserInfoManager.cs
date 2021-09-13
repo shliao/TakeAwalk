@@ -37,11 +37,10 @@ namespace TakeAwalk.DBSource
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
                 throw ex;
-            };
+            }
         }
 
         #region write log 紀錄觸發
@@ -55,7 +54,7 @@ namespace TakeAwalk.DBSource
                 Directory.CreateDirectory(logPath);                                 //新增log資料夾
             }
 
-            FileStream fs = new FileStream (@"C:\Log\error.log", FileMode.Append);  //新增錯誤log檔
+            FileStream fs = new FileStream(@"C:\Log\error.log", FileMode.Append);  //新增錯誤log檔
 
             StreamWriter sw = new StreamWriter(fs);
             sw.WriteLine(DateTime.Now.ToString() + "----" + msg);
@@ -91,7 +90,6 @@ namespace TakeAwalk.DBSource
                 errorMsg = "請重新確認帳號與信箱。";
                 return false;
             }
-
         }
         public static UserInfo GetUserInfoByAccount(string account)
         {
@@ -231,7 +229,6 @@ namespace TakeAwalk.DBSource
                     context.SaveChanges();
                     return true;
                 }
-
             }
             catch (Exception ex)
             {
@@ -241,7 +238,6 @@ namespace TakeAwalk.DBSource
         }
         public static bool UpdateCustomer(Guid CustomerID, UserInfo userInfo)
         {
-
             try
             {
                 using (ContextModel context = new ContextModel())
@@ -283,7 +279,6 @@ namespace TakeAwalk.DBSource
                     context.SaveChanges();
                     return true;
                 }
-
             }
             catch (Exception ex)
             {
@@ -291,6 +286,5 @@ namespace TakeAwalk.DBSource
                 return false;
             }
         }
-
     }
 }
