@@ -51,14 +51,16 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-        public static List<Manager_OrderList_View> GetOrdersRevenueByDate(DateTime start_t, DateTime end_t)
+        public static List<Manager_OrderList_View> GetOrdersByDate(Guid customerid, DateTime start_t, DateTime end_t)
         {
             using (ContextModel context = new ContextModel())
             {
                 try
                 {
                     var query = (from item in context.Manager_OrderList_View
-                                 where item.CreateDate.Date <= end_t && item.CreateDate.Date >= start_t
+                                 join order in context.Orders on item.OrderID equals order.OrderID
+                                 where order.CustomerID == customerid
+                                 where item.CreateDate <= end_t && item.CreateDate >= start_t
                                  select item);
 
                     var list = query.ToList();
