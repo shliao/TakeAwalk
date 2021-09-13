@@ -11,8 +11,15 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class UserLevel : System.Web.UI.Page
     {
+        public UserInfoModel currentUser;
         protected void Page_Load(object sender, EventArgs e)
         {
+            currentUser = AuthManager.GetCurrentUser();
+            if (currentUser.UserLevel != 0)
+            {
+                Response.Redirect("/Login.aspx");
+            }
+
             if (!IsPostBack)
             {
                 string customeridtxt = this.Request.QueryString["CustomerID"];
