@@ -115,5 +115,49 @@ namespace TakeAwalk.SystemAdmin
             int startIndex = (this.GetCurrentPage() - 1) * 10;
             return list.Skip(startIndex).Take(10).ToList();
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            this.ltlMsg2.Visible = false;     //有錯誤提示才轉true(因測試時,重複按搜尋,錯誤提示無顯示)            
+            currentUser = AuthManager.GetCurrentUser();
+
+            if (string.IsNullOrWhiteSpace(this.txbStr.Text) || string.IsNullOrEmpty(this.txbEnd.Text)) // 檢查有無輸入日期
+            {
+                this.ltlMsg2.Visible = true;
+                this.ltlMsg2.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+            }
+
+            string start = this.txbStr.Text;
+            string end = this.txbEnd.Text;
+            try                                // 檢查是否符合DateTime格式(例外輸入狀況:年份五位數)
+            {
+                DateTime.Parse(start);
+                DateTime.Parse(end);
+            }
+            catch (Exception)
+            {
+                this.GridView1.Visible = false;
+                this.ltlMsg2.Visible = true;
+                this.ltlMsg2.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                return;
+            }
+            DateTime startTime = Convert.ToDateTime(start);
+            DateTime endTime = Convert.ToDateTime(end);
+            var list = OrdersManager.GetOrdersByDate(currentUser.CustomerID, startTime, endTime);
+
+            if (list.Count > 0)  // 檢查有無資料
+            {
+                this.GridView1.Visible = true;
+                this.GridView1.DataSource = OrdersManager.GetOrdersByDate(currentUser.CustomerID, startTime, endTime);
+                this.GridView1.DataBind();
+            }
+            else
+            {
+                this.GridView1.Visible = false;
+                this.ltlMsg2.Visible = true;
+                this.ltlMsg2.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+            }
+
+        }
     }
 }
