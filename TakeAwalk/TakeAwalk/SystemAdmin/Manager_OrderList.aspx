@@ -14,6 +14,7 @@
                 起始:<asp:TextBox ID="txb_start" runat="server" TextMode="Date"></asp:TextBox>
                 結束:<asp:TextBox ID="txb_End" runat="server" TextMode="Date"></asp:TextBox>
                 <asp:Button ID="btn_Search" runat="server" Text="搜尋" OnClick="btnSearch_Click" /><br />
+                 <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
                 <asp:GridView ID="gv_orderlist" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2">
                     <Columns>
                         <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />

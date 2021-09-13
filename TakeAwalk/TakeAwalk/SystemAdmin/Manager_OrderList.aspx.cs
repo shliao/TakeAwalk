@@ -68,8 +68,20 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            this.ltlMsg.Visible = false;
             string starttxt = this.txb_start.Text;
             string endtxt = this.txb_End.Text;
+            try                                // 檢查是否符合DateTime格式(例外輸入狀況:年份五位數&無選取日期)
+            {
+                DateTime.Parse(starttxt);
+                DateTime.Parse(endtxt);
+            }
+            catch (Exception)
+            {
+                this.ltlMsg.Visible = true;
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                return;
+            }
             DateTime start_d = DateTime.Parse(starttxt);
             DateTime end_d = DateTime.Parse(endtxt);
 
