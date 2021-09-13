@@ -114,8 +114,27 @@ namespace TakeAwalk.DBSource
                 return null;
             }
         }
+        public static UserInfo GetUserInfoByID(Guid customerid)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var query =
+                        (from item in context.UserInfoes
+                         where item.CustomerID == customerid
+                         select item);
 
-
+                    var obj = query.FirstOrDefault();
+                    return obj;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return null;
+            }
+        }
         public static bool GetUserByAccount(string account)
         {
             try
@@ -140,7 +159,6 @@ namespace TakeAwalk.DBSource
                 return true;
             }
         }
-
         public static bool GetUserByEmail(string email)
         {
             try
@@ -165,7 +183,6 @@ namespace TakeAwalk.DBSource
                 return true;
             }
         }
-
         public static List<UserInfo> GetUserInfoList_AdminOnly()
         {
             try
@@ -252,5 +269,28 @@ namespace TakeAwalk.DBSource
                 return false;
             }
         }
+        public static bool UpdateUserLevel(Guid CustomerID, int levelvalue)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var query = (from item in context.UserInfoes
+                                 where item.CustomerID == CustomerID
+                                 select item).FirstOrDefault();
+
+                    query.UserLevel = levelvalue;
+                    context.SaveChanges();
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return false;
+            }
+        }
+
     }
 }

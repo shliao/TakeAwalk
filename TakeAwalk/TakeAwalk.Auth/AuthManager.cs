@@ -105,6 +105,12 @@ namespace TakeAwalk.Auth
                 errorMsg = "<span style='color:red'>登入失敗，請重新確認帳號/密碼</span>";
                 return false;
             }
+
+            if(userInfo.UserLevel == 2)
+            {
+                errorMsg = "<span style='color:red'>此帳號已被停用</span>";               
+                return false;
+            }
         }
     }
 }
