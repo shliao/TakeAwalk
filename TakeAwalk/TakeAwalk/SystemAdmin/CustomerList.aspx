@@ -20,10 +20,17 @@
                         <asp:BoundField DataField="Email" HeaderText="Email" />
                         <asp:BoundField DataField="Account" HeaderText="帳號" />
                         <asp:BoundField DataField="Password" HeaderText="密碼" DataFormatString="********" />
-                        <asp:TemplateField>
+                        <asp:TemplateField HeaderText="訂單紀錄">
                             <ItemTemplate>
                                 <a href="OrderList.aspx?CustomerID=<%# Eval("CustomerID") %>">
                                     <img src="/Images/icons-search.png" />
+                                </a>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <a href="UserLevel.aspx?CustomerID=<%# Eval("CustomerID") %>">
+                                    編輯權限
                                 </a>
                             </ItemTemplate>
                         </asp:TemplateField>
