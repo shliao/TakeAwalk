@@ -55,7 +55,7 @@
                 </asp:PlaceHolder>
                 <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
                 <br />
-                <h3>購票紀錄期間</h3>
+                <h3>購票期間</h3>
                 <br />
                 起始:<asp:TextBox ID="txbStr" runat="server" TextMode="Date"></asp:TextBox> 結束:<asp:TextBox ID="txbEnd" runat="server" TextMode="Date"></asp:TextBox>
                 <asp:Button ID="btnSearch" runat="server" Text="搜尋" OnClick="btnSearch_Click" /><br />

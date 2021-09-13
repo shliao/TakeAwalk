@@ -118,10 +118,10 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            this.ltlMsg2.Visible = false;
+            this.ltlMsg2.Visible = false;     //有錯誤提示才轉true(因測試時,重複按搜尋,錯誤提示無顯示)            
             currentUser = AuthManager.GetCurrentUser();
 
-            if (string.IsNullOrWhiteSpace(this.txbStr.Text) || string.IsNullOrEmpty(this.txbEnd.Text))
+            if (string.IsNullOrWhiteSpace(this.txbStr.Text) || string.IsNullOrEmpty(this.txbEnd.Text)) // 檢查有無輸入日期
             {
                 this.ltlMsg2.Visible = true;
                 this.ltlMsg2.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
@@ -129,7 +129,7 @@ namespace TakeAwalk.SystemAdmin
 
             string start = this.txbStr.Text;
             string end = this.txbEnd.Text;
-            try
+            try                                // 檢查是否符合DateTime格式(例外輸入狀況:年份五位數)
             {
                 DateTime.Parse(start);
                 DateTime.Parse(end);
@@ -145,10 +145,9 @@ namespace TakeAwalk.SystemAdmin
             DateTime endTime = Convert.ToDateTime(end);
             var list = OrdersManager.GetOrdersByDate(currentUser.CustomerID, startTime, endTime);
 
-            if (list.Count > 0)
+            if (list.Count > 0)  // 檢查有無資料
             {
                 this.GridView1.Visible = true;
-                //this.ltlMsg2.Visible = false;
                 this.GridView1.DataSource = OrdersManager.GetOrdersByDate(currentUser.CustomerID, startTime, endTime);
                 this.GridView1.DataBind();
             }
