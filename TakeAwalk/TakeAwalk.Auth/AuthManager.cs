@@ -80,7 +80,6 @@ namespace TakeAwalk.Auth
                 return false;
             }
 
-
             // 讀取和檢查資料庫
             var userInfo = UserInfoManager.GetUserInfoByAccount(account);
 
@@ -91,6 +90,12 @@ namespace TakeAwalk.Auth
                 return false;
             }
 
+            //檢查帳號是否黑名單
+            if (userInfo.UserLevel == 2)
+            {
+                errorMsg = "<span style='color:red'>此帳號已被停用</span>";
+                return false;
+            }
 
             // 檢查帳號/密碼
             if (string.Compare(userInfo.Account, account, true) == 0 &&

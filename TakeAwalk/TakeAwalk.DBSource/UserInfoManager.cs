@@ -37,11 +37,10 @@ namespace TakeAwalk.DBSource
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
                 throw ex;
-            };
+            }
         }
 
         #region write log 紀錄觸發
@@ -55,7 +54,7 @@ namespace TakeAwalk.DBSource
                 Directory.CreateDirectory(logPath);                                 //新增log資料夾
             }
 
-            FileStream fs = new FileStream (@"C:\Log\error.log", FileMode.Append);  //新增錯誤log檔
+            FileStream fs = new FileStream(@"C:\Log\error.log", FileMode.Append);  //新增錯誤log檔
 
             StreamWriter sw = new StreamWriter(fs);
             sw.WriteLine(DateTime.Now.ToString() + "----" + msg);
@@ -91,7 +90,6 @@ namespace TakeAwalk.DBSource
                 errorMsg = "請重新確認帳號與信箱。";
                 return false;
             }
-
         }
         public static UserInfo GetUserInfoByAccount(string account)
         {
@@ -114,8 +112,27 @@ namespace TakeAwalk.DBSource
                 return null;
             }
         }
+        public static UserInfo GetUserInfoByID(Guid customerid)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var query =
+                        (from item in context.UserInfoes
+                         where item.CustomerID == customerid
+                         select item);
 
-
+                    var obj = query.FirstOrDefault();
+                    return obj;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return null;
+            }
+        }
         public static bool GetUserByAccount(string account)
         {
             try
@@ -140,7 +157,6 @@ namespace TakeAwalk.DBSource
                 return true;
             }
         }
-
         public static bool GetUserByEmail(string email)
         {
             try
@@ -165,7 +181,6 @@ namespace TakeAwalk.DBSource
                 return true;
             }
         }
-
         public static List<UserInfo> GetUserInfoList_AdminOnly()
         {
             try
@@ -214,7 +229,6 @@ namespace TakeAwalk.DBSource
                     context.SaveChanges();
                     return true;
                 }
-
             }
             catch (Exception ex)
             {
@@ -224,7 +238,6 @@ namespace TakeAwalk.DBSource
         }
         public static bool UpdateCustomer(Guid CustomerID, UserInfo userInfo)
         {
-
             try
             {
                 using (ContextModel context = new ContextModel())
@@ -244,6 +257,27 @@ namespace TakeAwalk.DBSource
                         return true;
                     }
                     return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return false;
+            }
+        }
+        public static bool UpdateUserLevel(Guid CustomerID, int levelvalue)
+        {
+            try
+            {
+                using (ContextModel context = new ContextModel())
+                {
+                    var query = (from item in context.UserInfoes
+                                 where item.CustomerID == CustomerID
+                                 select item).FirstOrDefault();
+
+                    query.UserLevel = levelvalue;
+                    context.SaveChanges();
+                    return true;
                 }
             }
             catch (Exception ex)
