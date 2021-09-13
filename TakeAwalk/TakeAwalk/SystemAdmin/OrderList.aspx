@@ -54,6 +54,46 @@
                     </p>
                 </asp:PlaceHolder>
                 <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
+                <br />
+                <h3>購票紀錄期間</h3>
+                <br />
+                起始:<asp:TextBox ID="txbStr" runat="server" TextMode="Date"></asp:TextBox> 結束:<asp:TextBox ID="txbEnd" runat="server" TextMode="Date"></asp:TextBox>
+                <asp:Button ID="btnSearch" runat="server" Text="搜尋" OnClick="btnSearch_Click" /><br />
+                <asp:Literal ID="ltlMsg2" runat="server"></asp:Literal><br />
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Visible="false" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" >
+                      <Columns>
+                        <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
+                        <asp:BoundField DataField="CreateDate" HeaderText="購買日期" DataFormatString="{0:yyyy/MM/dd HH:mm}" />
+                        <asp:BoundField HeaderText="總金額" DataField="Total" />
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <label>元</label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField HeaderText="總張數" DataField="Quantity" />
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <label>張</label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" />
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <a href="OrderDetail.aspx?ID=<%# Eval("OrderID")%>">
+                                    <img src="/Images/icons-search.png" />
+                                </a>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                </asp:GridView>
             </div>
         </div>
     </div>

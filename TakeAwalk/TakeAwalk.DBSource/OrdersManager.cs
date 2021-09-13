@@ -51,6 +51,28 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
+        public static List<Manager_OrderList_View> GetOrdersByDate(Guid customerid, DateTime startTime, DateTime endTime)
+        {
+            using (ContextModel context = new ContextModel())
+            {
+                try
+                {
+                    var query = (from item in context.Manager_OrderList_View
+                                 join order in context.Orders on item.OrderID equals order.OrderID
+                                 where order.CustomerID == customerid && item.CreateDate <= endTime && item.CreateDate >= startTime
+                                 select item);
+
+                    var list = query.ToList();
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    Logger.WriteLog(ex);
+                    return null;
+                }
+            }
+        }
+
         public static List<Manager_OrderList_View> GetOrdersRevenueByDate(DateTime start_t, DateTime end_t)
         {
             using (ContextModel context = new ContextModel())
