@@ -11,6 +11,9 @@
             <div class="my-5 text-center text-xl-start">
                 <h2>管理客戶訂單</h2>
                 <br />
+                起始:<asp:TextBox ID="txb_start" runat="server" TextMode="Date"></asp:TextBox>
+                結束:<asp:TextBox ID="txb_End" runat="server" TextMode="Date"></asp:TextBox>
+                <asp:Button ID="btn_Search" runat="server" Text="搜尋" OnClick="btnSearch_Click" /><br />
                 <asp:GridView ID="gv_orderlist" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2">
                     <Columns>
                         <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
@@ -28,7 +31,7 @@
                                 <label>張</label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" DataFormatString="{0:'已完成'}"/>
+                        <asp:BoundField DataField="OrderStatus" HeaderText="訂單狀態" DataFormatString="{0:'已完成'}" />
                         <asp:BoundField HeaderText="修改訂單日期" DataField="ModifyDate" DataFormatString="{0:yyyy/MM/dd HH:mm}" />
                         <asp:TemplateField>
                             <ItemTemplate>

@@ -65,5 +65,31 @@ namespace TakeAwalk.SystemAdmin
             int startIndex = (this.GetCurrentPage() - 1) * 10;
             return list.Skip(startIndex).Take(10).ToList();
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string starttxt = this.txb_start.Text;
+            string endtxt = this.txb_End.Text;
+            DateTime start_d = DateTime.Parse(starttxt);
+            DateTime end_d = DateTime.Parse(endtxt);
+
+            var list = OrdersManager.GetOrdersByDate_AdminOnly(start_d, end_d);
+
+            if (list.Count > 0)  // 檢查有無資料
+            {
+                var pagedList = this.GetPagedDataTable(list);
+
+                this.gv_orderlist.DataSource = pagedList;
+                this.gv_orderlist.DataBind();
+
+                this.ucPager.TotalSize = list.Count;
+                this.ucPager.Bind();
+            }
+            else
+            {
+                this.gv_orderlist.Visible = false;
+                this.plcNoData.Visible = true;
+            }
+        }
     }
 }
