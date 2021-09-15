@@ -57,9 +57,11 @@ namespace TakeAwalk.DBSource
             {
                 try
                 {
+                    DateTime newEndTime = endTime.AddDays(1);
+
                     var query = (from item in context.Manager_OrderList_View
                                  join order in context.Orders on item.OrderID equals order.OrderID
-                                 where order.CustomerID == customerid && item.CreateDate.AddDays(1) <= endTime && item.CreateDate >= startTime
+                                 where order.CustomerID == customerid && item.CreateDate <= newEndTime && item.CreateDate >= startTime
                                  select item);
 
                     var list = query.ToList();
@@ -78,8 +80,10 @@ namespace TakeAwalk.DBSource
             {
                 try
                 {
+                    DateTime newend_d = end_t.AddDays(1);
+
                     var query = (from item in context.Manager_OrderList_View
-                                 where item.CreateDate.AddDays(1) <= end_t && item.CreateDate >= start_t
+                                 where item.CreateDate <= newend_d && item.CreateDate >= start_t
                                  select item);
 
                     var list = query.ToList();
