@@ -118,13 +118,12 @@ namespace TakeAwalk.SystemAdmin
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            this.ltlMsg2.Visible = false;     //有錯誤提示才轉true(因測試時,重複按搜尋,錯誤提示無顯示)            
             currentUser = AuthManager.GetCurrentUser();
 
             if (string.IsNullOrWhiteSpace(this.txbStr.Text) || string.IsNullOrEmpty(this.txbEnd.Text)) // 檢查有無輸入日期
             {
-                this.ltlMsg2.Visible = true;
-                this.ltlMsg2.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                this.ltlMsg.Visible = true;
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
             }
 
             string start = this.txbStr.Text;
@@ -136,9 +135,9 @@ namespace TakeAwalk.SystemAdmin
             }
             catch (Exception)
             {
-                this.GridView1.Visible = false;
-                this.ltlMsg2.Visible = true;
-                this.ltlMsg2.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                this.gv_orderlist.Visible = false;
+                this.ltlMsg.Visible = true;
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
                 return;
             }
             DateTime startTime = Convert.ToDateTime(start);
@@ -147,15 +146,15 @@ namespace TakeAwalk.SystemAdmin
 
             if (list.Count > 0)  // 檢查有無資料
             {
-                this.GridView1.Visible = true;
-                this.GridView1.DataSource = OrdersManager.GetOrdersByDate(currentUser.CustomerID, startTime, endTime);
-                this.GridView1.DataBind();
+                this.gv_orderlist.Visible = true;
+                this.gv_orderlist.DataSource = OrdersManager.GetOrdersByDate(currentUser.CustomerID, startTime, endTime);
+                this.gv_orderlist.DataBind();
             }
             else
             {
-                this.GridView1.Visible = false;
-                this.ltlMsg2.Visible = true;
-                this.ltlMsg2.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                this.gv_orderlist.Visible = false;
+                this.ltlMsg.Visible = true;
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
             }
 
         }

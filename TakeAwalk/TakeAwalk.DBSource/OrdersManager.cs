@@ -59,7 +59,7 @@ namespace TakeAwalk.DBSource
                 {
                     var query = (from item in context.Manager_OrderList_View
                                  join order in context.Orders on item.OrderID equals order.OrderID
-                                 where order.CustomerID == customerid && item.CreateDate <= endTime && item.CreateDate >= startTime
+                                 where order.CustomerID == customerid && item.CreateDate.AddDays(1) <= endTime && item.CreateDate >= startTime
                                  select item);
 
                     var list = query.ToList();
