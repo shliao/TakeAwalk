@@ -13,7 +13,7 @@ namespace TakeAwalk.SystemAdmin
 {
     public partial class Manager_ChangeTicket : System.Web.UI.Page
     {
-        public TrainTicket trainTicket;
+        public Manager_TicketList_View trainTicket_View;
         public UserInfoModel currentUser;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,31 +25,31 @@ namespace TakeAwalk.SystemAdmin
             string ticketidtxt = this.Request.QueryString["ID"];
             int ticketid = int.Parse(ticketidtxt);
 
-            trainTicket = TicketManager.GetTrainTicketsDetailbyID_AdminOnly(ticketid);
+            trainTicket_View = TicketManager.GetTrainTicketsDetailbyID_AdminOnly(ticketid);
 
             if (!IsPostBack)
             {
-                this.Name_tbx.Text = trainTicket.TicketName;
-                this.Company_tbx.Text = trainTicket.TrainCompany;
-                this.Start_tbx.Text = trainTicket.ActivityStartDate.ToString("yyyy-MM-dd");
-                this.End_tbx.Text = trainTicket.ActivityEndDate.ToString("yyyy-MM-dd");
-                this.Price_tbx.Text = trainTicket.Price.ToString();
-                this.Stocks_tbx.Text = trainTicket.Stocks.ToString();
-                this.Enabled_ddl.SelectedValue = trainTicket.IsEnabled.ToString();
+                this.Name_tbx.Text = trainTicket_View.TicketName;
+                this.Company_tbx.Text = trainTicket_View.TrainCompany;
+                this.Start_tbx.Text = trainTicket_View.ActivityStartDate.ToString("yyyy-MM-dd");
+                this.End_tbx.Text = trainTicket_View.ActivityEndDate.ToString("yyyy-MM-dd");
+                this.Price_tbx.Text = trainTicket_View.Price.ToString();
+                this.Stocks_tbx.Text = trainTicket_View.Stocks.ToString();
+                this.Enabled_ddl.SelectedValue = trainTicket_View.IsEnabled.ToString();
 
-                //this.Creator_ltl.Text = trainTicket.Creator.ToString();
-                this.CreateDate_ltl.Text = trainTicket.CreateDate.ToString("yyyy-MM-dd");
+                this.Creator_ltl.Text = trainTicket_View.CreatorName.ToString();
+                this.CreateDate_ltl.Text = trainTicket_View.CreateDate.ToString("yyyy-MM-dd");
 
-                if (trainTicket.Modifier.HasValue)
+                if (trainTicket_View.Modifier.HasValue)
                 {
-                    //this.Modifier_ltl.Text = trainTicket.Modifier.ToString();
+                    this.Modifier_ltl.Text = trainTicket_View.Modifier.ToString();
                 }
                 else
                     this.Modifier_ltl.Text = string.Empty;
 
-                if (trainTicket.ModifyDate.HasValue)
+                if (trainTicket_View.ModifyDate.HasValue)
                 {
-                    this.ModifyDate_ltl.Text = trainTicket.ModifyDate.Value.ToString();
+                    this.ModifyDate_ltl.Text = trainTicket_View.ModifyDate.Value.ToString();
                 }
                 else
                     this.ModifyDate_ltl.Text = string.Empty;

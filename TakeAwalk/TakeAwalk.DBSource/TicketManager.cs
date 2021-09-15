@@ -47,13 +47,13 @@ namespace TakeAwalk.DBSource
                 }
             }
         }
-        public static TrainTicket GetTrainTicketsDetailbyID_AdminOnly(int ticketid)
+        public static Manager_TicketList_View GetTrainTicketsDetailbyID_AdminOnly(int ticketid)
         {
             using (ContextModel context = new ContextModel())
             {
                 try
                 {
-                    var query = (from item in context.TrainTickets
+                    var query = (from item in context.Manager_TicketList_View
                                  where item.TicketID == ticketid
                                  select item).FirstOrDefault();
 
