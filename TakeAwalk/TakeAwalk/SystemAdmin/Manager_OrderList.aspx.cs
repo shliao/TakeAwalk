@@ -75,7 +75,7 @@ namespace TakeAwalk.SystemAdmin
             if (string.IsNullOrWhiteSpace(starttxt) || string.IsNullOrEmpty(endtxt)) // 檢查有無輸入日期
             {
                 this.ltlMsg.Visible = true;
-                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤，請重新選取日期</span>";
                 return;
             }
 
@@ -87,7 +87,7 @@ namespace TakeAwalk.SystemAdmin
             catch (Exception)
             {
                 this.ltlMsg.Visible = true;
-                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤，請重新選取日期</span>";
                 return;
             }
             DateTime start_d = DateTime.Parse(starttxt);

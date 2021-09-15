@@ -67,7 +67,7 @@ namespace TakeAwalk.DBSource
         {
             if (string.IsNullOrWhiteSpace(account) || string.IsNullOrWhiteSpace(email))
             {
-                errorMsg = "請輸入帳號和信箱。";
+                errorMsg = "請輸入帳號或信箱";
                 return false;
             }
 
@@ -75,7 +75,7 @@ namespace TakeAwalk.DBSource
 
             if (userInfo == null)
             {
-                errorMsg = "帳號輸入錯誤。";
+                errorMsg = "帳號輸入錯誤";
                 return false;
             }
             if (string.Compare(userInfo.Account, account) == 0 &&
@@ -87,7 +87,7 @@ namespace TakeAwalk.DBSource
             }
             else
             {
-                errorMsg = "請重新確認帳號與信箱。";
+                errorMsg = "請重新確認帳號與信箱";
                 return false;
             }
         }

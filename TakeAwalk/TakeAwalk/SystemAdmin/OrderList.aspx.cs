@@ -119,11 +119,12 @@ namespace TakeAwalk.SystemAdmin
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             currentUser = AuthManager.GetCurrentUser();
+            this.ltlMsg.Visible = false;//請保留(防止重複按下,提示訊息未清空)                 
 
             if (string.IsNullOrWhiteSpace(this.txbStr.Text) || string.IsNullOrEmpty(this.txbEnd.Text)) // 檢查有無輸入日期
             {
                 this.ltlMsg.Visible = true;
-                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期</span>";
             }
 
             string start = this.txbStr.Text;
@@ -137,7 +138,7 @@ namespace TakeAwalk.SystemAdmin
             {
                 this.gv_orderlist.Visible = false;
                 this.ltlMsg.Visible = true;
-                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期</span>";
                 return;
             }
             DateTime startTime = Convert.ToDateTime(start);
@@ -154,7 +155,7 @@ namespace TakeAwalk.SystemAdmin
             {
                 this.gv_orderlist.Visible = false;
                 this.ltlMsg.Visible = true;
-                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期</span>";
             }
 
         }
