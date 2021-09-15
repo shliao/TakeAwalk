@@ -85,12 +85,20 @@ namespace TakeAwalk.SystemAdmin
             DateTime start_d = DateTime.Parse(starttxt);
             DateTime end_d = DateTime.Parse(endtxt);
 
+            if(end_d <= start_d)
+            {
+                this.ltlMsg.Visible = true;
+                this.ltlMsg.Text = "<span style='color:red'>結束日期必須大於起始日期，請重新選取日期</span>";
+            }
+
             var list = OrdersManager.GetOrdersByDate_AdminOnly(start_d, end_d);
 
             if (list.Count > 0)  // 檢查有無資料
             {
                 var pagedList = this.GetPagedDataTable(list);
 
+
+                this.gv_orderlist.Visible = true;
                 this.gv_orderlist.DataSource = pagedList;
                 this.gv_orderlist.DataBind();
 

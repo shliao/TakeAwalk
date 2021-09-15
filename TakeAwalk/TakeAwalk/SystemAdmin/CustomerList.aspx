@@ -29,8 +29,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <a href="UserLevel.aspx?CustomerID=<%# Eval("CustomerID") %>">
-                                    編輯權限
+                                <a href="UserLevel.aspx?CustomerID=<%# Eval("CustomerID") %>">編輯權限
                                 </a>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -44,8 +43,6 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
-                <asp:Literal runat="server" ID="ltPager">
-                </asp:Literal>
                 <uc1:ucPager runat="server" ID="ucPager" PageSize="10" CurrentPage="1" TotalSize="10" Url="CustomerList.aspx" />
                 <asp:PlaceHolder ID="plcNoData" runat="server" Visible="false">
                     <p style="color: red; background-color: cornflowerblue">
