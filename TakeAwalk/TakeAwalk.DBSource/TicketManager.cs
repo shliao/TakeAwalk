@@ -16,6 +16,7 @@ namespace TakeAwalk.DBSource
                 try
                 {
                     var query = (from item in context.TrainTickets
+                                 where item.IsEnabled == true
                                  select item);
 
                     var list = query.ToList();
