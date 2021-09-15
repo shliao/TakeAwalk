@@ -23,7 +23,7 @@ namespace TakeAwalk.SystemAdmin
             this.ltlCheckInput.Text = string.Empty;
             this.ltlMsg.Text = string.Empty;
             this.ltlMsg2.Text = string.Empty;
-            this.ltlMsg1.Text = "<span style='color:red'>請於信箱收取驗證碼.</span>";
+            this.ltlMsg1.Text = "<span style='color:red'>請於信箱收取驗證碼</span>";
             ltlAccount.Text = this.Session["UserLoginInfo"] as string;
         }
 
@@ -36,19 +36,19 @@ namespace TakeAwalk.SystemAdmin
         {
             if (txbAttest.Text != "9267434351")
             {
-                ltlMsg1.Text = "驗證碼錯誤,請重新輸入.";
+                ltlMsg1.Text = "驗證碼錯誤,請重新輸入";
                 return;
             }
 
             Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");             //正則表達式排除特殊字元
             if (!rx.IsMatch(txbNewPassword.Text))
             {
-                this.ltlMsg.Text = "<span style='color:red'>新密碼不能為特殊字元,請重新輸入</span>";
+                this.ltlMsg.Text = "<span style='color:red'>新密碼不能為特殊字元及留空,請重新輸入</span>";
                 return;
             }
             if (!rx.IsMatch(txbNewPasswordCmf.Text))
             {
-                this.ltlMsg2.Text = "<span style='color:red'>確認密碼不能為特殊字元,請重新輸入</span>";
+                this.ltlMsg2.Text = "<span style='color:red'>確認密碼不能為特殊字元及留空,請重新輸入</span>";
                 return;
             }
 
@@ -74,7 +74,7 @@ namespace TakeAwalk.SystemAdmin
                 }
                 else
                 {
-                    this.ltlMsg.Text = "<span style='color:red'>新密碼與確認密碼不一致,請重新輸入.</span>";
+                    this.ltlMsg.Text = "<span style='color:red'>新密碼與確認密碼不一致,請重新輸入</span>";
                     return;
                 }
             }
@@ -84,23 +84,22 @@ namespace TakeAwalk.SystemAdmin
         {
             List<string> msgList = new List<string>();
 
-
             if (string.IsNullOrWhiteSpace(this.txbNewPassword.Text.Trim()) || string.IsNullOrEmpty(this.txbNewPassword.Text.Trim()))
             {
-                msgList.Add("<span style='color:red'>請輸入新密碼.</span>");
+                msgList.Add("<span style='color:red'>請輸入新密碼</span>");
             }
-            if (string.IsNullOrWhiteSpace(this.txbNewPasswordCmf.Text.Trim()) || string.IsNullOrEmpty(this.txbNewPasswordCmf.Text.Trim()))
-            {
-                msgList.Add("<span style='color:red'>請輸入確認密碼.</span>");
-            }
-
             if (this.txbNewPassword.Text.Length < 8)
             {
-                msgList.Add("<span style='color:red'>新密碼長度應為八到十八碼.</span>");
+                msgList.Add("<span style='color:red'>新密碼長度應為8到18碼</span>");
+            }
+
+            if (string.IsNullOrWhiteSpace(this.txbNewPasswordCmf.Text.Trim()) || string.IsNullOrEmpty(this.txbNewPasswordCmf.Text.Trim()))
+            {
+                msgList.Add("<span style='color:red'>請輸入確認密碼</span>");
             }
             if (this.txbNewPasswordCmf.Text.Length < 8)
             {
-                msgList.Add("<span style='color:red'>新密碼長度應為八到十八碼.</span>");
+                msgList.Add("<span style='color:red'>確認密碼長度應為8到18碼</span>");
             }
             errorMsgList = msgList;
 

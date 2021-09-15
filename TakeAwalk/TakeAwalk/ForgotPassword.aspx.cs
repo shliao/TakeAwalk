@@ -18,14 +18,14 @@ namespace TakeAwalk
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-
+            
             Regex rx = new Regex(@"[\d\u4E00-\u9FA5A-Za-z]");           //正則表達式排除特殊字元
             if (!rx.IsMatch(txbAccount.Text))
             {
-                this.ltlMsg.Text = "<span style='color:red'>帳號不能為特殊字元,請重新輸入</span>";
+                this.ltlMsg.Text = "<span style='color:red'>帳號不能為特殊字元及留空,請重新輸入</span>";
                 return;
             }
-            
+
             string account = txbAccount.Text;
             string email = txbEmail.Text;
             string time = DateTime.Now.ToLongDateString();
