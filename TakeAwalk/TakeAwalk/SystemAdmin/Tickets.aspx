@@ -73,7 +73,7 @@
                 </asp:GridView>
                 <asp:Label ID="lbError" runat="server" Visible="False" ForeColor="Red"></asp:Label>
                 <asp:Label ID="lbAmount" runat="server" Visible="False"></asp:Label><br />
-                <asp:Literal ID="ltlMsg" runat="server" Visible="False"></asp:Literal><br />
+                <span style="color:red"><asp:Literal ID="ltlMsg" runat="server" Visible="False"></asp:Literal></span><br />
                 <br />
                 <asp:Button ID="btnConfirm" runat="server" Text="確認選項" OnClick="btnConfirm_Click" />
                 <asp:Button ID="btnBuy" runat="server" Text="確定訂購" OnClick="btnBuy_Click" Visible="False" />
