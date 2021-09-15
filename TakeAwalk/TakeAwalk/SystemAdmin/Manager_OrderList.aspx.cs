@@ -71,6 +71,14 @@ namespace TakeAwalk.SystemAdmin
             this.ltlMsg.Visible = false;
             string starttxt = this.txb_start.Text;
             string endtxt = this.txb_End.Text;
+
+            if (string.IsNullOrWhiteSpace(starttxt) || string.IsNullOrEmpty(endtxt)) // 檢查有無輸入日期
+            {
+                this.ltlMsg.Visible = true;
+                this.ltlMsg.Text = "<span style='color:red'>搜尋日期有錯誤,請重新選取日期.</span>";
+                return;
+            }
+
             try                                // 檢查是否符合DateTime格式(例外輸入狀況:年份五位數&無選取日期)
             {
                 DateTime.Parse(starttxt);

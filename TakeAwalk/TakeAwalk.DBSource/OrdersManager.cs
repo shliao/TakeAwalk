@@ -79,7 +79,7 @@ namespace TakeAwalk.DBSource
                 try
                 {
                     var query = (from item in context.Manager_OrderList_View
-                                 where item.CreateDate <= end_t && item.CreateDate >= start_t
+                                 where item.CreateDate.AddDays(1) <= end_t && item.CreateDate >= start_t
                                  select item);
 
                     var list = query.ToList();

@@ -11,6 +11,9 @@
             <div class="my-5 text-center text-xl-start">
                 <h2>購票紀錄</h2>
                 <br />
+                起始:<asp:TextBox ID="txbStr" runat="server" TextMode="Date"></asp:TextBox>
+                結束:<asp:TextBox ID="txbEnd" runat="server" TextMode="Date"></asp:TextBox>
+                <asp:Button ID="btnSearch" runat="server" Text="搜尋" OnClick="btnSearch_Click" /><br />
                 <asp:GridView ID="gv_orderlist" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2">
                     <Columns>
                         <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
@@ -55,11 +58,9 @@
                 <br />
                 <h3>購票期間</h3>
                 <br />
-                起始:<asp:TextBox ID="txbStr" runat="server" TextMode="Date"></asp:TextBox> 結束:<asp:TextBox ID="txbEnd" runat="server" TextMode="Date"></asp:TextBox>
-                <asp:Button ID="btnSearch" runat="server" Text="搜尋" OnClick="btnSearch_Click" /><br />
                 <asp:Literal ID="ltlMsg2" runat="server"></asp:Literal><br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Visible="false" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" >
-                      <Columns>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Visible="false" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                    <Columns>
                         <asp:BoundField DataField="OrderID" HeaderText="訂單序號" />
                         <asp:BoundField DataField="CreateDate" HeaderText="購買日期" DataFormatString="{0:yyyy/MM/dd HH:mm}" />
                         <asp:BoundField HeaderText="總金額" DataField="Total" />
